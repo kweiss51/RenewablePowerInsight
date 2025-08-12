@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Renewable Energy Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Renewable Energy Calculator</h1>
+
+  <div class="energy-calc-section">
+    <h3>PV Solar Power</h3>
+    <label>Panel Area (m²):</label>
+    <input id="pv_area" type="number">
+    <label>Panel Efficiency (0-1):</label>
+    <input id="pv_eff" type="number">
+    <label>Solar Irradiance (kW/m²):</label>
+    <input id="pv_irr" type="number">
+    <label>Sunlight Hours/Day:</label>
+    <input id="pv_hours" type="number">
+    <button onclick="calcPV()">Calculate</button>
+    <div id="pv_result" class="energy-calc-result"></div>
+  </div>
+
+  <!-- You can add Wind, Hydro, and Geothermal sections here too -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>
