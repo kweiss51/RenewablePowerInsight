@@ -1,22 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
 .energy-calc-section {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
 }
+
 .energy-calc-section h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
+
 .energy-calc-section label {
-  display: block;
-  margin: 8px 0 2px;
+    display: block;
+    margin: 8px 0 2px;
 }
+
 .energy-calc-section input {
-  width: 100%;
-  padding: 4px;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 8px;
 }
+
+.energy-calc-section button {
+    margin-top: 8px;
+    padding: 6px 16px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.energy-calc-section button:hover {
+    background: #219150;
+}
+
 .energy-calc-result {
-  font-weight: bold;
-  color: green;
-  margin-top: 10px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 10px;
 }
