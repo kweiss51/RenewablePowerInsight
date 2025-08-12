@@ -1,0 +1,22 @@
+.energy-calc-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.energy-calc-section h3 {
+  margin-top: 0;
+}
+.energy-calc-section label {
+  display: block;
+  margin: 8px 0 2px;
+}
+.energy-calc-section input {
+  width: 100%;
+  padding: 4px;
+}
+.energy-calc-result {
+  font-weight: bold;
+  color: green;
+  margin-top: 10px;
+}
