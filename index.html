@@ -1,29 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Renewable Energy Calculator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Renewable Power Insight</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Renewable Energy Calculator</h1>
-
-  <div class="energy-calc-section">
-    <h3>PV Solar Power</h3>
-    <label>Panel Area (m²):</label>
-    <input id="pv_area" type="number">
-    <label>Panel Efficiency (0-1):</label>
-    <input id="pv_eff" type="number">
-    <label>Solar Irradiance (kW/m²):</label>
-    <input id="pv_irr" type="number">
-    <label>Sunlight Hours/Day:</label>
-    <input id="pv_hours" type="number">
-    <button onclick="calcPV()">Calculate</button>
-    <div id="pv_result" class="energy-calc-result"></div>
-  </div>
-
-  <!-- You can add Wind, Hydro, and Geothermal sections here too -->
-
-  <script src="script.js" defer></script>
+    <header>
+        <h1>Renewable Power Insight</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                Renewable Power Insight provides data and analysis on renewable energy sources, trends, and innovations.
+            </p>
+        </section>
+        <section id="data">
+            <h2>Data</h2>
+            <p>
+                Explore interactive charts and up-to-date statistics on solar, wind, and other renewable energy sources.
+            </p>
+            <!-- Placeholder for future data visualizations -->
+            <div id="charts"></div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                For inquiries, email us at <a href="mailto:info@renewablepowerinsight.com">info@renewablepowerinsight.com</a>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Renewable Power Insight</p>
+    </footer>
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Renewable Energy Potential Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Renewable Energy Potential Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your Renewable Energy Potential</h2>
+            <div id="calculator-container"></div>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                This site helps you estimate the daily energy potential at your home from PV Solar, Wind Turbine, Hydropower, and Geothermal sources.
+            </p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                For inquiries, email us at <a href="mailto:info@renewablepowerinsight.com">info@renewablepowerinsight.com</a>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Renewable Power Insight</p>
+    </footer>
+    <script src
