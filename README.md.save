@@ -1,0 +1,75 @@
+# RenewablePowerInsight
+
+A simple project for estimating the daily energy potential at a home from four renewable sources: **PV Solar Power, Wind Turbine, Hydropower, and Geothermal**.
+
+---
+
+## Features
+
+- **Web Calculator:**  
+  Interactive HTML/JS calculator for PV Solar, Wind, Hydro, and Geothermal energy (hostable on GitHub Pages).
+
+- **Python Logic:**  
+  Reference Python functions for each energy source in `energy_calculator/calculations.py`.
+
+---
+
+## Folder Structure
+
+```
+RenewablePowerInsight/
+├── index.html           # Main website page
+├── style.css            # CSS for styling
+├── script.js            # JS for calculator logic
+├── energy_calculator/
+│   └── calculations.py  # Python calculation functions
+└── assets/              # (Optional) Images or other assets
+```
+
+---
+
+## Usage
+
+### Website
+
+1. Open `index.html` in your browser, or
+2. Host the repository on [GitHub Pages](https://pages.github.com/) for a live calculator.
+
+### Python Module
+
+Use the functions in `energy_calculator/calculations.py` for backend or data analysis:
+
+```python
+from energy_calculator.calculations import (
+    calculate_pv_solar,
+    calculate_wind_turbine,
+    calculate_hydropower,
+    calculate_geothermal
+)
+
+# Example: Calculate daily PV solar energy
+energy = calculate_pv_solar(area_m2=10, efficiency=0.18, solar_irradiance=1, hours=5)
+print(f"PV Solar Daily Energy: {energy} kWh")
+```
+
+---
+
+## GitHub Pages Deployment
+
+1. Push your repository to GitHub.
+2. In your repo settings, enable GitHub Pages (source: root or `/docs`).
+3. Visit your site at `https://<your-username>.github.io/<repo-name>/`.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Credits
+
+- Calculator logic by [Your Name]
+- Inspired by open renewable energy resources
+
