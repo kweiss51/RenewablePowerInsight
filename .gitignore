@@ -1,0 +1,39 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code settings
+.vscode/
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+
+# Node modules (if you ever add JS tooling)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log
+
+# Other system files
+Thumbs.db
+Desktop.ini
+
+# Ignore backup files
+*~
+*.swp
+*.swo
+
+# Ignore local environment files
+.env
+.env.*
