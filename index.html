@@ -6,80 +6,65 @@
   <title>Renewable Power Insight</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
 
   <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
+  <header class="bg-white shadow fixed top-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-green-600">Renewable Power Insight</h1>
-      <nav class="space-x-4">
-        <a href="#calculator" class="text-gray-600 hover:text-green-600">Calculator</a>
-        <a href="#blog" class="text-gray-600 hover:text-green-600">Blog</a>
-        <a href="#contact" class="text-gray-600 hover:text-green-600">Contact</a>
-      </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-green-100 py-12 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Estimate Your Renewable Energy Potential</h2>
-    <p class="max-w-xl mx-auto mb-6">Use our calculator to explore how much energy you can harness from solar, wind, hydro, or geothermal sources based on your U.S. city.</p>
-    <a href="#calculator" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">Start Calculating</a>
+  <section class="bg-green-100 py-24 text-center mt-16">
+    <h2 class="text-4xl font-semibold mb-4">Discover Your Renewable Energy Potential</h2>
+    <p class="max-w-xl mx-auto mb-6 text-lg">Estimate your energy output, savings, and ROI based on your location and system size.</p>
+    <a href="#calculator" class="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition">Try the Calculator</a>
   </section>
 
   <!-- Calculator -->
-  <section id="calculator" class="max-w-4xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold mb-6">Energy Calculator</h3>
-    <form id="energyForm" class="bg-white shadow rounded p-6 space-y-4">
+  <section id="calculator" class="max-w-4xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-bold mb-8 text-center">Energy Calculator</h3>
+    <form id="energyForm" class="bg-white shadow rounded p-6 space-y-6">
       <div>
-        <label for="city" class="block font-medium">City</label>
-        <input type="text" id="city" name="city" class="w-full border rounded px-3 py-2" placeholder="e.g., Phoenix, AZ" required>
+        <label for="zip" class="block font-medium mb-1">ZIP Code</label>
+        <input type="text" id="zip" name="zip" class="w-full border rounded px-3 py-2" placeholder="e.g., 98040" required>
       </div>
       <div>
-        <label for="energyType" class="block font-medium">Energy Type</label>
+        <label for="energyType" class="block font-medium mb-1">Energy Type</label>
         <select id="energyType" name="energyType" class="w-full border rounded px-3 py-2">
           <option value="solar">Solar</option>
           <option value="wind">Wind</option>
-          <option value="hydro">Hydro</option>
-          <option value="geothermal">Geothermal</option>
         </select>
       </div>
       <div>
-        <label for="systemSize" class="block font-medium">System Size (kW)</label>
+        <label for="systemSize" class="block font-medium mb-1">System Size (kW)</label>
         <input type="number" id="systemSize" name="systemSize" class="w-full border rounded px-3 py-2" required>
+      </div>
+      <div>
+        <label for="installCost" class="block font-medium mb-1">Estimated Installation Cost ($)</label>
+        <input type="number" id="installCost" name="installCost" class="w-full border rounded px-3 py-2" placeholder="Leave blank for default">
       </div>
       <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Calculate</button>
     </form>
 
-    <div id="results" class="mt-8 hidden bg-green-50 border-l-4 border-green-600 p-4 rounded">
-      <h4 class="font-semibold text-lg mb-2">Estimated Output</h4>
-      <p id="outputText" class="text-gray-700"></p>
-    </div>
-  </section>
-
-  <!-- Blog -->
-  <section id="blog" class="bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-2xl font-bold mb-6">Latest Blog Posts</h3>
-      <div id="blogPosts" class="space-y-6">
-        <!-- Blog posts will be injected here -->
+    <div id="results" class="mt-10 hidden bg-green-50 border-l-4 border-green-600 p-6 rounded shadow space-y-4">
+      <h4 class="text-xl font-semibold">Results</h4>
+      <p id="outputText" class="text-gray-700 text-lg"></p>
+      <div class="space-y-2">
+        <p id="offsetText" class="text-gray-700"></p>
+        <p id="savingsText" class="text-gray-700"></p>
+        <p id="roiText" class="text-gray-700 font-medium"></p>
+        <div class="w-full bg-gray-200 rounded h-6">
+          <div id="roiBar" class="h-6 rounded text-white text-center text-sm leading-6"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="bg-gray-100 py-12">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
-      <p class="text-gray-700">Questions or feedback? Reach out via <a href="mailto:info@renewablepowerinsight.com" class="text-green-600 underline">email</a>.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="bg-gray-200 py-6 mt-12">
     <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-600">
       <p>&copy; 2025 Renewable Power Insight. All rights reserved.</p>
-      <p><a href="https://github.com/kweiss51/RenewablePowerInsight" class="text-green-600 hover:underline">View on GitHub</a></p>
     </div>
   </footer>
 
