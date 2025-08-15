@@ -2,72 +2,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("energyForm");
   const results = document.getElementById("results");
   const outputText = document.getElementById("outputText");
-  const blogPosts = document.getElementById("blogPosts");
+  const offsetText = document.getElementById("offsetText");
+  const savingsText = document.getElementById("savingsText");
+  const roiText = document.getElementById("roiText");
+  const roiBar = document.getElementById("roiBar");
 
-  // Mock energy output factors (kWh per kW per year)
-  const energyFactors = {
-    solar: {
-      "Phoenix, AZ": 1700,
-      "Seattle, WA": 1100,
-      "Denver, CO": 1500,
-      default: 1300
-    },
-    wind: {
-      "Amarillo, TX": 3000,
-      "Chicago, IL": 2500,
-      default: 2200
-    },
-    hydro: {
-      default: 4000
-    },
-    geothermal: {
-      default: 5000
-    }
+  // Mock irradiance and consumption data by ZIP prefix
+  const zipData = {
+    "980": { irradiance: 3.5, windFactor: 2.0, consumption: 11000, rate: 0.12 }, // Mercer Island
+    "850": { irradiance: 5.5, windFactor: 1.5, consumption: 10500, rate: 0.13 }, // Phoenix
+    "606": { irradiance: 4.2, windFactor: 2.8, consumption: 9500, rate: 0.14 },  // Chicago
+    default: { irradiance: 4.0, windFactor: 2.0, consumption: 10000, rate: 0.13 }
+  };
+
+  const defaultCosts = {
+    solar: 3000, // per kW
+    wind: 2500
   };
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const city = document.getElementById("city").value.trim();
+    const zip = document.getElementById("zip").value.trim();
     const energyType = document.getElementById("energyType").value;
     const systemSize = parseFloat(document.getElementById("systemSize").value);
+    const installCostInput = parseFloat(document.getElementById("installCost").value);
 
-    if (!city || isNaN(systemSize)) return;
+    const zipPrefix = zip.substring(0, 3);
+    const locationData = zipData[zipPrefix] || zipData.default;
 
-    const cityFactor = energyFactors[energyType][city] || energyFactors[energyType].default;
-    const estimatedOutput = cityFactor * systemSize;
+    const irradiance = energyType === "solar" ? locationData.irradiance : locationData.windFactor;
+    const annualGeneration = irradiance * systemSize * 365; // kWh/year
+    const avgConsumption = locationData.consumption;
+    const rate = locationData.rate;
 
-    outputText.textContent = `In ${city}, a ${systemSize} kW ${energyType} system could generate approximately ${estimatedOutput.toLocaleString()} kWh per year.`;
-    results.classList.remove("hidden");
-  });
+    const offsetPercent = Math.min(100, ((annualGeneration / avgConsumption) * 100).toFixed(1));
+    const annualSavings = (annualGeneration * rate).toFixed(2);
+    const installCost = installCostInput || (defaultCosts[energyType] * systemSize);
+    const roiYears = (installCost / (annualGeneration * rate)).toFixed(1);
 
-  // Mock blog posts
-  const posts = [
-    {
-      title: "Solar vs Wind: Which Is Better for Your Region?",
-      summary: "Explore the pros and cons of solar and wind energy depending on your climate and geography.",
-      link: "#"
-    },
-    {
-      title: "Top 5 Cities for Geothermal Potential",
-      summary: "Discover which U.S. cities offer the best conditions for geothermal energy systems.",
-      link: "#"
-    },
-    {
-      title: "How to Size Your Renewable System",
-      summary: "Learn how to estimate the right system size for your household energy needs.",
-      link: "#"
+    // Output
+    outputText.textContent = `Estimated annual generation: ${annualGeneration.toLocaleString()} kWh`;
+    offsetText.textContent = `This covers approximately ${offsetPercent}% of the average home's yearly energy use in your area (${avgConsumption.toLocaleString()} kWh).`;
+    savingsText.textContent = `Estimated annual savings: $${annualSavings}`;
+    roiText.textContent = `Estimated ROI: ${roiYears} years`;
+
+    // ROI Bar
+    let barColor = "bg-green-600";
+    let label = "Fast ROI";
+    if (roiYears > 10) {
+      barColor = "bg-red-500";
+      label = "Long ROI";
+    } else if (roiYears > 1) {
+      barColor = "bg-yellow-500";
+      label = "Moderate ROI";
     }
-  ];
 
-  posts.forEach(post => {
-    const div = document.createElement("div");
-    div.className = "bg-gray-50 p-4 rounded shadow";
-    div.innerHTML = `
-      <h4 class="text-lg font-semibold mb-2">${post.title}</h4>
-      <p class="text-gray-700 mb-2">${post.summary}</p>
-      <a href="${post.link}" class="text-green-600 underline">Read more</a>
-    `;
-    blogPosts.appendChild(div);
+    roiBar.className = `${barColor} h-6 rounded text-white text-center text-sm leading-6`;
+    roiBar.style.width = `${Math.min(100, (10 / roiYears) * 100)}%`;
+    roiBar.textContent = label;
+
+    results.classList.remove("hidden");
   });
 });
