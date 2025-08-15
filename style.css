@@ -22,79 +22,163 @@ nav ul {
     margin: 1em 0 0 0;
     display: flex;
     justify-content: center;
-    gap: 2em;
-}
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        background: #f7fafd;
+        color: #1a2327;
+    }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
+    header {
+        background: #1a3c40;
+        color: #fff;
+        padding: 1.5em 0 1em 0;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
 
-nav a:hover {
-    text-decoration: underline;
-}
+    header h1 {
+        margin: 0;
+        font-size: 2.2em;
+        letter-spacing: 1px;
+    }
 
-main {
-    max-width: 800px;
-    margin: 2em auto;
-    background: #fff;
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 1em 0 0 0;
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
 
-section {
-    margin-bottom: 2em;
-}
+    .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1em;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
+        outline: none;
+    }
 
-footer {
-    background: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
+    .nav-link.active,
+    .nav-link:focus {
+        color: #ffd166;
+        border-bottom: 2px solid #ffd166;
+        outline: none;
+    }
 
-.energy-calc-section {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
+    .nav-link:hover {
+        color: #ffd166;
+        text-decoration: underline;
+    }
 
-.energy-calc-section h3 {
-    margin-top: 0;
-}
+    main {
+        max-width: 900px;
+        margin: 2em auto;
+        background: #fff;
+        padding: 2.5em 2em;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
 
-.energy-calc-section label {
-    display: block;
-    margin: 8px 0 2px;
-}
+    .site-section {
+        margin-bottom: 2.5em;
+        animation: fadeIn 0.4s;
+    }
 
-.energy-calc-section input {
-    width: 100%;
-    padding: 4px;
-    margin-bottom: 8px;
-}
+    .site-section h2 {
+        color: #1a3c40;
+        margin-top: 0;
+        font-size: 1.5em;
+    }
 
-.energy-calc-section button {
-    margin-top: 8px;
-    padding: 6px 16px;
-    background: #27ae60;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    footer {
+        background: #1a3c40;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+        margin-top: 2em;
+        font-size: 1em;
+    }
 
-.energy-calc-section button:hover {
-    background: #219150;
-}
+    .energy-calc-section {
+        border: 1px solid #cce3e7;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background: #f7fafc;
+        box-shadow: 0 1px 4px rgba(26,60,64,0.04);
+    }
 
-.energy-calc-result {
-    font-weight: bold;
-    color: #27ae60;
-    margin-top: 10px;
-}
+    .energy-calc-section h3 {
+        margin-top: 0;
+        color: #277da1;
+        font-size: 1.2em;
+    }
+
+    .energy-calc-section label {
+        display: block;
+        margin: 10px 0 2px;
+        font-weight: 500;
+    }
+
+    .energy-calc-section input {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 10px;
+        border: 1px solid #b5c9cc;
+        border-radius: 4px;
+        font-size: 1em;
+        background: #fff;
+        transition: border 0.2s;
+    }
+
+    .energy-calc-section input:focus {
+        border: 1.5px solid #277da1;
+        outline: none;
+    }
+
+    .energy-calc-section button {
+        margin-top: 8px;
+        padding: 8px 20px;
+        background: #277da1;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+
+    .energy-calc-section button:hover {
+        background: #1a3c40;
+    }
+
+    .energy-calc-result {
+        font-weight: bold;
+        color: #277da1;
+        margin-top: 12px;
+        font-size: 1.1em;
+    }
+
+    @media (max-width: 600px) {
+        main {
+            padding: 1em 0.5em;
+        }
+        .energy-calc-section {
+            padding: 12px;
+        }
+        .nav-list {
+            flex-direction: column;
+            gap: 1em;
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
