@@ -33,29 +33,41 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Handle button selection within each question
-    document.querySelectorAll('.options button').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const parentOptions = e.target.closest('.options');
-            parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
-            e.target.classList.add('selected');
+    // Handle button selections with event delegation
+    quizSection.addEventListener('click', (e) => {
+        // Check if the clicked element is a quiz option button
+        if (e.target.tagName === 'BUTTON' && e.target.closest('.options')) {
+            const selectedButton = e.target;
+            const parentOptions = selectedButton.closest('.options');
 
-            // This is the new logic to auto-advance
+            // Remove the 'selected' class from all other buttons in the same question
+            parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+            
+            // Add the 'selected' class to the clicked button
+            selectedButton.classList.add('selected');
+
+            // Store the user's answer
             const questionId = `q${currentQuestionIndex + 1}`;
-            userAnswers[questionId] = e.target.dataset.value;
+            userAnswers[questionId] = selectedButton.dataset.value;
     
+            // Hide the current question
             quizQuestions[currentQuestionIndex].classList.add('hidden');
+            
+            // Advance to the next question
             currentQuestionIndex++;
     
+            // Check if there are more questions or if the quiz is finished
             if (currentQuestionIndex < quizQuestions.length) {
+                // Show the next question
                 quizQuestions[currentQuestionIndex].classList.remove('hidden');
             } else {
+                // All questions answered, show results
                 generateResults();
                 quizSection.classList.add('hidden');
                 resultsSection.classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-        });
+        }
     });
     
     // Function to generate and display the results
