@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctaButton = document.getElementById('cta-button');
     const quizSection = document.getElementById('quiz-section');
     const resultsSection = document.getElementById('results-section');
-    const nextBtn = document.getElementById('next-btn');
     const quizQuestions = document.querySelectorAll('.question-box');
     const resultsContent = document.getElementById('results-content');
     const otherResourcesSection = document.getElementById('other-resources');
@@ -40,33 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const parentOptions = e.target.closest('.options');
             parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
             e.target.classList.add('selected');
+
+            // This is the new logic to auto-advance
+            const questionId = `q${currentQuestionIndex + 1}`;
+            userAnswers[questionId] = e.target.dataset.value;
+    
+            quizQuestions[currentQuestionIndex].classList.add('hidden');
+            currentQuestionIndex++;
+    
+            if (currentQuestionIndex < quizQuestions.length) {
+                quizQuestions[currentQuestionIndex].classList.remove('hidden');
+            } else {
+                generateResults();
+                quizSection.classList.add('hidden');
+                resultsSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         });
     });
-
-    // Handle next button click to progress through the quiz
-    nextBtn.addEventListener('click', () => {
-        const selectedButton = quizQuestions[currentQuestionIndex].querySelector('.options .selected');
-        if (!selectedButton) {
-            alert('Please make a selection to continue.');
-            return;
-        }
-
-        const questionId = `q${currentQuestionIndex + 1}`;
-        userAnswers[questionId] = selectedButton.dataset.value;
-
-        quizQuestions[currentQuestionIndex].classList.add('hidden');
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < quizQuestions.length) {
-            quizQuestions[currentQuestionIndex].classList.remove('hidden');
-        } else {
-            generateResults();
-            quizSection.classList.add('hidden');
-            resultsSection.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    });
-
+    
     // Function to generate and display the results
     function generateResults() {
         resultsContent.innerHTML = '';
