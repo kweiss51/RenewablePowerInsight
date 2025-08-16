@@ -42,10 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (card) {
             currentQuizId = card.dataset.quiz;
             quizSelectionSection.classList.add('hidden');
+            
+            // Show the selected quiz section and its first question
             const targetQuizSection = document.getElementById(`quiz-${currentQuizId}`);
             if (targetQuizSection) {
                 targetQuizSection.classList.remove('hidden');
-                // Ensure the first question is shown
                 const firstQuestion = targetQuizSection.querySelector('.question-box');
                 if (firstQuestion) {
                     firstQuestion.classList.remove('hidden');
@@ -60,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.tagName === 'BUTTON' && e.target.closest('.options')) {
             const selectedButton = e.target;
             const parentOptions = selectedButton.closest('.options');
-
+    
             // Remove selected class from all buttons in the current question
             parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
             selectedButton.classList.add('selected');
-
+    
             const questionId = parentOptions.closest('.question-box').dataset.q;
             userAnswers[questionId] = selectedButton.dataset.value;
     
