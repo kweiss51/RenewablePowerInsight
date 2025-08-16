@@ -43,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 70vh; /* Increased to fill more of the initial screen */
 }
 
 .hero-content {
@@ -52,8 +52,14 @@ body {
 
 .hero-content h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 800;
+}
+
+.hero-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
@@ -66,10 +72,10 @@ body {
     display: inline-block;
     background-color: var(--accent-color);
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: var(--border-radius);
     text-decoration: none;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
     transition: transform 0.2s ease, background-color 0.2s ease;
     border: none;
@@ -137,7 +143,7 @@ main {
 .next-btn {
     margin-top: 2rem;
     width: auto;
-    padding: 0.8rem 2.5rem;
+    padding: 1rem 2.5rem;
 }
 
 /* Results Section */
