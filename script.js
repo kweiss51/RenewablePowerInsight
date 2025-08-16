@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizSidebar = document.querySelector('.quiz-sidebar');
     
     let currentQuizId = '';
-    let currentQuestionIndex = 0;
     const userAnswers = {};
 
     // Master list of all resources with their category tags and costs
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show the selected quiz section and its first question
             const targetQuizSection = document.getElementById(`quiz-${currentQuizId}`);
             if (targetQuizSection) {
-                targetQuizSelectionSection.classList.remove('hidden');
+                targetQuizSection.classList.remove('hidden');
                 const firstQuestion = targetQuizSection.querySelector('.question-box');
                 if (firstQuestion) {
                     firstQuestion.classList.remove('hidden');
@@ -61,18 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.tagName === 'BUTTON' && e.target.closest('.options')) {
             const selectedButton = e.target;
             const parentOptions = selectedButton.closest('.options');
-    
+
             // Remove selected class from all buttons in the current question
             parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
             selectedButton.classList.add('selected');
-    
+
             const questionId = parentOptions.closest('.question-box').dataset.q;
             userAnswers[questionId] = selectedButton.dataset.value;
-    
+
             // Find the current question and the next one
             const currentQuestion = parentOptions.closest('.question-box');
+            
+            // Advance to the next question
             const nextQuestion = currentQuestion.nextElementSibling;
-    
+
             currentQuestion.classList.add('hidden');
             
             if (nextQuestion && nextQuestion.classList.contains('question-box')) {
@@ -97,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetQuizState(quizId) {
         currentQuizId = quizId;
-        currentQuestionIndex = 0;
         Object.keys(userAnswers).forEach(key => delete userAnswers[key]);
 
         allQuizSections.forEach(section => section.classList.add('hidden'));
