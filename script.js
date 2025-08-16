@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial CTA button to show the quiz selection page
     ctaButton.addEventListener('click', () => {
         heroSection.classList.add('hidden');
-        quizSection.classList.remove('hidden');
+        quizSelectionSection.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
