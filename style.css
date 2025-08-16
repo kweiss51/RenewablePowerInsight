@@ -43,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70vh; /* Increased to fill more of the initial screen */
+    min-height: 70vh;
 }
 
 .hero-content {
@@ -65,7 +65,7 @@ body {
 .hero-content p {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     opacity: 0.9;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .cta-button {
@@ -163,12 +163,12 @@ main {
 
 .result-item {
     margin-bottom: 2rem;
-    border-bottom: 2px solid #e5e7eb;
     padding-bottom: 1.5rem;
 }
 
-.result-item:last-child {
-    border-bottom: none;
+.result-item:last-of-type {
+    margin-bottom: 1rem;
+    padding-bottom: 0;
 }
 
 .result-item h3 {
@@ -204,11 +204,32 @@ main {
     text-decoration: underline;
 }
 
+.match-percentage {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.cost-badge {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
 .final-message {
     text-align: center;
     color: var(--text-color);
     font-style: italic;
     margin-top: 2rem;
+}
+
+#other-resources {
+    margin-top: 2rem;
+    border-top: 2px solid #e5e7eb;
+    padding-top: 1rem;
 }
 
 /* Footer */
