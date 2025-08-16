@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const heroSection = document.querySelector('.hero-section');
     const ctaButton = document.getElementById('cta-button');
     const quizSection = document.getElementById('quiz-section');
     const resultsSection = document.getElementById('results-section');
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial CTA button to start the quiz
     ctaButton.addEventListener('click', () => {
-        document.querySelector('.hero-section').classList.add('hidden');
+        heroSection.classList.add('hidden');
         quizSection.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
