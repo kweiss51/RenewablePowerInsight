@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renewable Power Insight</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language PathFinder | Find Your Way to Fluency</title>
+    <meta name="description" content="Take a quick quiz to get a personalized language learning plan. Find the best resources and a clear path to your goals.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow fixed top-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-green-600">Renewable Power Insight</h1>
-    </div>
-  </header>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Tired of Not Knowing Where to Start?</h1>
+            <p>We'll give you a clear, personalized path to learning any language. No more guesswork, no more frustration.</p>
+            <button id="cta-button" class="cta-button">Find My Path</button>
+        </div>
+    </header>
 
-  <!-- Hero -->
-  <section class="bg-green-100 py-24 text-center mt-16">
-    <h2 class="text-4xl font-semibold mb-4">Discover Your Renewable Energy Potential</h2>
-    <p class="max-w-xl mx-auto mb-6 text-lg">Estimate your energy output, savings, and ROI based on your location and system size.</p>
-    <a href="#calculator" class="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition">Try the Calculator</a>
-  </section>
+    <main id="app">
+        <section id="quiz-section" class="hidden">
+            <div class="quiz-container">
+                <div class="question-box" id="q1">
+                    <h3>1. What's your main goal for learning?</h3>
+                    <div class="options">
+                        <button data-value="travel">✈️ Travel & Social</button>
+                        <button data-value="career">💼 Career & Business</button>
+                        <button data-value="hobby">🧠 Personal Growth & Hobby</button>
+                    </div>
+                </div>
 
-  <!-- Calculator -->
-  <section id="calculator" class="max-w-4xl mx-auto px-4 py-16">
-    <h3 class="text-3xl font-bold mb-8 text-center">Energy Calculator</h3>
-    <form id="energyForm" class="bg-white shadow rounded p-6 space-y-6">
-      <div>
-        <label for="zip" class="block font-medium mb-1">ZIP Code</label>
-        <input type="text" id="zip" name="zip" class="w-full border rounded px-3 py-2" placeholder="e.g., 98040" required>
-      </div>
-      <div>
-        <label for="energyType" class="block font-medium mb-1">Energy Type</label>
-        <select id="energyType" name="energyType" class="w-full border rounded px-3 py-2">
-          <option value="solar">Solar</option>
-          <option value="wind">Wind</option>
-        </select>
-      </div>
-      <div>
-        <label for="systemSize" class="block font-medium mb-1">System Size (kW)</label>
-        <input type="number" id="systemSize" name="systemSize" class="w-full border rounded px-3 py-2" required>
-      </div>
-      <div>
-        <label for="installCost" class="block font-medium mb-1">Estimated Installation Cost ($)</label>
-        <input type="number" id="installCost" name="installCost" class="w-full border rounded px-3 py-2" placeholder="Leave blank for default">
-      </div>
-      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Calculate</button>
-    </form>
+                <div class="question-box hidden" id="q2">
+                    <h3>2. How much time can you commit weekly?</h3>
+                    <div class="options">
+                        <button data-value="low">1-2 Hours (The Busy Learner)</button>
+                        <button data-value="medium">3-5 Hours (The Consistent Learner)</button>
+                        <button data-value="high">5+ Hours (The Dedicated Learner)</button>
+                    </div>
+                </div>
 
-    <div id="results" class="mt-10 hidden bg-green-50 border-l-4 border-green-600 p-6 rounded shadow space-y-4">
-      <h4 class="text-xl font-semibold">Results</h4>
-      <p id="outputText" class="text-gray-700 text-lg"></p>
-      <p id="offsetText" class="text-gray-700"></p>
-      <p id="savingsText" class="text-gray-700"></p>
-      <p id="roiText" class="text-gray-700 font-medium"></p>
-      <div class="w-full bg-gray-200 rounded h-6">
-        <div id="roiBar" class="h-6 rounded text-white text-center text-sm leading-6"></div>
-      </div>
-    </div>
-  </section>
+                <div class="question-box hidden" id="q3">
+                    <h3>3. What's your preferred learning style?</h3>
+                    <div class="options">
+                        <button data-value="visual">👀 Visual (Apps, Videos, Text)</button>
+                        <button data-value="auditory">👂 Auditory (Podcasts, Music, Audio)</button>
+                        <button data-value="kinesthetic">✍️ Kinesthetic (Writing, Speaking, Flashcards)</button>
+                    </div>
+                </div>
+            </div>
+            <button id="next-btn" class="next-btn cta-button">Next</button>
+        </section>
 
-  <footer class="bg-gray-200 py-6 mt-12">
-    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-600">
-      <p>&copy; 2025 Renewable Power Insight. All rights reserved.</p>
-    </div>
-  </footer>
+        <section id="results-section" class="hidden">
+            <div class="results-container">
+                <h2>Your Personalized Learning Plan</h2>
+                <div id="results-content">
+                    </div>
+                <p class="final-message">Ready to start? Click the links above to begin your journey. Every step you take, no matter how small, gets you closer to your goal.</p>
+            </div>
+        </section>
+    </main>
 
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 Language PathFinder. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
