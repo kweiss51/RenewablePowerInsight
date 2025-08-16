@@ -21,7 +21,7 @@
     </header>
 
     <main id="app">
-        <section id="quiz-selection" class="hidden quiz-section">
+        <section id="quiz-selection" class="hidden">
             <div class="quiz-container">
                 <h2>Choose Your Challenge</h2>
                 <div class="quiz-card-container">
@@ -107,4 +107,57 @@
 
         <section id="quiz-directionless" class="hidden quiz-section">
             <div class="quiz-container">
-                <div
+                <div class="question-box" data-q="directionless-1">
+                    <h3>1. What's your #1 goal for this language?</h3>
+                    <div class="options">
+                        <button data-value="speaking">🗣️ Speaking Fluently</button>
+                        <button data-value="reading">📖 Reading & Writing</button>
+                        <button data-value="listening">👂 Listening Comprehension</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="directionless-2">
+                    <h3>2. What kind of content would you prefer to learn with?</h3>
+                    <div class="options">
+                        <button data-value="textbooks">📚 Textbooks & Articles</button>
+                        <button data-value="media">🎬 Videos & Podcasts</button>
+                        <button data-value="games">🎮 Games & Flashcards</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="directionless-3">
+                    <h3>3. How do you prefer to practice?</h3>
+                    <div class="options">
+                        <button data-value="teacher">👩‍🏫 Structured Lessons</button>
+                        <button data-value="partner">💬 Informal Chatting</button>
+                        <button data-value="community">🧑‍🤝‍🧑 Online Communities</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="results-section" class="hidden">
+            <div class="results-container">
+                <h2>Your Personalized Learning Plan</h2>
+                <div id="results-content">
+                    </div>
+                <div id="other-resources" class="hidden">
+                    <h3>Other Great Resources</h3>
+                    <ul id="other-resources-list" class="resource-list">
+                        </ul>
+                </div>
+            </div>
+            <aside class="quiz-sidebar">
+                <h3>More Quizzes</h3>
+                <button class="sidebar-btn" data-quiz-start="frustrated">The Frustrated Learner</button>
+                <button class="sidebar-btn" data-quiz-start="time-crunched">The Time-Crunched Learner</button>
+                <button class="sidebar-btn" data-quiz-start="directionless">The Directionless Learner</button>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Language PathFinder. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
