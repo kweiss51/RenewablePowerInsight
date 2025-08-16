@@ -42,34 +42,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (card) {
             currentQuizId = card.dataset.quiz;
             quizSelectionSection.classList.add('hidden');
-            document.getElementById(`quiz-${currentQuizId}`).classList.remove('hidden');
+            const targetQuizSection = document.getElementById(`quiz-${currentQuizId}`);
+            if (targetQuizSection) {
+                targetQuizSection.classList.remove('hidden');
+                // Ensure the first question is shown
+                const firstQuestion = targetQuizSection.querySelector('.question-box');
+                if (firstQuestion) {
+                    firstQuestion.classList.remove('hidden');
+                }
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
 
     // Handle button selections with event delegation
     document.addEventListener('click', (e) => {
-        // Check if the clicked element is a quiz option button
         if (e.target.tagName === 'BUTTON' && e.target.closest('.options')) {
             const selectedButton = e.target;
             const parentOptions = selectedButton.closest('.options');
 
-            // Store the user's answer
+            // Remove selected class from all buttons in the current question
+            parentOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+            selectedButton.classList.add('selected');
+
             const questionId = parentOptions.closest('.question-box').dataset.q;
             userAnswers[questionId] = selectedButton.dataset.value;
     
-            // Hide the current question
-            parentOptions.closest('.question-box').classList.add('hidden');
-            
-            // Advance to the next question
-            currentQuestionIndex++;
+            // Find the current question and the next one
+            const currentQuestion = parentOptions.closest('.question-box');
+            const nextQuestion = currentQuestion.nextElementSibling;
     
-            const currentQuizQuestions = document.querySelectorAll(`#quiz-${currentQuizId} .question-box`);
-
-            // Check if there are more questions or if the quiz is finished
-            if (currentQuestionIndex < currentQuizQuestions.length) {
-                // Show the next question
-                currentQuizQuestions[currentQuestionIndex].classList.remove('hidden');
+            currentQuestion.classList.add('hidden');
+            
+            if (nextQuestion && nextQuestion.classList.contains('question-box')) {
+                nextQuestion.classList.remove('hidden');
             } else {
                 // All questions answered, show results
                 generateResults();
@@ -115,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const userTags = Object.values(userAnswers);
         
-        // Calculate scores for each resource
         const scoredResources = allResources.map(resource => {
             let score = 0;
             userTags.forEach(userTag => {
@@ -131,13 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         });
 
-        // Sort by score (descending)
         scoredResources.sort((a, b) => b.score - a.score);
 
         const topThree = scoredResources.slice(0, 3);
         const otherOptions = scoredResources.slice(3);
 
-        // Display top three recommendations
         const topList = document.createElement('ul');
         topList.classList.add('resource-list');
         topList.classList.add('result-item');
@@ -158,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsContent.appendChild(topRecommendationsTitle);
         resultsContent.appendChild(topList);
 
-        // Display other resources
         if (otherOptions.length > 0) {
             otherResourcesSection.classList.remove('hidden');
             otherOptions.forEach(rec => {
@@ -175,4 +177,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
