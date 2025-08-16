@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show the selected quiz section and its first question
             const targetQuizSection = document.getElementById(`quiz-${currentQuizId}`);
             if (targetQuizSection) {
-                targetQuizSection.classList.remove('hidden');
+                targetQuizSelectionSection.classList.remove('hidden');
                 const firstQuestion = targetQuizSection.querySelector('.question-box');
                 if (firstQuestion) {
                     firstQuestion.classList.remove('hidden');
