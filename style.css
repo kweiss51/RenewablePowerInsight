@@ -21,10 +21,19 @@ html {
 }
 
 body {
+    font-family: var(--font-sans);
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Updated background with image */
     background-image: url('images/Background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed when scrolling */
 }
 
 .hidden {
@@ -101,6 +110,41 @@ main {
     text-align: center;
 }
 
+.quiz-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.quiz-card {
+    background: var(--secondary-color);
+    border: 1px solid #d1d5db;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.quiz-card:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quiz-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
 .question-box {
     margin-bottom: 2rem;
 }
@@ -137,18 +181,14 @@ main {
     box-shadow: var(--shadow-md);
 }
 
-.next-btn {
-    margin-top: 2rem;
-    width: auto;
-    padding: 1rem 2.5rem;
-}
-
 /* Results Section */
 .results-container {
     background: white;
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
+    position: relative;
+    padding-right: 180px; /* Space for the sidebar */
 }
 
 #results-section h2 {
@@ -227,6 +267,46 @@ main {
     margin-top: 2rem;
     border-top: 2px solid #e5e7eb;
     padding-top: 1rem;
+}
+
+/* Quiz Sidebar */
+.quiz-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 170px;
+    height: 100%;
+    padding: 2rem 1rem;
+    border-left: 2px solid #e5e7eb;
+    background-color: #f9fafb;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.quiz-sidebar h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.sidebar-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-btn:hover {
+    background-color: #2563eb;
 }
 
 /* Footer */
