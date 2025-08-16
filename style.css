@@ -21,13 +21,10 @@ html {
 }
 
 body {
-    font-family: var(--font-sans);
-    background-color: var(--secondary-color);
-    color: var(--dark-color);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-image: url('images/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hidden {
