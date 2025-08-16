@@ -21,37 +21,119 @@
     </header>
 
     <main id="app">
-        <section id="quiz-section" class="hidden">
+        <section id="quiz-selection" class="hidden">
             <div class="quiz-container">
-                <div class="question-box" id="q1">
-                    <h3>1. What's your main goal for learning?</h3>
-                    <div class="options">
-                        <button data-value="travel">✈️ Travel & Social</button>
-                        <button data-value="career">💼 Career & Business</button>
-                        <button data-value="hobby">🧠 Personal Growth & Hobby</button>
+                <h2>Choose Your Challenge</h2>
+                <div class="quiz-card-container">
+                    <div class="quiz-card" data-quiz="frustrated">
+                        <h3>The Frustrated Learner</h3>
+                        <p>Overwhelmed by complex grammar rules?</p>
+                        <p>Your villain: **The Grammar Gremlin**</p>
+                        <p>Find resources that make the hardest parts easy.</p>
                     </div>
-                </div>
-
-                <div class="question-box hidden" id="q2">
-                    <h3>2. How much time can you commit weekly?</h3>
-                    <div class="options">
-                        <button data-value="low">1-2 Hours (The Busy Learner)</button>
-                        <button data-value="medium">3-5 Hours (The Consistent Learner)</button>
-                        <button data-value="high">5+ Hours (The Dedicated Learner)</button>
+                    <div class="quiz-card" data-quiz="time-crunched">
+                        <h3>The Time-Crunched Learner</h3>
+                        <p>Feel like you don't have enough time to learn?</p>
+                        <p>Your villain: **The Time Thief**</p>
+                        <p>Find a path that fits your busy life.</p>
                     </div>
-                </div>
-
-                <div class="question-box hidden" id="q3">
-                    <h3>3. What's your preferred learning style?</h3>
-                    <div class="options">
-                        <button data-value="visual">👀 Visual (Apps, Videos, Text)</button>
-                        <button data-value="auditory">👂 Auditory (Podcasts, Music, Audio)</button>
-                        <button data-value="kinesthetic">✍️ Kinesthetic (Writing, Speaking, Flashcards)</button>
+                    <div class="quiz-card" data-quiz="directionless">
+                        <h3>The Directionless Learner</h3>
+                        <p>Too many options and no clear path?</p>
+                        <p>Your villain: **The Generalist Curse**</p>
+                        <p>Get a clear plan to master your top skill.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="quiz-frustrated" class="hidden quiz-section">
+            <div class="quiz-container">
+                <div class="question-box" data-q="frustrated-1">
+                    <h3>1. What feels like the biggest roadblock?</h3>
+                    <div class="options">
+                        <button data-value="pronunciation">🗣️ Pronunciation & Accent</button>
+                        <button data-value="grammar">📝 Grammar & Sentence Structure</button>
+                        <button data-value="vocabulary">🧠 Vocabulary & Memorization</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="frustrated-2">
+                    <h3>2. How do you prefer to tackle tricky concepts?</h3>
+                    <div class="options">
+                        <button data-value="structured">📘 Structured Lessons</button>
+                        <button data-value="interactive">🤖 Interactive Practice</button>
+                        <button data-value="immersion">📺 Immersion & Exposure</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="frustrated-3">
+                    <h3>3. What's your biggest fear about reaching fluency?</h3>
+                    <div class="options">
+                        <button data-value="sounding">😩 Sounding unnatural</button>
+                        <button data-value="mistake">😳 Making a major mistake</button>
+                        <button data-value="speed">🏃 Never understanding native speakers</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-time-crunched" class="hidden quiz-section">
+            <div class="quiz-container">
+                <div class="question-box" data-q="time-1">
+                    <h3>1. How much time can you commit weekly?</h3>
+                    <div class="options">
+                        <button data-value="low">⏰ Less than 2 hours</button>
+                        <button data-value="medium">🗓️ 3-5 hours</button>
+                        <button data-value="high">💪 6+ hours</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="time-2">
+                    <h3>2. What's your preferred learning rhythm?</h3>
+                    <div class="options">
+                        <button data-value="micro">⚡ Micro-sessions</button>
+                        <button data-value="long">🧘 Long sessions</button>
+                        <button data-value="spontaneous">🕊️ Spontaneous learning</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="time-3">
+                    <h3>3. What do you want your learning to feel like?</h3>
+                    <div class="options">
+                        <button data-value="workout">🏋️ A structured workout</button>
+                        <button data-value="relaxing">🏖️ Relaxing entertainment</button>
+                        <button data-value="social">🤝 A social experience</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-directionless" class="hidden quiz-section">
+            <div class="quiz-container">
+                <div class="question-box" data-q="directionless-1">
+                    <h3>1. What's your #1 goal for this language?</h3>
+                    <div class="options">
+                        <button data-value="speaking">🗣️ Speaking Fluently</button>
+                        <button data-value="reading">📖 Reading & Writing</button>
+                        <button data-value="listening">👂 Listening Comprehension</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="directionless-2">
+                    <h3>2. What kind of content would you prefer to learn with?</h3>
+                    <div class="options">
+                        <button data-value="textbooks">📚 Textbooks & Articles</button>
+                        <button data-value="media">🎬 Videos & Podcasts</button>
+                        <button data-value="games">🎮 Games & Flashcards</button>
+                    </div>
+                </div>
+                <div class="question-box hidden" data-q="directionless-3">
+                    <h3>3. How do you prefer to practice?</h3>
+                    <div class="options">
+                        <button data-value="teacher">👩‍🏫 Structured Lessons</button>
+                        <button data-value="partner">💬 Informal Chatting</button>
+                        <button data-value="community">🧑‍🤝‍🧑 Online Communities</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="results-section" class="hidden">
             <div class="results-container">
                 <h2>Your Personalized Learning Plan</h2>
@@ -63,6 +145,12 @@
                         </ul>
                 </div>
             </div>
+            <aside class="quiz-sidebar">
+                <h3>More Quizzes</h3>
+                <button class="sidebar-btn" data-quiz-start="frustrated">The Frustrated Learner</button>
+                <button class="sidebar-btn" data-quiz-start="time-crunched">The Time-Crunched Learner</button>
+                <button class="sidebar-btn" data-quiz-start="directionless">The Directionless Learner</button>
+            </aside>
         </section>
     </main>
 
