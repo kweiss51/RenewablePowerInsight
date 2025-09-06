@@ -3,21 +3,23 @@ description: Comprehensive insights into renewable energy trends and development
 baseurl: "/RenewablePowerInsight"
 url: "https://kweiss51.github.io"
 
+# GitHub Pages settings
+source: .
+destination: ./_site
+safe: true
+incremental: false
+lsi: false
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+remote_theme: jekyll/minima
 
-# Jekyll plugins
+# Jekyll plugins (GitHub Pages supported only)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
-
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
 
 # Permalink style
 permalink: /:year/:month/:day/:title/

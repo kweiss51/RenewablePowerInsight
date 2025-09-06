@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
-gem "minima", "~> 2.5"
+# Use GitHub Pages gem for compatibility
+gem "github-pages", group: :jekyll_plugins
 
+# Additional plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
-  gem "jekyll-paginate"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
