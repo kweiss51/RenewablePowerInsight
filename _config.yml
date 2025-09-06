@@ -6,11 +6,10 @@ url: "https://kweiss51.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-remote_theme: pages-themes/minima@v2.5.0
+theme: minima
 
 # Jekyll plugins (GitHub Pages supported only)
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
