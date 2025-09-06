@@ -1,42 +1,12 @@
 ---
-author: Energy Research Team
-c## Key Statistics: Smart Energy Management Investment
-
-| Metric | 2024 | 2025 (Projected) | Growth Rate |
-|
-image: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-
---------|------|------------------|-------------|
-| Global Investment | $23.7B | $34.2B | +44.3% |
-| Smart Grid Deployments | 1,247 | 1,789 | +43.5% |
-| Energy Savings | 12.4% | 17.8% | +5.4% |
-| Grid Efficiency | 89.2% | 93.1% | +3.9% |
-| Demand Response Programs | 2,156 | 3,089 | +43.2% |
-
-*Source: Smart Grid Analytics, International Energy Agency*- Technology
-- Grid Infrastructure
-- Energy
-date: 2025-09-05 23:04:56 +0000
-excerpt: The AI-powered energy management landscape is experiencing unprecedented
-  growth in 2025, marking a pivotal moment for the global energy sector. As ...
-featured: false
-last_modified_at: 2025-09-05 23:07:00 +0000
 layout: post
-reading_time: 5
-tags:
-- technology
-- investment
-- renewable energy
-- sustainability
-- innovation
-- market trends
-- smart grid
-- research
-- future outlook
-- carbon emissions
-title: 'Market Report: AI-powered energy management Investment Surges to Record Levels'
-topic: smart grid technology
-word_count: 1071
+title: "Market Report: AI-powered energy management Investment Surges to Record Levels"
+date: 2025-09-05
+category: investment
+tags: [smart grid, technology, investment, renewable energy, sustainability]
+excerpt: "The AI-powered energy management landscape is experiencing unprecedented growth in 2025, marking a pivotal moment for the global energy sector."
+author: "Energy Research Team"
+image: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 ---
 
 ![Smart Grid Technology](https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
