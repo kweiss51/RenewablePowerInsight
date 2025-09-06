@@ -1,0 +1,62 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    <footer class="site-footer h-card">
+      <data class="u-url" href="{{ "/" | relative_url }}"></data>
+    
+      <div class="wrapper">
+    
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+    
+        <div class="footer-col-wrapper">
+          <div class="footer-col footer-col-1">
+            <ul class="contact-list">
+              <li class="p-name">
+                {%- if site.author -%}
+                  {{ site.author.name | escape }}
+                {%- else -%}
+                  {{ site.title | escape }}
+                {%- endif -%}
+              </li>
+              {%- if site.author.email -%}
+                <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+              {%- endif -%}
+            </ul>
+          </div>
+    
+          <div class="footer-col footer-col-2">
+            {%- include social.html -%}
+          </div>
+    
+          <div class="footer-col footer-col-3">
+            <p>{{- site.description | escape -}}</p>
+          </div>
+        </div>
+        
+        <!-- Custom Disclaimer -->
+        <div class="disclaimer">
+          <p><strong>Disclaimer:</strong> All information provided on this website is for informational purposes only. Please verify all information with original sources before making any decisions or taking action based on the content presented here.</p>
+        </div>
+    
+      </div>
+    
+    </footer>
+
+  </body>
+
+</html>

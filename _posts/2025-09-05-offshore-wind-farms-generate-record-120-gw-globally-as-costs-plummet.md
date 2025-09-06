@@ -6,9 +6,12 @@ category: wind
 tags: [renewable energy, wind, sustainability]
 excerpt: "
 The global offshore wind industry reached a historic milestone in 2025, with total installed capacity surpassing 120 gigawatts (GW) worldwide. This r..."
-author: "Renewable Power Insight AI"
+author: "Energy Research Team"
+image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 ---
 
+![Offshore Wind Farm](https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+*Offshore wind turbines generating clean energy at sea*
 
 The global offshore wind industry reached a historic milestone in 2025, with total installed capacity surpassing 120 gigawatts (GW) worldwide. This represents a 45% increase from the previous year, driven by technological advances, cost reductions, and supportive government policies across major markets.
 

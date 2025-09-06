@@ -6,9 +6,12 @@ category: industry
 tags: [renewable energy, industry, sustainability]
 excerpt: "
 The global renewable energy sector achieved a historic milestone in 2025, with total installed capacity reaching 3.6 terawatts (TW), representing a 1..."
-author: "Renewable Power Insight AI"
+author: "Energy Research Team"
+image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 ---
 
+![Global Renewable Energy Growth](https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+*Solar panels and wind turbines representing the global renewable energy expansion*
 
 The global renewable energy sector achieved a historic milestone in 2025, with total installed capacity reaching 3.6 terawatts (TW), representing a 15% increase from the previous year. This unprecedented growth was driven by massive investments in solar photovoltaic systems, offshore wind farms, and battery storage technologies.
 
@@ -22,6 +25,9 @@ The global renewable energy sector achieved a historic milestone in 2025, with t
 ## Regional Leaders
 
 The Asia-Pacific region continued to dominate renewable energy deployments, accounting for 60% of new capacity additions. China alone installed 200 GW of solar capacity, while India surpassed 100 GW of total renewable capacity for the first time.
+
+![Offshore Wind Farm](https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)
+*Offshore wind farms leading Europe's renewable energy expansion*
 
 Europe maintained strong momentum in offshore wind development, with the North Sea emerging as a renewable energy powerhouse. The United States accelerated deployment under new federal incentives, adding 120 GW of renewable capacity.
 

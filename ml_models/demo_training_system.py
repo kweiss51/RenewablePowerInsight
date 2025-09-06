@@ -1,6 +1,7 @@
 """
 Demo Training System for Progress Bar Demonstration
 This is a lightweight version that simulates the training process for demonstration purposes.
+Includes energy image scraping integration.
 """
 
 import time
@@ -8,9 +9,10 @@ import random
 from datetime import datetime
 import json
 from pathlib import Path
+from .energy_image_scraper import EnergyImageScraper
 
 class DemoEnergyDataCollector:
-    """Demo data collector that simulates data collection"""
+    """Demo data collector that simulates data collection and image scraping"""
     
     def __init__(self):
         self.academic_keywords = [
@@ -22,26 +24,52 @@ class DemoEnergyDataCollector:
             "Department of Energy", "National Renewable Energy Laboratory",
             "International Energy Agency", "MIT Energy Initiative"
         ]
+        
+        # Initialize image scraper
+        self.image_scraper = EnergyImageScraper()
     
-    def collect_comprehensive_data(self):
-        """Simulate data collection with realistic delays"""
+    def collect_comprehensive_data(self, include_images=True):
+        """Simulate data collection with realistic delays and optional image scraping"""
         print("🔍 Collecting energy research data...")
         time.sleep(2)  # Simulate data collection time
         
-        # Return mock data
-        return {
+        # Collect images if requested
+        image_results = None
+        if include_images:
+            print("📸 Scraping energy-related images...")
+            image_results = self.image_scraper.scrape_all_topics()
+            print(f"   Downloaded {image_results.get('total_downloaded', 0)} images")
+        
+        # Return mock data with image information
+        data = {
             "academic_papers": [
                 {
                     "title": "Advances in Perovskite Solar Cell Technology",
                     "content": "Recent developments in perovskite solar cells show promising efficiency gains...",
                     "source": "Nature Energy",
-                    "date": "2025-09-01"
+                    "date": "2025-09-01",
+                    "topic": "perovskite"
                 },
                 {
                     "title": "Grid-Scale Battery Storage Systems: A Comprehensive Review",
                     "content": "Large-scale battery storage is crucial for renewable energy integration...",
                     "source": "IEEE Transactions on Energy",
-                    "date": "2025-09-03"
+                    "date": "2025-09-03",
+                    "topic": "battery"
+                },
+                {
+                    "title": "Offshore Wind Farm Optimization Strategies",
+                    "content": "New approaches to offshore wind farm design maximize energy output...",
+                    "source": "Renewable Energy Journal",
+                    "date": "2025-09-02",
+                    "topic": "offshore"
+                },
+                {
+                    "title": "Smart Grid Integration of Electric Vehicle Charging",
+                    "content": "EV charging infrastructure presents both challenges and opportunities...",
+                    "source": "Energy Policy",
+                    "date": "2025-09-04",
+                    "topic": "ev"
                 }
             ],
             "news_articles": [
@@ -59,8 +87,11 @@ class DemoEnergyDataCollector:
                     "source": "U.S. EIA",
                     "date": "2025-08-15"
                 }
-            ]
+            ],
+            "image_scraping_results": image_results
         }
+        
+        return data
 
 class DemoEnergyDataPreprocessor:
     """Demo preprocessor that simulates data preprocessing"""

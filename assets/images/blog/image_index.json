@@ -1,0 +1,16 @@
+{
+  "solar": [
+    {
+      "filename": "SOL_PEXELS_a490e8_01.jpg",
+      "path": "/assets/images/blog/SOL_PEXELS_a490e8_01.jpg",
+      "source": "pexels",
+      "topic_code": "SOL"
+    },
+    {
+      "filename": "SOL_PEXELS_b2f2b6_01.jpg",
+      "path": "/assets/images/blog/SOL_PEXELS_b2f2b6_01.jpg",
+      "source": "pexels",
+      "topic_code": "SOL"
+    }
+  ]
+}

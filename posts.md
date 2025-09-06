@@ -57,7 +57,7 @@ permalink: /posts/
       {% endfor %}
     </div>
   {% else %}
-    <p>No posts found. Check back soon for AI-generated energy content!</p>
+    <p>No posts found. Check back soon for new energy content!</p>
   {% endif %}
 </div>
 

@@ -2,6 +2,7 @@
 """
 Demo Energy Content Inference Engine
 Generates realistic blog posts without heavy ML dependencies
+Includes automatic image integration
 """
 
 import json
@@ -11,6 +12,8 @@ import time
 from pathlib import Path
 from typing import List, Dict, Optional
 from datetime import datetime
+from .energy_image_scraper import EnergyImageScraper
+from .blog_image_integrator import BlogImageIntegrator
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -18,8 +21,12 @@ logger = logging.getLogger(__name__)
 
 class DemoEnergyInference:
     def __init__(self, model_path: str = 'model_checkpoints'):
-        """Initialize the demo inference engine"""
+        """Initialize the demo inference engine with image integration"""
         self.model_path = Path(model_path)
+        
+        # Initialize image systems
+        self.image_scraper = EnergyImageScraper()
+        self.image_integrator = BlogImageIntegrator()
         
         # Energy-specific topics with trending keywords
         self.energy_topics = [
@@ -366,23 +373,47 @@ For the latest developments and in-depth analysis of {trending_keyword} trends, 
         ]
     
     def _generate_image_suggestions(self, trending_keyword: str, topic: str) -> List[Dict]:
-        """Generate image suggestions related to the topic"""
-        base_images = [
+        """Generate image suggestions using scraped images and fallbacks"""
+        # Determine topic category for image selection
+        topic_category = "renewable"  # default
+        
+        if any(word in trending_keyword.lower() for word in ["solar", "photovoltaic", "perovskite"]):
+            topic_category = "solar"
+        elif any(word in trending_keyword.lower() for word in ["wind", "offshore", "turbine"]):
+            topic_category = "wind"
+        elif any(word in trending_keyword.lower() for word in ["battery", "lithium", "storage"]):
+            topic_category = "battery"
+        elif any(word in trending_keyword.lower() for word in ["ev", "charging", "electric"]):
+            topic_category = "ev"
+        elif any(word in trending_keyword.lower() for word in ["smart", "ai", "grid"]):
+            topic_category = "smart"
+        
+        # Get best image for this topic
+        image_info = self.image_integrator.get_best_image_for_post(topic_category)
+        
+        # Create comprehensive image suggestions
+        suggestions = [
             {
-                "alt_text": f"{trending_keyword} technology installation showing modern equipment",
+                "alt_text": image_info.get("alt", f"{trending_keyword} technology"),
                 "description": f"High-resolution image of {trending_keyword} infrastructure",
                 "suggested_caption": f"Latest {trending_keyword} technology demonstrating efficiency improvements",
-                "seo_filename": f"{trending_keyword.replace(' ', '-')}-technology-2025.jpg"
+                "seo_filename": f"{trending_keyword.replace(' ', '-')}-technology-2025.jpg",
+                "url": image_info["path"],
+                "source": image_info.get("source", "unsplash"),
+                "topic_category": topic_category
             },
             {
                 "alt_text": f"Infographic showing {topic} market growth statistics and trends",
                 "description": f"Data visualization of {topic} market performance",
                 "suggested_caption": f"Market analysis chart highlighting {trending_keyword} growth trends",
-                "seo_filename": f"{topic.replace(' ', '-')}-market-analysis-chart.jpg"
+                "seo_filename": f"{topic.replace(' ', '-')}-market-analysis-chart.jpg",
+                "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                "source": "unsplash",
+                "topic_category": "data"
             }
         ]
         
-        return base_images
+        return suggestions
     
     def _generate_meta_description(self, trending_keyword: str, topic: str) -> str:
         """Generate SEO meta description"""
