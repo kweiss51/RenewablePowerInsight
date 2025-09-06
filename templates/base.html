@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Energy Blog - Latest Renewable Energy News{% endblock %}</title>
+    <meta name="description" content="Stay updated with the latest trends in renewable energy, solar power, wind energy, and sustainable technologies.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="{{ url_for('index') }}" class="nav-logo">⚡ Energy Insight</a>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">🏠 Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">ℹ️ About</a></li>
+                    <li><a href="{{ url_for('admin') }}" class="nav-link">⚙️ Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Energy Insight Blog. Powered by AI and real-time energy news.</p>
+            <p>🌱 Promoting sustainable energy for a better future</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

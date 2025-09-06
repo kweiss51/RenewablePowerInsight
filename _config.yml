@@ -1,0 +1,202 @@
+---
+title: "Renewable Power Insight"
+description: "Leading source for renewable energy news, analysis, and market insights. Stay informed with the latest solar, wind, battery, and clean energy developments."
+baseurl: "/RenewablePowerInsight"
+url: "https://kweiss51.github.io"
+
+# SEO Configuration
+lang: en-US
+author:
+  name: "Renewable Power Insight Team"
+  email: "contact@renewablepowerinsight.com"
+  twitter: "renewablepower"
+
+# Site Settings
+timezone: America/New_York
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Pagination
+paginate: 12
+paginate_path: "/page:num/"
+
+# Excerpts
+excerpt_separator: "<!--more-->"
+show_excerpts: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-redirect-from
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+    - year
+    - month
+  layouts:
+    category: archive-category
+    tag: archive-tag
+    year: archive-year
+    month: archive-month
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    category: '/category/:name/'
+    tag: '/tag/:name/'
+
+# SEO and Social
+twitter:
+  username: renewablepower
+  card: summary_large_image
+
+facebook:
+  app_id: your_facebook_app_id
+  publisher: your_facebook_page
+
+social:
+  name: Renewable Power Insight
+  links:
+    - https://twitter.com/renewablepower
+    - https://linkedin.com/company/renewable-power-insight
+    - https://github.com/kweiss51/RenewablePowerInsight
+
+# RSS Feeds Configuration
+rss_feeds:
+  - name: "Reuters Energy"
+    url: "https://feeds.reuters.com/reuters/environment"
+    category: "news"
+  - name: "CleanTechnica"
+    url: "https://cleantechnica.com/feed/"
+    category: "technology"
+  - name: "Renewable Energy World"
+    url: "https://www.renewableenergyworld.com/rss.xml"
+    category: "industry"
+  - name: "Solar Power World"
+    url: "https://www.solarpowerworldonline.com/feed/"
+    category: "solar"
+  - name: "Wind Power Engineering"
+    url: "https://www.windpowerengineering.com/feed/"
+    category: "wind"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Latest News"
+    url: "/news/"
+  - title: "Solar Power"
+    url: "/category/solar/"
+  - title: "Wind Energy"
+    url: "/category/wind/"
+  - title: "Energy Storage"
+    url: "/category/storage/"
+  - title: "Electric Vehicles"
+    url: "/category/electric-vehicles/"
+  - title: "Market Analysis"
+    url: "/category/market/"
+  - title: "About"
+    url: "/about/"
+
+# Footer Links
+footer_links:
+  - title: "Categories"
+    links:
+      - name: "Solar Power"
+        url: "/category/solar/"
+      - name: "Wind Energy"
+        url: "/category/wind/"
+      - name: "Energy Storage"
+        url: "/category/storage/"
+      - name: "Electric Vehicles"
+        url: "/category/electric-vehicles/"
+  - title: "Resources"
+    links:
+      - name: "Market Reports"
+        url: "/reports/"
+      - name: "Industry News"
+        url: "/news/"
+      - name: "Technology Insights"
+        url: "/technology/"
+      - name: "Policy Updates"
+        url: "/policy/"
+
+# Theme Configuration
+theme: minima
+
+# Custom CSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build settings
+incremental: false
+safe: true
+source: .
+destination: ./_site
+keep_files: [".git", ".svn"]
+exclude:
+  - "*.py"
+  - "requirements*.txt"
+  - "venv/"
+  - "ml_models/"
+  - "logs/"
+  - "data/"
+  - "*.pyc"
+  - "__pycache__/"
+  - "automation_controller.py"
+  - "daily_automation.py"
+  - "simple_blog_app.py"
+  - "integrated_blog_system.py"
+  - "github_pages_generator.py"
+  - "Pipfile*"
+  - "node_modules/"
+  - "*.gemspec"
+  - "Gemfile.lock"
+  - "vendor/"
+
+# Collections
+collections:
+  authors:
+    output: true
+    permalink: /author/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "Renewable Power Insight Team"
+      image: /assets/images/default-post.jpg
+      comments: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: authors
+    values:
+      layout: author
+
+# Google Analytics
+google_analytics: G-XXXXXXXXXX
+
+# Search Engine Verification
+google_site_verification: "your_google_verification_code"
+bing_site_verification: "your_bing_verification_code"
+
+# Cloudflare settings (if using)
+cloudflare:
+  zone_id: "your_cloudflare_zone_id"

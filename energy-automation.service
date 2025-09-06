@@ -1,0 +1,20 @@
+[Unit]
+Description=Energy Blog Daily Automation Service
+After=network.target
+
+[Service]
+Type=simple
+User=kyleweiss
+WorkingDirectory=/Users/kyleweiss/Documents/GitHub/RenewablePowerInsight
+Environment=PATH=/Users/kyleweiss/Documents/GitHub/RenewablePowerInsight/venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/Users/kyleweiss/Documents/GitHub/RenewablePowerInsight/venv/bin/python daily_automation.py
+Restart=always
+RestartSec=60
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=energy-automation
+
+[Install]
+WantedBy=multi-user.target
