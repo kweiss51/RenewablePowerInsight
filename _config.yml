@@ -1,22 +1,37 @@
-author:
-  email: contact@renewablepowerinsight.com
-  name: Energy AI Team
-baseurl: /RenewablePowerInsight
+title: Renewable Power Insight
 description: AI-powered insights into renewable energy trends and developments
-excerpt_separator: <!--more-->
-highlighter: rouge
+baseurl: "/RenewablePowerInsight"
+url: "https://kweiss51.github.io"
+
+# Build settings
 markdown: kramdown
-paginate: 10
-paginate_path: /page:num/
-permalink: /:year/:month/:day/:title/
+highlighter: rouge
+theme: minima
+
+# Jekyll plugins
 plugins:
-- jekyll-feed
-- jekyll-sitemap
-- jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Permalink style
+permalink: /:year/:month/:day/:title/
+
+# Excerpt settings
+excerpt_separator: <!--more-->
 show_excerpts: true
+
+# Author info
+author:
+  name: Energy AI Team
+  email: contact@renewablepowerinsight.com
+
+# Social links
 social:
   github: kweiss51
   twitter: renewablepower
-theme: minima
-title: Renewable Power Insight
-url: https://kweiss51.github.io

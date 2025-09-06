@@ -13,8 +13,22 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import nltk
-import spacy
-from transformers import AutoTokenizer
+
+# Try to import spacy, use fallback if not available
+try:
+    import spacy
+    SPACY_AVAILABLE = True
+except ImportError:
+    SPACY_AVAILABLE = False
+    print("Warning: spacy not available, using simplified text processing")
+
+try:
+    from transformers import AutoTokenizer
+    TRANSFORMERS_AVAILABLE = True
+except ImportError:
+    TRANSFORMERS_AVAILABLE = False
+    print("Warning: transformers not available, using basic tokenization")
+
 import textstat
 from datetime import datetime
 import glob
@@ -30,17 +44,31 @@ except:
 
 class AdvancedEnergyDataPreprocessor:
     def __init__(self, model_name: str = "microsoft/DialoGPT-medium"):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
+        # Initialize tokenizer if transformers is available
+        if TRANSFORMERS_AVAILABLE:
+            try:
+                self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+                if self.tokenizer.pad_token is None:
+                    self.tokenizer.pad_token = self.tokenizer.eos_token
+            except Exception as e:
+                print(f"Warning: Could not load tokenizer, using basic tokenization: {e}")
+                self.tokenizer = None
+        else:
+            self.tokenizer = None
         
-        # Initialize spaCy for advanced NLP
-        try:
-            self.nlp = spacy.load("en_core_web_sm")
-        except OSError:
-            print("⚠️ spaCy model not found. Installing...")
-            os.system("python -m spacy download en_core_web_sm")
-            self.nlp = spacy.load("en_core_web_sm")
+        # Initialize spaCy for advanced NLP if available
+        self.nlp = None
+        if SPACY_AVAILABLE:
+            try:
+                self.nlp = spacy.load("en_core_web_sm")
+            except OSError:
+                print("⚠️ spaCy model not found. Using basic text processing...")
+                # Try to download if spacy is available
+                try:
+                    os.system("python -m spacy download en_core_web_sm")
+                    self.nlp = spacy.load("en_core_web_sm")
+                except:
+                    print("Could not download spaCy model, using fallback processing")
         
         # Energy domain specific terms and entities
         self.energy_terms = {

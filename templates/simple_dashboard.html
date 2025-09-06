@@ -212,6 +212,86 @@
             transition: width 0.3s ease;
         }
 
+        /* Enhanced Training Progress Styles */
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 15px;
+            height: 20px;
+            overflow: hidden;
+            margin: 10px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .progress-fill {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            height: 100%;
+            transition: width 0.5s ease;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(86, 171, 47, 0.3);
+            animation: progress-shimmer 2s infinite;
+        }
+        
+        @keyframes progress-shimmer {
+            0% { box-shadow: 0 2px 8px rgba(86, 171, 47, 0.3); }
+            50% { box-shadow: 0 2px 12px rgba(86, 171, 47, 0.5); }
+            100% { box-shadow: 0 2px 8px rgba(86, 171, 47, 0.3); }
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        #progress-percentage {
+            font-size: 1.2em;
+            color: #56ab2f;
+        }
+        
+        #progress-stage {
+            color: #667eea;
+            font-size: 0.9em;
+        }
+        
+        .progress-message {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .progress-eta {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        #training-progress-section {
+            margin-top: 20px;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .alert {
             padding: 15px 20px;
             border-radius: 10px;
@@ -415,6 +495,28 @@
                         <a href="/posts" class="btn btn-info">📝 View Posts</a>
                     </div>
                 </form>
+                
+                <!-- Training Progress Section -->
+                <div id="training-progress-section" style="display: none;">
+                    <div class="card">
+                        <h3>🔄 Training Progress</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span id="progress-percentage">0%</span>
+                                <span id="progress-stage">Initializing...</span>
+                            </div>
+                        </div>
+                        <div id="progress-message" class="progress-message">
+                            Preparing training environment...
+                        </div>
+                        <div id="progress-eta" class="progress-eta" style="display: none;">
+                            Estimated completion: <span id="eta-time">--:--</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Recent Sessions -->
@@ -522,7 +624,7 @@
             const originalText = trainBtn.textContent;
             
             trainBtn.disabled = true;
-            trainBtn.innerHTML = '<span class="loading"></span> Training...';
+            trainBtn.innerHTML = '<span class="loading"></span> Starting...';
             
             try {
                 const response = await fetch('/train', {
@@ -535,17 +637,102 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    showAlert('🔄 Training started! This will take 30-60 minutes.', 'info');
+                    showAlert('🔄 Training started! Watch the progress below.', 'info');
+                    
+                    // Show progress section
+                    const progressSection = document.getElementById('training-progress-section');
+                    progressSection.style.display = 'block';
+                    
+                    // Start monitoring progress
+                    startProgressMonitoring();
+                    
                 } else {
                     throw new Error(result.error);
                 }
                 
             } catch (error) {
                 showAlert(`❌ Training failed: ${error.message}`, 'danger');
-            } finally {
                 trainBtn.disabled = false;
                 trainBtn.textContent = originalText;
             }
+        }
+
+        // Progress monitoring
+        let progressInterval;
+        
+        function startProgressMonitoring() {
+            progressInterval = setInterval(async () => {
+                try {
+                    const response = await fetch('/training/progress');
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        updateProgressDisplay(result.progress);
+                        
+                        // Stop monitoring if training is complete
+                        if (!result.progress.is_training) {
+                            clearInterval(progressInterval);
+                            onTrainingComplete(result.progress);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error fetching progress:', error);
+                }
+            }, 2000); // Update every 2 seconds
+        }
+        
+        function updateProgressDisplay(progress) {
+            // Update progress bar
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercentage = document.getElementById('progress-percentage');
+            const progressStage = document.getElementById('progress-stage');
+            const progressMessage = document.getElementById('progress-message');
+            const progressEta = document.getElementById('progress-eta');
+            const etaTime = document.getElementById('eta-time');
+            
+            if (progressFill) progressFill.style.width = `${progress.progress}%`;
+            if (progressPercentage) progressPercentage.textContent = `${progress.progress}%`;
+            if (progressStage) progressStage.textContent = progress.stage || 'Processing...';
+            if (progressMessage) progressMessage.textContent = progress.message || 'Working...';
+            
+            // Show ETA if available
+            if (progress.estimated_completion && progressEta) {
+                const eta = new Date(progress.estimated_completion);
+                const now = new Date();
+                const minutesLeft = Math.max(0, Math.round((eta - now) / 1000 / 60));
+                
+                if (minutesLeft > 0) {
+                    etaTime.textContent = `${minutesLeft} minutes`;
+                    progressEta.style.display = 'block';
+                } else {
+                    progressEta.style.display = 'none';
+                }
+            }
+        }
+        
+        function onTrainingComplete(progress) {
+            const trainBtn = document.getElementById('trainBtn');
+            const progressSection = document.getElementById('training-progress-section');
+            
+            if (progress.stage === 'Completed') {
+                showAlert('🎉 Training completed successfully!', 'success');
+                
+                // Hide progress section after a delay
+                setTimeout(() => {
+                    progressSection.style.display = 'none';
+                    window.location.reload(); // Refresh to show updated status
+                }, 3000);
+                
+            } else {
+                showAlert('❌ Training failed. Please try again.', 'danger');
+                setTimeout(() => {
+                    progressSection.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Re-enable training button
+            trainBtn.disabled = false;
+            trainBtn.textContent = '🔄 Monthly Training';
         }
 
         // Calculate and display totals
