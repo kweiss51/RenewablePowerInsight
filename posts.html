@@ -57,12 +57,36 @@
             background: #fff;
             border: 1px solid #e5e7eb;
             border-radius: 8px;
-            padding: 2rem;
-            transition: box-shadow 0.3s;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 0;
         }
         
         .post-item:hover {
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            padding: 2rem;
         }
         
         .post-date {
@@ -103,6 +127,17 @@
             border-radius: 20px;
             font-size: 0.8rem;
         }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-image {
+                height: 150px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -123,41 +158,56 @@
         <div class="container">
             <div class="posts-list">
                 <article class="post-item">
-                    <div class="post-date">September 5, 2025</div>
-                    <h2 class="post-title">
-                        <a href="/RenewablePowerInsight/2025/09/05/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency/">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a>
-                    </h2>
-                    <p class="post-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
-                    <div class="post-tags">
-                        <span class="tag">Solar Energy</span>
-                        <span class="tag">Technology</span>
-                        <span class="tag">Innovation</span>
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Advanced Solar Cell Technology" />
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">September 5, 2025</div>
+                        <h2 class="post-title">
+                            <a href="/RenewablePowerInsight/2025/09/05/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency/">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a>
+                        </h2>
+                        <p class="post-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
+                        <div class="post-tags">
+                            <span class="tag">Solar Energy</span>
+                            <span class="tag">Technology</span>
+                            <span class="tag">Innovation</span>
+                        </div>
                     </div>
                 </article>
 
                 <article class="post-item">
-                    <div class="post-date">September 5, 2025</div>
-                    <h2 class="post-title">
-                        <a href="/RenewablePowerInsight/2025/09/05/global-renewable-energy-capacity-hits-record-3.6-tw-in-2025/">Global Renewable Energy Capacity Hits Record 3.6 TW in 2025</a>
-                    </h2>
-                    <p class="post-excerpt">The global renewable energy sector reached a historic milestone in 2025, with total installed capacity surpassing 3.6 terawatts for the first time, representing a 28.6% increase from the previous year.</p>
-                    <div class="post-tags">
-                        <span class="tag">Global Markets</span>
-                        <span class="tag">Statistics</span>
-                        <span class="tag">Growth</span>
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Global Renewable Energy" />
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">September 5, 2025</div>
+                        <h2 class="post-title">
+                            <a href="/RenewablePowerInsight/2025/09/05/global-renewable-energy-capacity-hits-record-3.6-tw-in-2025/">Global Renewable Energy Capacity Hits Record 3.6 TW in 2025</a>
+                        </h2>
+                        <p class="post-excerpt">The global renewable energy sector reached a historic milestone in 2025, with total installed capacity surpassing 3.6 terawatts for the first time, representing a 28.6% increase from the previous year.</p>
+                        <div class="post-tags">
+                            <span class="tag">Global Markets</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">Growth</span>
+                        </div>
                     </div>
                 </article>
 
                 <article class="post-item">
-                    <div class="post-date">September 5, 2025</div>
-                    <h2 class="post-title">
-                        <a href="/RenewablePowerInsight/2025/09/05/offshore-wind-farms-generate-record-120-gw-globally-as-costs-plummet/">Offshore Wind Farms Generate Record 120 GW Globally as Costs Plummet</a>
-                    </h2>
-                    <p class="post-excerpt">Global offshore wind capacity has reached an unprecedented 120 gigawatts in 2025, driven by technological advances and dramatic cost reductions that have made offshore wind competitive with traditional energy sources.</p>
-                    <div class="post-tags">
-                        <span class="tag">Wind Energy</span>
-                        <span class="tag">Offshore</span>
-                        <span class="tag">Cost Reduction</span>
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Offshore Wind Farms" />
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">September 5, 2025</div>
+                        <h2 class="post-title">
+                            <a href="/RenewablePowerInsight/2025/09/05/offshore-wind-farms-generate-record-120-gw-globally-as-costs-plummet/">Offshore Wind Farms Generate Record 120 GW Globally as Costs Plummet</a>
+                        </h2>
+                        <p class="post-excerpt">Global offshore wind capacity has reached an unprecedented 120 gigawatts in 2025, driven by technological advances and dramatic cost reductions that have made offshore wind competitive with traditional energy sources.</p>
+                        <div class="post-tags">
+                            <span class="tag">Wind Energy</span>
+                            <span class="tag">Offshore</span>
+                            <span class="tag">Cost Reduction</span>
+                        </div>
                     </div>
                 </article>
             </div>

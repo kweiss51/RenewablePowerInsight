@@ -30,11 +30,18 @@ layout: default
 
     <div class="post-content-wrapper">
       <div class="post-content e-content" itemprop="articleBody">
-        <!-- Featured Image Placeholder -->
+        <!-- Featured Image -->
+        {%- if page.image -%}
+        <div class="featured-image">
+          <img src="{{ page.image }}" alt="{{ page.title | escape }}" />
+          <div class="image-caption">{{ page.title | escape }}</div>
+        </div>
+        {%- else -%}
         <div class="featured-image">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='Arial, sans-serif' font-size='18'%3EFeatured Image%3C/text%3E%3C/svg%3E" alt="Article featured image" />
           <div class="image-caption">Renewable energy technology continues to advance rapidly across multiple sectors.</div>
         </div>
+        {%- endif -%}
         
         {{ content }}
       </div>
@@ -179,12 +186,17 @@ body {
 
 .featured-image {
   margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .featured-image img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .image-caption {
@@ -192,6 +204,10 @@ body {
   color: #666;
   margin-top: 0.5rem;
   font-style: italic;
+  text-align: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
 }
 
 .post-content {
