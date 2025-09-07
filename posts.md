@@ -1,156 +1,158 @@
 ---
-layout: page
-title: All Posts
+layout: default
+title: All Articles
 permalink: /posts/
 ---
 
 <div class="posts-page">
-  <h1>All Energy Blog Posts</h1>
-  
-  {% if site.posts.size > 0 %}
-    <p>{{ site.posts.size }} posts total</p>
-    
-    <div class="post-list">
-      {% for post in site.posts %}
-        <article class="post-item">
-          <header class="post-header">
-            <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
-            <h2 class="post-title">
-              <a class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-              </a>
-            </h2>
-          </header>
-          
-          <div class="post-content">
-            {% if post.excerpt %}
-              {{ post.excerpt | markdownify | truncatewords: 50 }}
-            {% else %}
-              {{ post.content | markdownify | strip_html | truncatewords: 50 }}
-            {% endif %}
-          </div>
-          
-          <div class="post-meta-info">
-            {% if post.topic %}
-              <span class="post-topic">📂 {{ post.topic }}</span>
-            {% endif %}
-            {% if post.word_count %}
-              <span class="post-word-count">📝 {{ post.word_count }} words</span>
-            {% endif %}
-            {% if post.reading_time %}
-              <span class="post-reading-time">⏱️ {{ post.reading_time }} min read</span>
-            {% endif %}
-          </div>
-          
-          {% if post.tags and post.tags.size > 0 %}
-            <div class="post-tags">
-              {% for tag in post.tags limit: 5 %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
+  <header class="page-header">
+    <h1>All Articles</h1>
+    <p>Comprehensive coverage of renewable energy news and insights</p>
+  </header>
+
+  <div class="posts-list">
+    {% for post in site.posts %}
+      <article class="post-preview">
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          {% if post.category %}
+            <span class="category">{{ post.category | capitalize }}</span>
           {% endif %}
-          
-          <footer class="post-footer">
-            <a href="{{ post.url | relative_url }}" class="read-more">Read Full Article →</a>
-          </footer>
-        </article>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No posts found. Check back soon for new energy content!</p>
-  {% endif %}
+        </div>
+        
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        {% endif %}
+        
+        {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
 </div>
 
 <style>
 .posts-page {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-.post-list {
-  margin-top: 2em;
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
 }
 
-.post-item {
-  margin-bottom: 3em;
-  padding: 2em;
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.post-header {
-  margin-bottom: 1em;
+.page-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-preview {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 2rem;
+}
+
+.post-preview:last-child {
+  border-bottom: none;
 }
 
 .post-meta {
-  font-size: 0.9em;
-  color: #6a737d;
-  display: block;
-  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.post-title {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.3;
-}
-
-.post-link {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.post-link:hover {
-  text-decoration: underline;
-}
-
-.post-content {
-  margin: 1em 0;
-  color: #24292e;
-  line-height: 1.6;
-}
-
-.post-meta-info {
-  margin: 1em 0;
-  font-size: 0.85em;
-}
-
-.post-meta-info span {
-  margin-right: 1em;
-  color: #6a737d;
-}
-
-.post-tags {
-  margin: 1em 0;
-}
-
-.tag {
-  background: #f1f8ff;
-  color: #0366d6;
-  padding: 0.25em 0.5em;
-  border-radius: 3px;
-  font-size: 0.8em;
-  margin-right: 0.5em;
-  display: inline-block;
-  margin-bottom: 0.25em;
-}
-
-.post-footer {
-  margin-top: 1.5em;
-  padding-top: 1em;
-  border-top: 1px solid #e1e4e8;
-}
-
-.read-more {
-  color: #0366d6;
-  text-decoration: none;
+.category {
+  background: #e0f2fe;
+  color: #0277bd;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
   font-weight: 500;
 }
 
-.read-more:hover {
-  text-decoration: underline;
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.post-title a:hover {
+  color: #2563eb;
+}
+
+.post-excerpt {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .posts-page {
+    padding: 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .post-title {
+    font-size: 1.3rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 </style>

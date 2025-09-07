@@ -14,9 +14,9 @@ import time
 
 # Add the project root to the path
 import sys
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent.parent))
 
-from automation_controller import AutomationController
+from scripts.automation_controller import AutomationController
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 

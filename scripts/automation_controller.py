@@ -16,9 +16,9 @@ import threading
 import logging
 
 # Add the project root to the path
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent.parent))
 
-from daily_automation import DailyEnergyAutomation
+from scripts.daily_automation import DailyEnergyAutomation
 
 # Configure logging
 logging.basicConfig(

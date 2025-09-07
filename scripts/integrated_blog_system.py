@@ -14,10 +14,10 @@ import subprocess
 from typing import Dict, List, Optional
 
 # Add the project root to the path
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent.parent))
 
 from simple_blog_app import SimpleBlogController
-from github_pages_generator import GitHubPagesGenerator
+from scripts.github_pages_generator import GitHubPagesGenerator
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

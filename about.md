@@ -1,6 +1,40 @@
 ---
 layout: page
 title: About
+permalink: /about/
+---
+
+# About Renewable Power Insight
+
+Welcome to **Renewable Power Insight**, your premier destination for comprehensive analysis and insights into the rapidly evolving renewable energy sector.
+
+## Our Mission
+
+We are dedicated to providing accurate, timely, and in-depth coverage of renewable energy developments, market trends, and technological breakthroughs that are shaping the future of sustainable power generation.
+
+## What We Cover
+
+### ⚡ **Energy Technologies**
+- Solar photovoltaic and thermal systems
+- Wind power (onshore and offshore)
+- Battery storage and grid integration
+- Hydroelectric and emerging technologies
+- Smart grid and energy efficiency solutions
+
+### 📊 **Market Intelligence**
+- Industry growth statistics and projections
+- Investment trends and funding opportunities
+- Policy impacts on renewable energy adoption
+- Regional market analysis and comparisons
+- Economic feasibility studies
+
+### 🔬 **Technical Innovation**
+- Research breakthroughs in energy conversion
+- Material science advances (perovskites, etc.)
+- Grid stability and energy storage solutions
+- Artificial intelligence in energy management
+- Sustainability and lifecycle assessments
+
 ### 🔍 **Research Synthesis**
 - Multi-source data analysis and compilation
 - Trend identification and pattern recognition
