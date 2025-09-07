@@ -37,6 +37,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+      }
+      
+      .header-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       
       .site-title {
@@ -46,10 +53,20 @@
         text-decoration: none;
         letter-spacing: -0.5px;
         text-transform: uppercase;
+        line-height: 1;
       }
       
       .site-title:hover {
         color: #d97706;
+      }
+      
+      .site-tagline {
+        font-size: 0.75rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.25rem;
+        font-weight: 500;
       }
       
       .site-nav {
@@ -102,12 +119,21 @@
           padding: 1rem 0.5rem;
         }
         
+        .header-brand {
+          align-items: center;
+          text-align: center;
+        }
+        
         .site-title {
           font-size: 1.5rem;
         }
         
+        .site-tagline {
+          font-size: 0.7rem;
+        }
+        
         .site-nav {
-          gap: 1.5rem;
+          gap: 1rem;
           flex-wrap: wrap;
           justify-content: center;
         }
@@ -120,14 +146,18 @@
 
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Renewable Power Insight</a>
+        <div class="header-brand">
+          <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Renewable Power Insight</a>
+          <div class="site-tagline">Clean Energy Intelligence</div>
+        </div>
         <nav class="site-nav">
           <a href="{{ "/" | relative_url }}">Home</a>
-          <a href="{{ "/posts.html" | relative_url }}">News</a>
-          <a href="{{ "/about.html" | relative_url }}">Technology</a>
+          <a href="{{ "/posts.html" | relative_url }}">Solar</a>
+          <a href="{{ "/about.html" | relative_url }}">Wind</a>
+          <a href="{{ "/about.html" | relative_url }}">Battery Storage</a>
+          <a href="{{ "/about.html" | relative_url }}">Grid Tech</a>
           <a href="{{ "/about.html" | relative_url }}">Markets</a>
-          <a href="{{ "/about.html" | relative_url }}">Analysis</a>
-          <a href="{{ "/about.html" | relative_url }}">About</a>
+          <a href="{{ "/about.html" | relative_url }}">Policy</a>
         </nav>
       </div>
     </header>
