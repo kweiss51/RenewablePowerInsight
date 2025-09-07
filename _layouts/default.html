@@ -23,29 +23,38 @@
       
       .site-header {
         background: #fff;
-        border-bottom: 1px solid #e5e7eb;
-        padding: 0.75rem 0;
+        border-bottom: 2px solid #000;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
       
       .site-header .wrapper {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
       
       .site-title {
-        font-size: 1.5rem;
-        font-weight: bold;
+        font-size: 2rem;
+        font-weight: 700;
         color: #000;
         text-decoration: none;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+      }
+      
+      .site-title:hover {
+        color: #d97706;
       }
       
       .site-nav {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         list-style: none;
       }
       
@@ -53,12 +62,17 @@
         color: #000;
         text-decoration: none;
         font-size: 0.9rem;
-        font-weight: 500;
-        transition: color 0.2s;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.2s ease;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
       }
       
       .site-nav a:hover {
-        color: #0066cc;
+        color: #d97706;
+        border-bottom-color: #d97706;
       }
       
       .page-content {
@@ -85,26 +99,35 @@
         .site-header .wrapper {
           flex-direction: column;
           gap: 1rem;
+          padding: 1rem 0.5rem;
+        }
+        
+        .site-title {
+          font-size: 1.5rem;
         }
         
         .site-nav {
-          gap: 1rem;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .site-nav a {
+          font-size: 0.8rem;
         }
       }
     </style>
 
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Renewable Power Insight</a>
         <nav class="site-nav">
-          <div class="trigger">
-            {%- for path in page_paths -%}
-              {%- assign my_page = site.pages | where: "path", path | first -%}
-              {%- if my_page.title -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
+          <a href="{{ "/" | relative_url }}">Home</a>
+          <a href="{{ "/posts.html" | relative_url }}">News</a>
+          <a href="{{ "/about.html" | relative_url }}">Technology</a>
+          <a href="{{ "/about.html" | relative_url }}">Markets</a>
+          <a href="{{ "/about.html" | relative_url }}">Analysis</a>
+          <a href="{{ "/about.html" | relative_url }}">About</a>
         </nav>
       </div>
     </header>
