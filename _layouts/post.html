@@ -3,21 +3,80 @@ layout: default
 ---
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-container">
+    <header class="post-header">
+      <div class="breadcrumb">
+        <a href="/">Renewable Power Insight</a> > <span class="post-category">Technology</span>
+      </div>
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <div class="post-meta">
+        <div class="author-info">
+          <span class="byline">By</span>
+          <span class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">
+              {%- if page.author -%}{{ page.author }}{%- else -%}Renewable Power Insight Staff{%- endif -%}
+            </span>
+          </span>
+        </div>
+        <div class="publish-info">
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {{ page.date | date: date_format }}
+          </time>
+          <span class="read-time">5 MIN READ</span>
+        </div>
+      </div>
+    </header>
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    <div class="post-content-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        <!-- Featured Image Placeholder -->
+        <div class="featured-image">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='Arial, sans-serif' font-size='18'%3EFeatured Image%3C/text%3E%3C/svg%3E" alt="Article featured image" />
+          <div class="image-caption">Renewable energy technology continues to advance rapidly across multiple sectors.</div>
+        </div>
+        
+        {{ content }}
+      </div>
+      
+      <aside class="post-sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">More from Technology</h3>
+          <ul class="related-articles">
+            <li class="related-item">
+              <h4><a href="/RenewablePowerInsight/2025/09/05/technology-deep-dive-how-ai-powered-energy-managem/">AI-Powered Energy Management Deep Dive</a></h4>
+              <div class="related-meta">15 MIN READ</div>
+            </li>
+            <li class="related-item">
+              <h4><a href="/RenewablePowerInsight/2025/09/05/technology-deep-dive-how-offshore-wind-farm-capaci/">Offshore Wind Farm Technology Advances</a></h4>
+              <div class="related-meta">12 MIN READ</div>
+            </li>
+            <li class="related-item">
+              <h4><a href="/RenewablePowerInsight/2025/09/05/technology-deep-dive-how-lithium-ion-battery-recyc/">Lithium-Ion Battery Recycling Breakthrough</a></h4>
+              <div class="related-meta">8 MIN READ</div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Most Popular</h3>
+          <ul class="popular-articles">
+            <li class="popular-item">
+              <span class="rank">01</span>
+              <h4><a href="/RenewablePowerInsight/2025/09/05/global-renewable-energy-capacity-hits-record-3.6-tw-in-2025/">Global Renewable Energy Capacity Hits Record 3.6 TW</a></h4>
+            </li>
+            <li class="popular-item">
+              <span class="rank">02</span>
+              <h4><a href="/RenewablePowerInsight/2025/09/05/offshore-wind-farms-generate-record-120-gw-globally-as-costs-plummet/">Offshore Wind Costs Plummet to Record Lows</a></h4>
+            </li>
+            <li class="popular-item">
+              <span class="rank">03</span>
+              <h4><a href="/RenewablePowerInsight/2025/09/05/breaking-renewable-energy-transition-2025-reaches-tipping-point/">Renewable Energy Transition Reaches Tipping Point</a></h4>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </div>
 
   {%- if site.disqus.shortname -%}
@@ -28,81 +87,288 @@ layout: default
 </article>
 
 <style>
-.post {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.post-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 .post-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.post-category {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .post-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
 .post-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.author-info {
+  color: #000;
+  font-size: 0.95rem;
+}
+
+.byline {
+  color: #666;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #000;
+}
+
+.publish-info {
   color: #666;
   font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.read-time {
+  font-weight: 500;
+}
+
+.post-content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.featured-image {
+  margin-bottom: 2rem;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-caption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 .post-content {
   font-size: 1.1rem;
-  color: #444;
+  color: #000;
+  line-height: 1.6;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 2rem 0 1rem 0;
+  line-height: 1.3;
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  margin: 1.5rem 0 0.75rem 0;
 }
 
 .post-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
+  border-radius: 4px;
+  margin: 1.5rem 0;
 }
 
-.post-content h2 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+.post-content blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
   color: #333;
-}
-
-.post-content h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #444;
 }
 
 .post-content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+  font-size: 0.95rem;
 }
 
 .post-content th,
 .post-content td {
-  border: 1px solid #ddd;
+  border: 1px solid #e5e7eb;
   padding: 0.75rem;
   text-align: left;
 }
 
 .post-content th {
-  background-color: #f5f5f5;
+  background-color: #f9fafb;
   font-weight: bold;
 }
 
+/* Sidebar */
+.post-sidebar {
+  padding-left: 2rem;
+  border-left: 1px solid #e5e7eb;
+}
+
+.sidebar-section {
+  margin-bottom: 2rem;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.related-articles,
+.popular-articles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-item,
+.popular-item {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 1rem 0;
+}
+
+.related-item:last-child,
+.popular-item:last-child {
+  border-bottom: none;
+}
+
+.related-item h4,
+.popular-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+.related-item h4 a,
+.popular-item h4 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.related-item h4 a:hover,
+.popular-item h4 a:hover {
+  color: #0066cc;
+}
+
+.related-meta {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.popular-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.rank {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  min-width: 2rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .post {
+  .post-container {
     padding: 1rem;
   }
   
   .post-title {
     font-size: 2rem;
+  }
+  
+  .post-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .post-sidebar {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 2rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-title {
+    font-size: 1.75rem;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+  }
+  
+  .publish-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 }
 </style>
