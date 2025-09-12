@@ -48,6 +48,259 @@
             color: #000;
             text-decoration: none;
             letter-spacing: -0.5px;
+        }
+        
+        .site-title:hover {
+            color: #2d5016;
+        }
+        
+        .site-tagline {
+            font-size: 0.9rem;
+            color: #2d5016;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+        
+        .site-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .site-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .site-nav a:hover {
+            color: #2d5016;
+            border-bottom-color: #2d5016;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .top-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .featured-article {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-article:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 1.5rem;
+        }
+
+        .featured-content h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .featured-content h1 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .featured-content h1 a:hover {
+            color: #2d5016;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-time {
+            color: #2d5016;
+            font-weight: 500;
+        }
+
+        .article-excerpt {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-article {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .grid-article:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .grid-article-image {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .grid-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-article:hover .grid-article-image img {
+            transform: scale(1.05);
+        }
+
+        .grid-article h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 0;
+            padding: 12px 15px 8px;
+        }
+
+        .grid-article h2 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .grid-article h2 a:hover {
+            color: #2d5016;
+        }
+
+        .grid-article .article-meta {
+            font-size: 0.8rem;
+            color: #666;
+            padding: 0 15px 15px;
+            margin: 0;
+        }
+
+        .content-below {
+            margin-top: 40px;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .article-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-thumbnail img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .article-content h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h2 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .article-content h2 a:hover {
+            color: #2d5016;
+        }
+
+        .excerpt {
+            color: #4a5568;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .top-articles {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            
+            .site-nav {
+                gap: 1rem;
+            }
+            
+            .site-nav a {
+                font-size: 0.85rem;
+            }
+            
+            .article-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .article-thumbnail img {
+                width: 100%;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
             text-transform: uppercase;
             line-height: 1;
         }
@@ -88,7 +341,6 @@
             border-bottom-color: #2d5016;
         }
 
-        /* Main Content Styles */
         .main {
             max-width: 1200px;
             margin: 0 auto;
@@ -98,18 +350,36 @@
             gap: 3rem;
         }
 
-        .featured-article {
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 300px;
+        .content-area {
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            align-items: start;
+        }
+
+        .top-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 3rem;
+        }
+
+        .featured-article {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         .featured-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 0.5rem;
@@ -148,11 +418,58 @@
             letter-spacing: 0.5px;
         }
 
-        .featured-image img {
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-article {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .grid-article-image img {
             width: 100%;
-            height: 200px;
+            height: 120px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 6px;
+        }
+
+        .grid-article h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-article h2 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .grid-article h2 a:hover {
+            color: #2d5016;
+        }
+
+        .grid-article .article-meta {
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+
+        .content-below {
+            margin-top: 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .article-list {
@@ -205,8 +522,13 @@
         }
 
         .sidebar {
-            padding-left: 2rem;
-            border-left: 1px solid #e5e7eb;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+            border: 1px solid #e5e7eb;
         }
 
         .sidebar-section {
@@ -272,28 +594,23 @@
                 gap: 2rem;
             }
             
-            .sidebar {
-                border-left: none;
-                border-top: 1px solid #e5e7eb;
-                padding-left: 0;
-                padding-top: 2rem;
-            }
-            
-            .featured-article {
+            .top-articles {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
             }
             
-            .featured-image {
-                order: -1;
+            .articles-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
             
-            .featured-image img {
-                height: 250px;
+            .sidebar {
+                position: static;
+                margin-top: 2rem;
             }
             
             .featured-content h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .site-header .wrapper {
@@ -327,6 +644,10 @@
         }
 
         @media (max-width: 640px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .article-item {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -347,84 +668,136 @@
                 <div class="site-tagline">Clean Energy Intelligence</div>
             </div>
             <nav class="site-nav">
-                <a href="/">Home</a>
-                <a href="/posts.html">Solar</a>
-                <a href="/about.html">Wind</a>
-                <a href="/about.html">Battery Storage</a>
-                <a href="/about.html">Grid Tech</a>
-                <a href="/about.html">Markets</a>
-                <a href="/about.html">Policy</a>
+                <a href="index.html">Home</a>
+                <a href="posts.html">All Posts</a>
+                <a href="solar.html">Solar</a>
+                <a href="wind.html">Wind</a>
+                <a href="battery.html">Battery Storage</a>
+                <a href="grid.html">Grid Tech</a>
+                <a href="markets.html">Markets</a>
+                <a href="policy.html">Policy</a>
             </nav>
         </div>
     </header>
 
     <main class="main">
-        <div class="content">
-            <!-- Featured Article -->
-            <article class="featured-article">
-                <div class="featured-content">
-                    <h1><a href="/2025/09/05/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency/">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a></h1>
-                    <div class="article-meta">September 5, 2025</div>
-                    <p class="article-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
-                    <div class="read-time">5 MIN READ</div>
-                </div>
-                <div class="featured-image">
-                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Advanced Solar Cell Technology" />
-                </div>
-            </article>
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <!-- Top Articles Section: 1 featured + 6 grid articles -->
+            <section class="top-articles">
+                <!-- Featured Article (Left Half) -->
+                <article class="featured-article">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Advanced Solar Cell Technology" />
+                    </div>
+                    <div class="featured-content">
+                        <h1><a href="posts.html">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a></h1>
+                        <div class="article-meta">September 5, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
+                    </div>
+                </article>
 
-            <!-- Article List -->
-            <ul class="article-list">
-                <li class="article-item">
-                    <div class="article-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Global Renewable Energy" />
-                    </div>
-                    <div class="article-content">
-                        <h2><a href="/2025/09/05/global-renewable-energy-capacity-hits-record-3.6-tw-in-2025/">Global Renewable Energy Capacity Hits Record 3.6 TW in 2025</a></h2>
-                        <p class="excerpt">The International Renewable Energy Agency reports unprecedented growth in clean energy installations, with solar and wind leading the charge toward a sustainable future.</p>
-                        <div class="article-meta">September 5, 2025 • <span class="read-time">4 MIN READ</span></div>
-                    </div>
-                </li>
-                
-                <li class="article-item">
-                    <div class="article-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Offshore Wind Farms" />
-                    </div>
-                    <div class="article-content">
-                        <h2><a href="/2025/09/05/offshore-wind-farms-generate-record-120-gw-globally-as-costs-plummet/">Offshore Wind Farms Generate Record 120 GW Globally as Costs Plummet</a></h2>
-                        <p class="excerpt">Technological advances and economies of scale have driven down offshore wind costs by 60% over the past decade, making it increasingly competitive with fossil fuels.</p>
-                        <div class="article-meta">September 5, 2025 • <span class="read-time">6 MIN READ</span></div>
-                    </div>
-                </li>
-                
-                <li class="article-item">
-                    <div class="article-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Renewable Energy Transition" />
-                    </div>
-                    <div class="article-content">
-                        <h2><a href="/2025/09/05/breaking-renewable-energy-transition-2025-reaches-tipping-point/">Renewable Energy Transition 2025 Reaches Tipping Point</a></h2>
-                        <p class="excerpt">Analysis shows global renewable energy capacity expansion accelerating beyond previous forecasts, signaling a fundamental shift in the energy landscape.</p>
-                        <div class="article-meta">September 5, 2025 • <span class="read-time">7 MIN READ</span></div>
-                    </div>
-                </li>
-            </ul>
+                <!-- Articles Grid (Right Half) -->
+                <div class="articles-grid">
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Global Renewable Energy" />
+                        </div>
+                        <h2><a href="posts.html">Global Renewable Energy Capacity Hits Record 3.6 TW in 2025</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">4 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Offshore Wind Farms" />
+                        </div>
+                        <h2><a href="posts.html">Offshore Wind Farms Generate Record 120 GW Globally</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">6 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Renewable Energy Transition" />
+                        </div>
+                        <h2><a href="posts.html">Renewable Energy Transition 2025 Reaches Tipping Point</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">7 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Energy Management" />
+                        </div>
+                        <h2><a href="posts.html">AI-Powered Energy Management Reaches New Heights</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">8 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="EV Charging Network" />
+                        </div>
+                        <h2><a href="posts.html">EV Charging Network Expansion Reaches New Milestone</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">5 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Battery Technology" />
+                        </div>
+                        <h2><a href="posts.html">Lithium-Ion Battery Recycling Technology Breakthrough</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">6 MIN READ</span></div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Additional Articles -->
+            <section class="content-below">
+                <h2 class="section-title">Latest News</h2>
+                <ul class="article-list">
+                    <li class="article-item">
+                        <div class="article-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Technology Deep Dive" />
+                        </div>
+                        <div class="article-content">
+                            <h2><a href="posts.html">Technology Deep Dive: How Renewable Energy Transition Works</a></h2>
+                            <p class="excerpt">An in-depth analysis of the technological innovations driving the global shift toward renewable energy sources and their implementation challenges.</p>
+                            <div class="article-meta">September 5, 2025 • <span class="read-time">12 MIN READ</span></div>
+                        </div>
+                    </li>
+                    
+                    <li class="article-item">
+                        <div class="article-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Market Analysis" />
+                        </div>
+                        <div class="article-content">
+                            <h2><a href="posts.html">Market Report: Renewable Energy Investment Trends 2025</a></h2>
+                            <p class="excerpt">Comprehensive analysis of global renewable energy investment patterns, market dynamics, and future growth projections for clean energy sectors.</p>
+                            <div class="article-meta">September 5, 2025 • <span class="read-time">10 MIN READ</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </div>
-        
+
+        <!-- Right Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h2 class="sidebar-title">Most Popular</h2>
                 <ul class="sidebar-list">
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency/">Breakthrough in Perovskite Solar Cell Technology</a></h3>
-                        <div class="sidebar-meta">5 MIN READ</div>
+                        <h3><a href="posts.html">Breakthrough in Perovskite Solar Cell Technology</a></h3>
+                        <div class="sidebar-meta">5 MIN READ • 2.5K VIEWS</div>
                     </li>
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/offshore-wind-farms-generate-record-120-gw-globally-as-costs-plummet/">Offshore Wind Costs Plummet to Record Lows</a></h3>
-                        <div class="sidebar-meta">6 MIN READ</div>
+                        <h3><a href="posts.html">Offshore Wind Costs Plummet to Record Lows</a></h3>
+                        <div class="sidebar-meta">6 MIN READ • 1.8K VIEWS</div>
                     </li>
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/global-renewable-energy-capacity-hits-record-3.6-tw-in-2025/">Global Renewable Capacity Hits 3.6 TW</a></h3>
-                        <div class="sidebar-meta">4 MIN READ</div>
+                        <h3><a href="posts.html">Global Renewable Capacity Hits 3.6 TW</a></h3>
+                        <div class="sidebar-meta">4 MIN READ • 1.3K VIEWS</div>
+                    </li>
+                    <li class="sidebar-item">
+                        <h3><a href="posts.html">AI-Powered Energy Management Revolution</a></h3>
+                        <div class="sidebar-meta">8 MIN READ • 1.1K VIEWS</div>
                     </li>
                 </ul>
             </div>
@@ -433,11 +806,11 @@
                 <h2 class="sidebar-title">Technology</h2>
                 <ul class="sidebar-list">
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/technology-deep-dive-how-renewable-energy-transiti/">How Renewable Energy Transition Works</a></h3>
+                        <h3><a href="posts.html">How Renewable Energy Transition Works</a></h3>
                         <div class="sidebar-meta">12 MIN READ</div>
                     </li>
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/technology-deep-dive-how-ai-powered-energy-managem/">AI-Powered Energy Management Deep Dive</a></h3>
+                        <h3><a href="posts.html">AI-Powered Energy Management Deep Dive</a></h3>
                         <div class="sidebar-meta">15 MIN READ</div>
                     </li>
                 </ul>
@@ -447,11 +820,11 @@
                 <h2 class="sidebar-title">Markets</h2>
                 <ul class="sidebar-list">
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/market-report-renewable-energy-transition-2025-inv/">Renewable Energy Investment Report 2025</a></h3>
+                        <h3><a href="posts.html">Renewable Energy Investment Report 2025</a></h3>
                         <div class="sidebar-meta">10 MIN READ</div>
                     </li>
                     <li class="sidebar-item">
-                        <h3><a href="/2025/09/05/market-report-offshore-wind-farm-capacity-investme/">Offshore Wind Investment Trends</a></h3>
+                        <h3><a href="posts.html">Offshore Wind Investment Trends</a></h3>
                         <div class="sidebar-meta">8 MIN READ</div>
                     </li>
                 </ul>
@@ -460,3 +833,4 @@
     </main>
 </body>
 </html>
+
