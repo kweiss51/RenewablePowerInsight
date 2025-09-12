@@ -61,6 +61,48 @@
             color: #2d5016;
         }
         
+        /* Sub Navigation */
+        .sub-nav-bar {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+        
+        .sub-nav-bar .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sub-nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sub-nav a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .sub-nav a:hover, .sub-nav a.active {
+            color: #2d5016;
+        }
+        
+        .sub-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2d5016;
+        }
+        
         .main {
             max-width: 1200px;
             margin: 0 auto;
@@ -197,6 +239,21 @@
             </nav>
         </div>
     </header>
+
+    <!-- Wind Sub-Navigation -->
+    <div class="sub-nav-bar">
+        <div class="wrapper">
+            <nav class="sub-nav">
+                <a href="wind.html" class="active">All Wind</a>
+                <a href="wind-offshore.html">Offshore Wind</a>
+                <a href="wind-onshore.html">Onshore Wind</a>
+                <a href="wind-technology.html">Technology</a>
+                <a href="wind-manufacturing.html">Manufacturing</a>
+                <a href="wind-markets.html">Markets & Finance</a>
+                <a href="wind-policy.html">Policy & Incentives</a>
+            </nav>
+        </div>
+    </div>
 
     <main class="main">
         <div class="page-header">

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Policy & Incentives - Renewable Power Insight</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #000; background-color: #fff; }
+        .site-header { background: #fff; border-bottom: 2px solid #000; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .site-header .wrapper { max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .site-title { font-size: 1.6rem; font-weight: 700; text-decoration: none; color: #2d5016; letter-spacing: -0.5px; }
+        .site-nav { display: flex; gap: 1.5rem; }
+        .site-nav a { color: #333; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+        .site-nav a:hover, .site-nav a.active { color: #2d5016; }
+        .sub-nav-bar { background: #f8f9fa; border-bottom: 1px solid #e5e5e5; padding: 15px 0; }
+        .sub-nav-bar .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .sub-nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .sub-nav a { color: #666; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s ease; position: relative; }
+        .sub-nav a:hover, .sub-nav a.active { color: #2d5016; }
+        .sub-nav a.active::after { content: ''; position: absolute; bottom: -15px; left: 0; right: 0; height: 2px; background: #2d5016; }
+        .main { max-width: 1200px; margin: 0 auto; padding: 30px 20px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+        .content-area { min-width: 0; }
+        .page-header { margin-bottom: 30px; }
+        .page-header h1 { font-size: 2.2rem; font-weight: 700; color: #2d5016; margin-bottom: 10px; }
+        .page-header p { font-size: 1.1rem; color: #666; margin-bottom: 20px; }
+        .articles-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .article-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .article-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .article-image { width: 100%; height: 200px; overflow: hidden; }
+        .article-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .article-card:hover .article-image img { transform: scale(1.05); }
+        .article-content { padding: 20px; }
+        .article-content h2 { font-size: 1.3rem; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+        .article-content h2 a { color: #333; text-decoration: none; }
+        .article-content h2 a:hover { color: #2d5016; }
+        .article-meta { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+        .article-excerpt { color: #555; font-size: 0.95rem; line-height: 1.5; }
+        .read-time { font-weight: 600; }
+        .sidebar { background: #f8f9fa; padding: 30px 25px; border-radius: 8px; height: fit-content; position: sticky; top: 95px; }
+        .sidebar h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: #2d5016; }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-list { list-style: none; padding: 0; margin: 0; }
+        .sidebar-list li { padding: 12px 0; border-bottom: 1px solid #e5e5e5; }
+        .sidebar-list li:last-child { border-bottom: none; }
+        .sidebar-list a { color: #333; text-decoration: none; font-weight: 500; font-size: 0.9rem; line-height: 1.4; display: block; }
+        .sidebar-list a:hover { color: #2d5016; }
+        @media (max-width: 968px) { .main { grid-template-columns: 1fr; gap: 30px; padding: 20px; } .articles-section { grid-template-columns: 1fr; } .sidebar { position: static; } }
+        @media (max-width: 768px) { .site-header .wrapper { flex-direction: column; gap: 15px; } .site-nav { flex-wrap: wrap; justify-content: center; gap: 1rem; } .sub-nav { justify-content: center; gap: 1rem; } .page-header h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Renewable Power Insight</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="posts.html">All Posts</a>
+                <a href="solar.html">Solar</a>
+                <a href="wind.html">Wind</a>
+                <a href="battery.html" class="active">Battery Storage</a>
+                <a href="grid.html">Grid Tech</a>
+                <a href="markets.html">Markets</a>
+                <a href="policy.html">Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="sub-nav-bar">
+        <div class="wrapper">
+            <nav class="sub-nav">
+                <a href="battery.html">All Battery Storage</a>
+                <a href="battery-residential.html">Residential Storage</a>
+                <a href="battery-utility.html">Utility Scale</a>
+                <a href="battery-technology.html">Technology</a>
+                <a href="battery-manufacturing.html">Manufacturing</a>
+                <a href="battery-markets.html">Markets & Finance</a>
+                <a href="battery-policy.html" class="active">Policy & Incentives</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="main">
+        <div class="content-area">
+            <div class="page-header">
+                <h1>Battery Policy & Incentives</h1>
+                <p>Government policies, regulations, incentives, and their impact on battery storage adoption</p>
+            </div>
+
+            <section class="articles-section">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Policy Building" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">IRA Battery Storage Tax Credits Extended to 2035</a></h2>
+                        <div class="article-meta">September 10, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">Congressional action extends investment tax credits for standalone battery storage systems, providing long-term policy certainty.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Grid Modernization" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">States Mandate Grid-Scale Storage for Clean Energy</a></h2>
+                        <div class="article-meta">September 7, 2025 • <span class="read-time">6 MIN READ</span></div>
+                        <p class="article-excerpt">Twenty-five states implement storage procurement mandates to support renewable energy integration and grid reliability.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Residential Incentives" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Home Battery Rebates Launch in 12 New States</a></h2>
+                        <div class="article-meta">September 5, 2025 • <span class="read-time">7 MIN READ</span></div>
+                        <p class="article-excerpt">State programs offer up to $10,000 rebates for residential battery installations to enhance grid resilience and reduce peak demand.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1587739977078-9cf0c5e64d7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="International Policy" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">EU Battery Regulation Creates Global Standards</a></h2>
+                        <div class="article-meta">September 3, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">New European Union battery regulation establishes sustainability requirements and recycling standards affecting global supply chains.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Safety Standards" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">New Safety Standards Accelerate Battery Deployment</a></h2>
+                        <div class="article-meta">September 1, 2025 • <span class="read-time">6 MIN READ</span></div>
+                        <p class="article-excerpt">Updated fire safety codes and installation standards reduce permitting delays and insurance costs for battery storage projects.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Grid Services" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">FERC Order 2222 Transforms Battery Market Access</a></h2>
+                        <div class="article-meta">August 28, 2025 • <span class="read-time">7 MIN READ</span></div>
+                        <p class="article-excerpt">Federal energy market reforms enable distributed battery resources to compete directly with traditional power plants for grid services.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Policy Areas</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#tax-credits">Tax Credits & Incentives</a></li>
+                    <li><a href="#mandates">Storage Mandates</a></li>
+                    <li><a href="#safety">Safety Standards</a></li>
+                    <li><a href="#grid-access">Grid Market Access</a></li>
+                    <li><a href="#permitting">Permitting Reform</a></li>
+                    <li><a href="#recycling">Recycling Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Geographic Focus</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#federal">Federal Policy</a></li>
+                    <li><a href="#state">State Programs</a></li>
+                    <li><a href="#local">Local Initiatives</a></li>
+                    <li><a href="#international">International</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>
