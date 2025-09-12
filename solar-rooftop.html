@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooftop Solar - Renewable Power Insight</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+        
+        .site-header {
+            background: #fff;
+            border-bottom: 2px solid #000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .site-header .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #2d5016;
+            letter-spacing: -0.5px;
+        }
+        
+        .site-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .site-nav a:hover, .site-nav a.active {
+            color: #2d5016;
+        }
+        
+        /* Sub Navigation */
+        .sub-nav-bar {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+        
+        .sub-nav-bar .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sub-nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sub-nav a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .sub-nav a:hover, .sub-nav a.active {
+            color: #2d5016;
+        }
+        
+        .sub-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2d5016;
+        }
+        
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+        
+        .content-area {
+            min-width: 0;
+        }
+        
+        .page-header {
+            margin-bottom: 30px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Article grid layout */
+        .articles-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-content h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        
+        .article-content h2 a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .article-content h2 a:hover {
+            color: #2d5016;
+        }
+        
+        .article-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .article-excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .read-time {
+            font-weight: 600;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px 25px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 95px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d5016;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            display: block;
+        }
+
+        .sidebar-list a:hover {
+            color: #2d5016;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+            
+            .articles-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header .wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .site-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .sub-nav {
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Renewable Power Insight</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="posts.html">All Posts</a>
+                <a href="solar.html" class="active">Solar</a>
+                <a href="wind.html">Wind</a>
+                <a href="battery.html">Battery Storage</a>
+                <a href="grid.html">Grid Tech</a>
+                <a href="markets.html">Markets</a>
+                <a href="policy.html">Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Solar Sub-Navigation -->
+    <div class="sub-nav-bar">
+        <div class="wrapper">
+            <nav class="sub-nav">
+                <a href="solar.html">All Solar</a>
+                <a href="solar-rooftop.html" class="active">Rooftop Solar</a>
+                <a href="solar-utility.html">Utility Scale</a>
+                <a href="solar-technology.html">Technology</a>
+                <a href="solar-manufacturing.html">Manufacturing</a>
+                <a href="solar-markets.html">Markets & Finance</a>
+                <a href="solar-policy.html">Policy & Incentives</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="main">
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <div class="page-header">
+                <h1>Rooftop Solar</h1>
+                <p>Residential and commercial rooftop solar installations, costs, incentives, and technology</p>
+            </div>
+
+            <section class="articles-section">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Residential Solar Installation" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Residential Solar Adoption Surges 45% in 2025</a></h2>
+                        <div class="article-meta">September 4, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">Home solar installations continue breaking records as costs decline and financing options expand, with suburban markets leading growth nationwide.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Panel Installation" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Solar Panel Costs Drop to $2.50 Per Watt</a></h2>
+                        <div class="article-meta">September 2, 2025 • <span class="read-time">4 MIN READ</span></div>
+                        <p class="article-excerpt">Residential solar panel prices reach new historic lows, making rooftop solar accessible to more homeowners across income brackets.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Commercial Rooftop Solar" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Commercial Rooftop Solar Reaches 25 GW Milestone</a></h2>
+                        <div class="article-meta">August 30, 2025 • <span class="read-time">6 MIN READ</span></div>
+                        <p class="article-excerpt">Businesses increasingly turn to rooftop solar for energy security and cost savings, with installations doubling year-over-year.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Financing" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Zero-Down Solar Financing Expands to All 50 States</a></h2>
+                        <div class="article-meta">August 28, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">New financing programs eliminate upfront costs for homeowners, accelerating rooftop solar adoption nationwide.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Smart Solar Technology" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">Smart Solar Systems Enable Peak Shaving</a></h2>
+                        <div class="article-meta">August 25, 2025 • <span class="read-time">7 MIN READ</span></div>
+                        <p class="article-excerpt">Intelligent rooftop solar systems paired with home batteries help reduce peak demand charges for residential customers.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Installation Process" />
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="posts.html">AI-Powered Solar Design Cuts Installation Time by 50%</a></h2>
+                        <div class="article-meta">August 22, 2025 • <span class="read-time">6 MIN READ</span></div>
+                        <p class="article-excerpt">Machine learning algorithms optimize rooftop solar system design and streamline permitting processes for faster installations.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Rooftop Solar Topics</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#residential">Residential Solar</a></li>
+                    <li><a href="#commercial">Commercial Rooftop</a></li>
+                    <li><a href="#financing">Solar Financing</a></li>
+                    <li><a href="#incentives">Tax Credits & Incentives</a></li>
+                    <li><a href="#installation">Installation Process</a></li>
+                    <li><a href="#maintenance">System Maintenance</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Related Categories</h2>
+                <ul class="sidebar-list">
+                    <li><a href="solar-policy.html">Solar Policy</a></li>
+                    <li><a href="battery.html">Battery Storage</a></li>
+                    <li><a href="solar-technology.html">Solar Technology</a></li>
+                    <li><a href="solar-markets.html">Solar Finance</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

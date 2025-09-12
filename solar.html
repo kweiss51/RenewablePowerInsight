@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy - Renewable Power Insight</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+        
+        .site-header {
+            background: #fff;
+            border-bottom: 2px solid #000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .site-header .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #2d5016;
+            letter-spacing: -0.5px;
+        }
+        
+        .site-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .site-nav a:hover, .site-nav a.active {
+            color: #2d5016;
+        }
+        
+        /* Sub Navigation */
+        .sub-nav-bar {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+        
+        .sub-nav-bar .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sub-nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sub-nav a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .sub-nav a:hover, .sub-nav a.active {
+            color: #2d5016;
+        }
+        
+        .sub-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2d5016;
+        }
+        
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+        
+        .content-area {
+            min-width: 0;
+        }
+        
+        .page-header {
+            margin-bottom: 30px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Homepage-style layout */
+        .top-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .featured-article {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 20px;
+        }
+
+        .featured-content h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h1 a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .featured-content h1 a:hover {
+            color: #2d5016;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-article {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .grid-article:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .grid-article-image {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .grid-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-article:hover .grid-article-image img {
+            transform: scale(1.05);
+        }
+
+        .grid-article h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 0;
+            padding: 12px 15px 8px;
+        }
+
+        .grid-article h2 a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .grid-article h2 a:hover {
+            color: #2d5016;
+        }
+
+        .grid-article .article-meta {
+            font-size: 0.8rem;
+            color: #666;
+            padding: 0 15px 15px;
+            margin: 0;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .article-excerpt {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .read-time {
+            font-weight: 600;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px 25px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 95px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d5016;
+        }
+
+        .popular-articles {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .popular-articles li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .popular-articles li:last-child {
+            border-bottom: none;
+        }
+
+        .popular-articles a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            display: block;
+        }
+
+        .popular-articles a:hover {
+            color: #2d5016;
+        }
+
+        .popular-meta {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+            
+            .top-articles {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header .wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .site-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .sub-nav {
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .featured-content h1 {
+                font-size: 1.3rem;
+            }
+            
+            .grid-article h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Renewable Power Insight</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="posts.html">All Posts</a>
+                <a href="solar.html" class="active">Solar</a>
+                <a href="wind.html">Wind</a>
+                <a href="battery.html">Battery Storage</a>
+                <a href="grid.html">Grid Tech</a>
+                <a href="markets.html">Markets</a>
+                <a href="policy.html">Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Solar Sub-Navigation -->
+    <div class="sub-nav-bar">
+        <div class="wrapper">
+            <nav class="sub-nav">
+                <a href="solar.html" class="active">All Solar</a>
+                <a href="solar-rooftop.html">Rooftop Solar</a>
+                <a href="solar-utility.html">Utility Scale</a>
+                <a href="solar-technology.html">Technology</a>
+                <a href="solar-manufacturing.html">Manufacturing</a>
+                <a href="solar-markets.html">Markets & Finance</a>
+                <a href="solar-policy.html">Policy & Incentives</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="main">
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <div class="page-header">
+                <h1>Solar Energy</h1>
+                <p>The latest breakthroughs, innovations, and market developments in solar power technology</p>
+            </div>
+
+            <!-- Top Articles Section: Homepage-style layout -->
+            <section class="top-articles">
+                <!-- Featured Article (Left Half) -->
+                <article class="featured-article">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Advanced Solar Cell Technology" />
+                    </div>
+                    <div class="featured-content">
+                        <h1><a href="posts.html">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a></h1>
+                        <div class="article-meta">September 5, 2025 • <span class="read-time">5 MIN READ</span></div>
+                        <p class="article-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
+                    </div>
+                </article>
+
+                <!-- Articles Grid (Right Half) -->
+                <div class="articles-grid">
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Perovskite Solar Cells" />
+                        </div>
+                        <h2><a href="posts.html">Industry Forecast: Perovskite Solar Cells Efficiency Trends</a></h2>
+                        <div class="article-meta">Sep 5 • <span class="read-time">6 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Panel Manufacturing" />
+                        </div>
+                        <h2><a href="posts.html">Solar Manufacturing Scales Production by 300%</a></h2>
+                        <div class="article-meta">Sep 3 • <span class="read-time">5 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Array Installation" />
+                        </div>
+                        <h2><a href="posts.html">Utility-Scale Solar Installations Reach 500 GW</a></h2>
+                        <div class="article-meta">Sep 1 • <span class="read-time">4 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Floating Solar Arrays" />
+                        </div>
+                        <h2><a href="posts.html">Floating Solar Arrays Transform Water Management</a></h2>
+                        <div class="article-meta">Aug 28 • <span class="read-time">5 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Residential Solar" />
+                        </div>
+                        <h2><a href="posts.html">Residential Solar Adoption Surges 45% in 2025</a></h2>
+                        <div class="article-meta">Aug 25 • <span class="read-time">6 MIN READ</span></div>
+                    </article>
+
+                    <article class="grid-article">
+                        <div class="grid-article-image">
+                            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Solar Energy Storage" />
+                        </div>
+                        <h2><a href="posts.html">Solar-Plus-Storage Projects Exceed 50 GW Globally</a></h2>
+                        <div class="article-meta">Aug 22 • <span class="read-time">7 MIN READ</span></div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Popular in Solar</h2>
+            <ul class="popular-articles">
+                <li>
+                    <a href="posts.html">Breakthrough in Perovskite Solar Cell Technology</a>
+                    <div class="popular-meta">Sep 5 • 5 min read</div>
+                </li>
+                <li>
+                    <a href="posts.html">Industry Forecast: Perovskite Solar Efficiency</a>
+                    <div class="popular-meta">Sep 5 • 6 min read</div>
+                </li>
+                <li>
+                    <a href="posts.html">Solar Manufacturing Scales Production by 300%</a>
+                    <div class="popular-meta">Sep 3 • 5 min read</div>
+                </li>
+                <li>
+                    <a href="posts.html">Utility-Scale Solar Reaches 500 GW</a>
+                    <div class="popular-meta">Sep 1 • 4 min read</div>
+                </li>
+                <li>
+                    <a href="posts.html">Floating Solar Arrays Transform Water Management</a>
+                    <div class="popular-meta">Aug 28 • 5 min read</div>
+                </li>
+            </ul>
+        </aside>
+    </main>
+</body>
+</html>
