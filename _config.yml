@@ -1,3 +1,6 @@
+# Ensure posts directory is included in the site output
+include:
+  - posts
 title: Renewable Power Insight
 description: Comprehensive insights into renewable energy trends and developments
 baseurl: "/RenewablePowerInsight"
