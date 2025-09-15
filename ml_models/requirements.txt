@@ -1,20 +1,44 @@
-# Basic dependencies for the blog automation system
-# Core automation
+# Comprehensive dependencies for the expanded ML blog automation system
+
+# Core automation and scheduling
 schedule>=1.2.0
 
-# Optional: Full ML dependencies (if you want to use the actual ML models)
-# torch>=2.1.0
-# transformers>=4.21.0
-# datasets>=2.0.0
-# accelerate>=0.20.0
-# wandb>=0.15.0
-
-# Web scraping (for data collection)
+# Web scraping and data collection
 requests>=2.28.0
 beautifulsoup4>=4.11.0
-newspaper3k>=0.2.8
+lxml>=4.9.0
 
-# Optional: Advanced data collection
-# selenium>=4.0.0
-# scholarly>=1.7.0
-# feedparser>=6.0.0
+# Advanced data collection (for broader energy coverage)
+newspaper3k>=0.2.8
+feedparser>=6.0.0
+selenium>=4.0.0
+scholarly>=1.7.0
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Natural language processing
+nltk>=3.8.0
+spacy>=3.6.0
+textstat>=0.7.0
+
+# ML and transformers (optional but recommended)
+torch>=2.1.0
+transformers>=4.21.0
+datasets>=2.0.0
+accelerate>=0.20.0
+
+# Monitoring and logging
+wandb>=0.15.0
+
+# Additional utilities
+pathlib2>=2.3.0
+python-dateutil>=2.8.0
+urllib3>=1.26.0
+
+# Installation notes:
+# For spaCy language model: python -m spacy download en_core_web_sm
+# For ChromeDriver (Selenium): Download from https://chromedriver.chromium.org/
+# Some dependencies are optional and can be commented out if not needed

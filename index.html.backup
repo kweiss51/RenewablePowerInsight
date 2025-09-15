@@ -334,6 +334,20 @@
 
                         <article class="featured-article">
                             <div class="featured-image">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format" alt="Government building representing energy policy" />
+                            </div>
+                            <div class="featured-content">
+                                <span class="category-tag">Policy & Markets</span>
+                                <h2><a href="posts/policy/smart-grid-cybersecurity-advanced-protection-measures-for-2025.html">Smart Grid Cybersecurity: Advanced Protection Measures for 2025</a></h2>
+                                <p>The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity: Advanced Protection Measures for 2025. These innovations are reshaping the landscape of clean ...</p>
+                                <div class="article-meta">
+                                    <span class="read-time">1 min read</span>
+                                    <span class="post-date">September 14, 2025</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="featured-article">
+                            <div class="featured-image">
                                 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop&auto=format" alt="Energy storage systems and batteries" />
                             </div>
                             <div class="featured-content">
@@ -354,20 +368,6 @@
                                 <span class="category-tag">Smart Grid</span>
                                 <h2><a href="posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html">Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update</a></h2>
                                 <p>The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity Innovations. These innovations are reshaping the landscape of clean energy and accelerating the...</p>
-                                <div class="article-meta">
-                                    <span class="read-time">1 min read</span>
-                                    <span class="post-date">September 14, 2025</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="featured-article">
-                            <div class="featured-image">
-                                <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&h=300&fit=crop&auto=format" alt="Wind turbines generating renewable energy" />
-                            </div>
-                            <div class="featured-content">
-                                <span class="category-tag">Wind Power</span>
-                                <h2><a href="posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations</a></h2>
-                                <p>The renewable energy sector continues to witness groundbreaking developments in Wind Turbine Efficiency Improvements. These innovations are reshaping the landscape of clean energy and accelerating the...</p>
                                 <div class="article-meta">
                                     <span class="read-time">1 min read</span>
                                     <span class="post-date">September 14, 2025</span>
@@ -450,13 +450,6 @@
                 <!-- START SIDEBAR-ARTICLES -->
 
                         <article class="sidebar-article">
-                            <h3><a href="posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">Market Outlook: Advanced Battery Storage Technology Industry Trends</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Energy Storage</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
                             <h3><a href="posts/solar/floating-solar-farm-installations-latest-developments-and-market-impact.html">Floating Solar Farm Installations: Latest Developments and Market Impact</a></h3>
                             <div class="sidebar-meta">
                                 <span class="category-tag">Solar Energy</span>
@@ -464,14 +457,28 @@
                             </div>
                         </article>
                         <article class="sidebar-article">
-                            <h3><a href="posts/solar/solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations</a></h3>
+                            <h3><a href="posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">Market Outlook: Advanced Battery Storage Technology Industry Trends</a></h3>
                             <div class="sidebar-meta">
-                                <span class="category-tag">Solar Energy</span>
+                                <span class="category-tag">Energy Storage</span>
                                 <span class="post-date">September 14</span>
                             </div>
                         </article>
                         <article class="sidebar-article">
-                            <h3><a href="posts/policy/the-future-of-smart-grid-cybersecurity-measures-industry-analysis.html">The Future of Smart Grid Cybersecurity Measures: Industry Analysis</a></h3>
+                            <h3><a href="posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations</a></h3>
+                            <div class="sidebar-meta">
+                                <span class="category-tag">Wind Power</span>
+                                <span class="post-date">September 14</span>
+                            </div>
+                        </article>
+                        <article class="sidebar-article">
+                            <h3><a href="posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">Offshore Wind Energy Developments Technology: Breakthrough Innovations</a></h3>
+                            <div class="sidebar-meta">
+                                <span class="category-tag">Wind Power</span>
+                                <span class="post-date">September 14</span>
+                            </div>
+                        </article>
+                        <article class="sidebar-article">
+                            <h3><a href="posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html">Market Outlook: Vehicle To Grid Technology Adoption Industry Trends</a></h3>
                             <div class="sidebar-meta">
                                 <span class="category-tag">Policy & Markets</span>
                                 <span class="post-date">September 14</span>
@@ -481,13 +488,6 @@
                             <h3><a href="posts/policy/microgrid-technology-innovations-latest-developments-and-market-impact.html">Microgrid Technology Innovations: Latest Developments and Market Impact</a></h3>
                             <div class="sidebar-meta">
                                 <span class="category-tag">Policy & Markets</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">Offshore Wind Energy Developments Technology: Breakthrough Innovations</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Wind Power</span>
                                 <span class="post-date">September 14</span>
                             </div>
                         </article>

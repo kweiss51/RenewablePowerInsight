@@ -75,37 +75,106 @@ class BlogAutomationController:
         print(f"📁 Posts Directory: {self.posts_dir.resolve()}")
         print(f"🌐 Website Root: {self.website_root.resolve()}")
         
-        # Energy topics for demo mode
+        # Comprehensive energy topics for diverse content generation
         self.energy_topics = [
-            # Solar Energy Topics
-            "perovskite solar cell efficiency breakthroughs",
-            "floating solar farm installations", 
-            "residential solar storage systems",
-            "solar panel recycling technologies",
+            # Solar Energy Technologies
+            "solar photovoltaic efficiency improvements",
+            "perovskite solar cell breakthroughs", 
+            "floating solar farm installations",
+            "residential solar energy systems",
+            "concentrated solar power developments",
+            "solar panel recycling innovations",
+            "agrivoltaics and dual land use",
+            "building integrated photovoltaics",
             
-            # Wind Energy Topics  
-            "offshore wind turbine innovations",
-            "vertical axis wind turbine development",
-            "wind energy grid integration", 
-            "floating wind platform technology",
+            # Wind Energy Technologies
+            "offshore wind energy developments",
+            "vertical axis wind turbine technology",
+            "wind energy grid integration solutions",
+            "floating wind platform innovations",
+            "wind turbine blade technology advances",
+            "small scale wind energy systems",
+            "wind forecasting and optimization",
             
-            # Energy Storage Topics
+            # Energy Storage Solutions
             "grid-scale battery storage deployment",
-            "lithium-ion battery recycling advances",
-            "solid-state battery technology",
+            "lithium-ion battery technology advances",
+            "solid-state battery innovations",
             "pumped hydro storage projects",
+            "compressed air energy storage",
+            "thermal energy storage systems",
+            "battery recycling and sustainability",
+            "distributed energy storage networks",
             
-            # Smart Grid Topics
+            # Smart Grid & Infrastructure
             "smart grid cybersecurity measures",
-            "vehicle-to-grid technology adoption",
-            "microgrid technology innovations",
+            "microgrid technology development",
             "grid modernization initiatives",
+            "demand response programs",
+            "power electronics innovations",
+            "transmission line upgrades",
+            "distribution automation",
+            "grid resilience and reliability",
             
-            # Policy & Markets
+            # Electric Vehicles & Transportation
+            "electric vehicle charging infrastructure",
+            "vehicle-to-grid technology adoption",
+            "battery electric vehicle advances",
+            "hydrogen fuel cell vehicles",
+            "electric aircraft development",
+            "marine electrification",
+            "public transportation electrification",
+            
+            # Hydrogen & Fuel Cells
+            "green hydrogen production methods",
+            "hydrogen fuel cell technology",
+            "hydrogen storage solutions",
+            "industrial hydrogen applications",
+            "hydrogen transportation infrastructure",
+            "electrolysis efficiency improvements",
+            
+            # Nuclear & Advanced Energy
+            "nuclear reactor innovations",
+            "small modular reactor technology",
+            "fusion energy research progress",
+            "thorium reactor developments",
+            "nuclear waste management",
+            "advanced nuclear materials",
+            
+            # Carbon Management
+            "carbon capture and storage",
+            "direct air capture technology",
+            "carbon utilization innovations",
+            "industrial decarbonization",
+            "natural carbon sequestration",
+            
+            # Policy & Economics
             "renewable energy investment trends",
-            "clean energy policy frameworks",
+            "clean energy policy frameworks", 
             "carbon pricing mechanisms",
-            "green hydrogen market development"
+            "energy transition financing",
+            "renewable energy subsidies",
+            "net metering policies",
+            "energy market deregulation",
+            "international climate agreements",
+            
+            # Energy Efficiency & Conservation
+            "building energy efficiency",
+            "industrial energy optimization",
+            "heat pump technology advances",
+            "smart home energy systems",
+            "energy management software",
+            "led lighting innovations",
+            
+            # Emerging Technologies
+            "ocean energy harvesting",
+            "tidal energy systems",
+            "wave energy converters",
+            "geothermal energy expansion",
+            "biomass energy innovations",
+            "waste-to-energy technologies",
+            "artificial intelligence in energy",
+            "blockchain energy applications"
         ]
     
     def create_automated_post(self, title: str, content: str = None, topic: str = None, category: str = None) -> Dict:

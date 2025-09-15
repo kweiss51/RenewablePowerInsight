@@ -1,11 +1,13 @@
 """
 Automated Blog Post Generator for RenewablePowerInsight
 Creates HTML blog posts that match the website format and saves them to the posts folder
+Includes automatic website integration and Git operations
 """
 
 import os
 import json
 import re
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -20,6 +22,9 @@ class AutomatedBlogGenerator:
     def __init__(self, posts_dir: str = "posts"):
         self.posts_dir = Path(posts_dir)
         self.posts_dir.mkdir(exist_ok=True)
+        
+        # Get the project root directory (one level up from ml_models)
+        self.project_root = Path(__file__).parent.parent
         
         # Category mapping to website navigation structure
         self.category_folders = {
@@ -38,6 +43,14 @@ class AutomatedBlogGenerator:
         
         # Create category subfolders
         self.setup_category_folders()
+        
+        # Track integration stats
+        self.integration_stats = {
+            "posts_created": 0,
+            "website_integrations": 0,
+            "git_commits": 0,
+            "last_integration": None
+        }
         
         # Energy topic categories for generating diverse content
         self.energy_topics = {
@@ -376,6 +389,140 @@ class AutomatedBlogGenerator:
             folder_path.mkdir(exist_ok=True)
             print(f"📁 Category folder ready: {folder}")
     
+    def run_git_command(self, command: List[str], cwd: Path = None) -> Dict[str, any]:
+        """
+        Execute a Git command safely and return the result
+        
+        Args:
+            command: Git command as a list of strings
+            cwd: Working directory (defaults to project root)
+            
+        Returns:
+            Dictionary with success status and output
+        """
+        if cwd is None:
+            cwd = self.project_root
+            
+        try:
+            result = subprocess.run(
+                command,
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                timeout=30  # 30 second timeout
+            )
+            
+            return {
+                'success': result.returncode == 0,
+                'output': result.stdout.strip(),
+                'error': result.stderr.strip(),
+                'returncode': result.returncode
+            }
+        except subprocess.TimeoutExpired:
+            return {
+                'success': False,
+                'output': '',
+                'error': 'Git command timed out',
+                'returncode': -1
+            }
+        except Exception as e:
+            return {
+                'success': False,
+                'output': '',
+                'error': str(e),
+                'returncode': -1
+            }
+    
+    def check_git_status(self) -> Dict[str, any]:
+        """Check if we're in a Git repository and get status"""
+        # Check if this is a git repo
+        git_check = self.run_git_command(['git', 'rev-parse', '--git-dir'])
+        if not git_check['success']:
+            return {
+                'is_git_repo': False,
+                'error': 'Not a Git repository'
+            }
+        
+        # Get current status
+        status_result = self.run_git_command(['git', 'status', '--porcelain'])
+        
+        return {
+            'is_git_repo': True,
+            'has_changes': bool(status_result['output'].strip()),
+            'status_output': status_result['output'],
+            'success': status_result['success']
+        }
+    
+    def commit_and_push_changes(self, commit_message: str = None) -> Dict[str, any]:
+        """
+        Automatically commit and push changes to Git repository
+        
+        Args:
+            commit_message: Custom commit message
+            
+        Returns:
+            Dictionary with operation results
+        """
+        if commit_message is None:
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            commit_message = f"Auto-generated blog post - {timestamp}"
+        
+        print(f"🔄 Starting Git operations...")
+        
+        # Check Git status first
+        git_status = self.check_git_status()
+        if not git_status['is_git_repo']:
+            print(f"❌ Not a Git repository: {git_status['error']}")
+            return {'success': False, 'error': git_status['error']}
+        
+        if not git_status['has_changes']:
+            print(f"✅ No changes to commit")
+            return {'success': True, 'message': 'No changes to commit'}
+        
+        operations = []
+        
+        # Stage all changes
+        add_result = self.run_git_command(['git', 'add', '.'])
+        operations.append(('add', add_result))
+        
+        if not add_result['success']:
+            print(f"❌ Git add failed: {add_result['error']}")
+            return {'success': False, 'error': f"Git add failed: {add_result['error']}"}
+        
+        print(f"✅ Staged changes successfully")
+        
+        # Commit changes
+        commit_result = self.run_git_command(['git', 'commit', '-m', commit_message])
+        operations.append(('commit', commit_result))
+        
+        if not commit_result['success']:
+            print(f"❌ Git commit failed: {commit_result['error']}")
+            return {'success': False, 'error': f"Git commit failed: {commit_result['error']}"}
+        
+        print(f"✅ Committed changes: {commit_message}")
+        
+        # Push to remote (main branch)
+        push_result = self.run_git_command(['git', 'push', 'origin', 'main'])
+        operations.append(('push', push_result))
+        
+        if not push_result['success']:
+            print(f"❌ Git push failed: {push_result['error']}")
+            return {
+                'success': False, 
+                'error': f"Git push failed: {push_result['error']}",
+                'commit_successful': True  # Commit worked, just push failed
+            }
+        
+        print(f"✅ Pushed to GitHub successfully")
+        self.integration_stats['git_commits'] += 1
+        
+        return {
+            'success': True,
+            'message': 'Successfully committed and pushed to GitHub',
+            'commit_hash': commit_result['output'],
+            'operations': operations
+        }
+    
     def get_category_folder(self, category: str) -> str:
         """Get the appropriate folder name for a category"""
         return self.category_folders.get(category, "general")
@@ -643,17 +790,17 @@ class AutomatedBlogGenerator:
         return formatted_content
     
     def create_blog_post(self, title: str, content: str, author: str = "Renewable Power Insight", 
-                        custom_category: Optional[str] = None) -> Dict[str, str]:
+                        custom_category: Optional[str] = None, auto_git: bool = True) -> Dict[str, str]:
         """
         Create a complete HTML blog post and save it to the posts directory
-        Includes validation and automatic regeneration if quality requirements aren't met
-        Automatically integrates the post into the website structure
+        Includes validation, automatic website integration, and Git operations
         
         Args:
             title: Blog post title
             content: Blog post content (can include markdown-style formatting)
             author: Author name
             custom_category: Override automatic categorization
+            auto_git: Whether to automatically commit and push to Git
             
         Returns:
             Dictionary with post info including filename and file path
@@ -708,7 +855,12 @@ class AutomatedBlogGenerator:
                 print(f"✅ Post validation passed: {validation['image_count']} images, {validation['external_link_count']} external links")
                 print(f"📁 Saved to category: {category_folder}")
                 
+                # Update integration stats
+                self.integration_stats['posts_created'] += 1
+                self.integration_stats['last_integration'] = datetime.now().isoformat()
+                
                 # AUTOMATIC WEBSITE INTEGRATION
+                website_integrated = False
                 try:
                     from website_integrator import WebsiteIntegrator
                     integrator = WebsiteIntegrator(self.posts_dir)
@@ -716,11 +868,30 @@ class AutomatedBlogGenerator:
                     
                     if integration_success:
                         print(f"🔗 Successfully integrated post into website structure")
+                        website_integrated = True
+                        self.integration_stats['website_integrations'] += 1
                     else:
                         print(f"⚠️ Post created but website integration failed")
                 except Exception as e:
                     print(f"⚠️ Website integration error: {e}")
                     print(f"📝 Post created successfully but manual integration may be needed")
+                
+                # AUTOMATIC GIT OPERATIONS
+                git_success = False
+                git_result = None
+                if auto_git:
+                    try:
+                        commit_message = f"Add new blog post: {title}"
+                        git_result = self.commit_and_push_changes(commit_message)
+                        git_success = git_result['success']
+                        
+                        if git_success:
+                            print(f"🚀 Successfully pushed to GitHub")
+                        else:
+                            print(f"⚠️ Git operations failed: {git_result.get('error', 'Unknown error')}")
+                    except Exception as e:
+                        print(f"⚠️ Git automation error: {e}")
+                        git_result = {'success': False, 'error': str(e)}
                 
                 # Create post metadata
                 post_info = {
@@ -733,7 +904,10 @@ class AutomatedBlogGenerator:
                     'author': author,
                     'url': f"posts/{category_folder}/{filename}",
                     'validation': validation,
-                    'website_integrated': True  # Flag for successful integration
+                    'website_integrated': website_integrated,
+                    'git_success': git_success,
+                    'git_result': git_result,
+                    'integration_stats': self.integration_stats.copy()
                 }
                 
                 return post_info
@@ -761,7 +935,9 @@ class AutomatedBlogGenerator:
                         'author': author,
                         'url': f"posts/{category_folder}/{filename}",
                         'validation': validation,
-                        'quality_warning': True
+                        'quality_warning': True,
+                        'website_integrated': False,
+                        'git_success': False
                     }
                     
                     return post_info

@@ -27,23 +27,67 @@ class AdvancedEnergyDataCollector:
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         
-        # Academic search terms for Google Scholar
+        # Comprehensive academic search terms for Google Scholar
         self.academic_keywords = [
-            "renewable energy efficiency",
-            "solar photovoltaic technology",
-            "wind turbine optimization",
-            "battery energy storage systems",
-            "smart grid integration",
-            "hydrogen fuel cells",
-            "geothermal energy systems",
-            "energy policy analysis",
-            "carbon capture storage",
-            "electric vehicle infrastructure",
-            "energy transition pathways",
-            "sustainable energy economics",
-            "power grid resilience",
-            "energy storage technologies",
-            "clean energy innovation"
+            # Renewable Energy Technologies
+            "renewable energy",
+            "clean energy",
+            "sustainable energy",
+            "solar energy",
+            "wind energy",
+            "hydroelectric power",
+            "geothermal energy",
+            "biomass energy",
+            "ocean energy",
+            "tidal energy",
+            
+            # Energy Storage & Grid
+            "energy storage",
+            "battery technology",
+            "grid storage",
+            "smart grid",
+            "microgrid",
+            "power grid",
+            "grid modernization",
+            "energy management",
+            "demand response",
+            "grid stability",
+            
+            # Emerging Technologies
+            "hydrogen energy",
+            "fuel cells",
+            "nuclear energy",
+            "fusion energy",
+            "carbon capture",
+            "energy efficiency",
+            "power electronics",
+            "electric vehicles",
+            "energy conversion",
+            "power systems",
+            
+            # Policy & Economics
+            "energy policy",
+            "energy economics",
+            "energy markets",
+            "energy regulation",
+            "energy security",
+            "energy planning",
+            "climate policy",
+            "carbon pricing",
+            "energy transition",
+            "decarbonization",
+            
+            # Industrial & Applications
+            "industrial energy",
+            "building energy",
+            "transportation energy",
+            "energy consumption",
+            "energy production",
+            "power generation",
+            "electricity markets",
+            "energy infrastructure",
+            "energy investment",
+            "energy innovation"
         ]
         
         # Government and institutional URLs

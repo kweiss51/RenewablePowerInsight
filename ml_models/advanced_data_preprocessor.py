@@ -70,22 +70,69 @@ class AdvancedEnergyDataPreprocessor:
                 except:
                     print("Could not download spaCy model, using fallback processing")
         
-        # Energy domain specific terms and entities
+        # Comprehensive energy domain specific terms and entities
         self.energy_terms = {
             'technologies': [
-                'solar', 'photovoltaic', 'pv', 'wind', 'turbine', 'hydroelectric', 'hydro',
-                'geothermal', 'biomass', 'nuclear', 'fusion', 'battery', 'storage', 'grid',
-                'fuel cell', 'hydrogen', 'biofuel', 'renewable', 'clean energy', 'sustainable'
+                # Renewable Technologies
+                'solar', 'photovoltaic', 'pv', 'solar panel', 'solar cell', 'concentrated solar',
+                'wind', 'turbine', 'wind farm', 'offshore wind', 'onshore wind',
+                'hydroelectric', 'hydro', 'hydropower', 'pumped storage', 'dam',
+                'geothermal', 'geothermal heat pump', 'ground source heat',
+                'biomass', 'bioenergy', 'biofuel', 'biogas', 'ethanol', 'biodiesel',
+                'ocean energy', 'tidal', 'wave energy', 'marine energy',
+                
+                # Storage & Grid Technologies
+                'battery', 'storage', 'energy storage', 'lithium ion', 'solid state battery',
+                'grid', 'smart grid', 'microgrid', 'power grid', 'transmission', 'distribution',
+                'power electronics', 'inverter', 'transformer', 'substation',
+                'demand response', 'grid scale storage', 'distributed energy',
+                
+                # Advanced Technologies
+                'hydrogen', 'fuel cell', 'electrolysis', 'green hydrogen', 'blue hydrogen',
+                'nuclear', 'fusion', 'fission', 'reactor', 'uranium', 'thorium',
+                'carbon capture', 'ccs', 'ccus', 'direct air capture',
+                'heat pump', 'electric vehicle', 'ev', 'charging station',
+                'energy efficiency', 'led', 'insulation', 'smart home'
             ],
             'concepts': [
+                # Energy System Concepts
                 'efficiency', 'capacity', 'generation', 'transmission', 'distribution',
-                'smart grid', 'microgrid', 'energy transition', 'decarbonization',
-                'electrification', 'carbon capture', 'emissions', 'sustainability'
+                'load', 'demand', 'supply', 'baseload', 'peak load', 'capacity factor',
+                'grid stability', 'grid integration', 'grid modernization', 'reliability',
+                'resilience', 'security', 'flexibility', 'dispatchability',
+                
+                # Transition & Sustainability
+                'energy transition', 'decarbonization', 'electrification', 'digitalization',
+                'sustainability', 'circular economy', 'net zero', 'carbon neutral',
+                'climate change', 'global warming', 'greenhouse gas', 'emissions',
+                'renewable energy', 'clean energy', 'green energy', 'sustainable energy',
+                
+                # Economic & Policy
+                'levelized cost', 'lcoe', 'investment', 'financing', 'subsidy', 'incentive',
+                'carbon pricing', 'carbon tax', 'cap and trade', 'renewable portfolio',
+                'feed in tariff', 'net metering', 'energy market', 'electricity market',
+                'energy security', 'energy independence', 'energy access', 'energy poverty'
             ],
             'metrics': [
-                'kilowatt', 'megawatt', 'gigawatt', 'terawatt', 'kwh', 'mwh', 'gwh', 'twh',
-                'btu', 'joule', 'calorie', 'therm', 'capacity factor', 'lcoe', 'efficiency',
-                'co2', 'carbon', 'greenhouse gas', 'ghg'
+                # Power Units
+                'watt', 'kilowatt', 'megawatt', 'gigawatt', 'terawatt', 'kw', 'mw', 'gw', 'tw',
+                'wh', 'kwh', 'mwh', 'gwh', 'twh', 'watthour', 'kilowatthour',
+                
+                # Energy Units
+                'joule', 'btu', 'calorie', 'therm', 'quad', 'toe', 'mtoe',
+                'barrel oil equivalent', 'natural gas equivalent',
+                
+                # Efficiency & Performance
+                'efficiency', 'capacity factor', 'load factor', 'availability',
+                'performance ratio', 'energy intensity', 'carbon intensity',
+                
+                # Environmental
+                'co2', 'carbon dioxide', 'methane', 'nitrous oxide', 'carbon footprint',
+                'life cycle assessment', 'lca', 'environmental impact',
+                
+                # Economic
+                'cost per watt', 'cost per kwh', 'payback period', 'roi', 'npv',
+                'capital cost', 'operating cost', 'maintenance cost'
             ]
         }
         

@@ -1,550 +1,395 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renewable Power Insight - Clean Energy Intelligence</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-        }
-        
-        .site-header {
-            background: #fff;
-            border-bottom: 2px solid #000;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .site-header .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .header-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        .site-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        
-        .site-title:hover {
-            color: #2d5016;
-        }
-        
-        .site-tagline {
-            font-size: 0.9rem;
-            color: #2d5016;
-            font-weight: 500;
-            margin-top: 0.2rem;
-        }
-        
-        .site-nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .site-nav a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-        
-        .site-nav a:hover {
-            color: #2d5016;
-            border-bottom-color: #2d5016;
-        }
-
-        .main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .top-articles {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .featured-article {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .featured-article:hover .featured-image img {
-            transform: scale(1.05);
-        }
-
-        .featured-content {
-            padding: 1.5rem;
-        }
-
-        .featured-content h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .featured-content h1 a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .featured-content h1 a:hover {
-            color: #2d5016;
-        }
-
-        .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .read-time {
-            color: #2d5016;
-            font-weight: 500;
-        }
-
-        .article-excerpt {
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .grid-article {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .grid-article:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .grid-article-image {
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-        }
-
-        .grid-article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .grid-article:hover .grid-article-image img {
-            transform: scale(1.05);
-        }
-
-        .grid-article h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            line-height: 1.3;
-            margin: 0;
-            padding: 12px 15px 8px;
-        }
-
-        .grid-article h2 a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .grid-article h2 a:hover {
-            color: #2d5016;
-        }
-
-        .grid-article .article-meta {
-            font-size: 0.8rem;
-            color: #666;
-            padding: 0 15px 15px;
-            margin: 0;
-        }
-
-        .content-below {
-            margin-top: 40px;
-        }
-
-        .article-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .article-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.5rem 0;
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 1.5rem;
-            align-items: start;
-        }
-
-        .article-item:last-child {
-            border-bottom: none;
-        }
-
-        .article-thumbnail img {
-            width: 120px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .article-content h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .article-content h2 a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .article-content h2 a:hover {
-            color: #2d5016;
-        }
-
-        .excerpt {
-            color: #4a5568;
-            margin-bottom: 0.75rem;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .top-articles {
-                grid-template-columns: 1fr;
-            }
-            
-            .articles-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            
-            .site-nav {
-                gap: 1rem;
-            }
-            
-            .site-nav a {
-                font-size: 0.85rem;
-            }
-            
-            .article-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .article-thumbnail img {
-                width: 100%;
-                height: 150px;
-            }
-        }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Renewable Power Insight - Advanced Energy Research &amp; Analysis</title>
+<meta content="Leading renewable energy research platform with cutting-edge analysis, market insights, and technology developments in solar, wind, battery storage, and smart grid innovations." name="description"/>
+<meta content="renewable energy, solar power, wind energy, battery storage, smart grid, energy analysis, sustainability" name="keywords"/>
+<!-- External Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- External CSS -->
+<link href="style.css" rel="stylesheet"/>
+<!-- Inline Critical CSS for Performance -->
+<style>
+        /* Critical above-the-fold styles for faster loading */
+        body { margin: 0; font-family: 'Inter', sans-serif; }
+        .site-header { position: sticky; top: 0; z-index: 100; }
+        .hero-section { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
     </style>
-    </style>
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Renewable Power Insight",
+        "description": "Advanced renewable energy research and analysis platform",
+        "url": "https://renewablepowerinsight.com",
+        "logo": "https://renewablepowerinsight.com/assets/images/logo.png",
+        "sameAs": [
+            "https://twitter.com/renewablepower",
+            "https://linkedin.com/company/renewable-power-insight"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <header class="site-header" role="banner">
-        <div class="wrapper">
-            <div class="header-brand">
-                <a class="site-title" href="/">Renewable Power Insight</a>
-                <div class="site-tagline">Clean Energy Intelligence</div>
-            </div>
-            <nav class="site-nav">
-                <a href="/index.html">Home</a>
-                <!-- All Posts link removed -->
-                <a href="solar.html">Solar</a>
-                <a href="wind.html">Wind</a>
-                <a href="battery.html">Battery Storage</a>
-                <a href="grid.html">Grid Tech</a>
-                <a href="markets.html">Markets</a>
-                <a href="policy.html">Policy</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <!-- Main Content Area -->
-        <div class="content-area">
-            <!-- Top Articles Section: 1 featured + 6 grid articles -->
-            <section class="top-articles">
-                <!-- Featured Article (Left Half) -->
-                <article class="featured-article">
-                    <div class="featured-image">
-                <!-- START FEATURED-ARTICLES -->
-
-                        <article class="featured-article">
-                            <div class="featured-image">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop&auto=format" alt="Energy storage systems and batteries" />
-                            </div>
-                            <div class="featured-content">
-                                <span class="category-tag">Energy Storage</span>
-                                <h2><a href="posts/battery/advanced-energy-storage-systems-revolutionary-battery-technology-developments.html">Advanced Energy Storage Systems: Revolutionary Battery Technology Developments</a></h2>
-                                <p>The renewable energy sector continues to witness groundbreaking developments in advanced battery storage technology. These innovations are reshaping the landscape of clean energy and accelerating the ...</p>
-                                <div class="article-meta">
-                                    <span class="read-time">1 min read</span>
-                                    <span class="post-date">September 14, 2025</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="featured-article">
-                            <div class="featured-image">
-                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format" alt="Government building representing energy policy" />
-                            </div>
-                            <div class="featured-content">
-                                <span class="category-tag">Smart Grid</span>
-                                <h2><a href="posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html">Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update</a></h2>
-                                <p>The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity Innovations. These innovations are reshaping the landscape of clean energy and accelerating the...</p>
-                                <div class="article-meta">
-                                    <span class="read-time">1 min read</span>
-                                    <span class="post-date">September 14, 2025</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="featured-article">
-                            <div class="featured-image">
-                                <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&h=300&fit=crop&auto=format" alt="Wind turbines generating renewable energy" />
-                            </div>
-                            <div class="featured-content">
-                                <span class="category-tag">Wind Power</span>
-                                <h2><a href="posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations</a></h2>
-                                <p>The renewable energy sector continues to witness groundbreaking developments in Wind Turbine Efficiency Improvements. These innovations are reshaping the landscape of clean energy and accelerating the...</p>
-                                <div class="article-meta">
-                                    <span class="read-time">1 min read</span>
-                                    <span class="post-date">September 14, 2025</span>
-                                </div>
-                            </div>
-                        </article>
-                <!-- END FEATURED-ARTICLES -->
-                
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Advanced Solar Cell Technology" />
-                    </div>
-                    <div class="featured-content">
-                            <h1><a href="posts/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency.html">Breakthrough in Perovskite Solar Cell Technology Promises 40% Efficiency</a></h1>
-                        <div class="article-meta">September 5, 2025 • <span class="read-time">5 MIN READ</span></div>
-                        <p class="article-excerpt">Researchers at leading institutions have achieved a groundbreaking advancement in perovskite solar cell technology, demonstrating laboratory efficiencies exceeding 35% while maintaining stability for over 1,000 hours under operational conditions.</p>
-                    </div>
-                </article>
-
-                <!-- Articles Grid (Right Half) -->
-                <div class="articles-grid">
-                    <article class="grid-article">
-                        <div class="grid-article-image">
-                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Global Renewable Energy" />
-                        </div>
-                            <h2><a href="posts/global-renewable-energy-capacity-hits-record-3-6-tw-in-2025.html">Global Renewable Energy Capacity Hits Record 3.6 TW in 2025</a></h2>
-                        <div class="article-meta">Sep 5 • <span class="read-time">4 MIN READ</span></div>
-                    </article>
-
-
-                    <article class="grid-article">
-                        <div class="grid-article-image">
-                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Renewable Energy Transition" />
-                        </div>
-                            <h2><a href="posts/connected-climate-change-energy-system-transformation.html">Renewable Energy Transition 2025 Reaches Tipping Point</a></h2>
-                        <div class="article-meta">Sep 5 • <span class="read-time">7 MIN READ</span></div>
-                    </article>
-
-                    <article class="grid-article">
-                        <div class="grid-article-image">
-                            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Energy Management" />
-                        </div>
-                            <h2><a href="posts/ai-powered-grid-optimization.html">AI-Powered Energy Management Reaches New Heights</a></h2>
-                        <div class="article-meta">Sep 5 • <span class="read-time">8 MIN READ</span></div>
-                    </article>
-
-
-                </div>
-            </section>
-
-            <!-- Additional Articles -->
-            <section class="content-below">
-                <h2 class="section-title">Latest News</h2>
-                <ul class="article-list">
-                    <li class="article-item">
-                        <div class="article-thumbnail">
-                            <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Technology Deep Dive" />
-                        </div>
-                        <div class="article-content">
-                                <h2><a href="posts/connected-climate-change-energy-system-transformation.html">Technology Deep Dive: How Renewable Energy Transition Works</a></h2>
-                            <p class="excerpt">An in-depth analysis of the technological innovations driving the global shift toward renewable energy sources and their implementation challenges.</p>
-                            <div class="article-meta">September 5, 2025 • <span class="read-time">12 MIN READ</span></div>
-                        </div>
-                    </li>
-                    
-                    <li class="article-item">
-                        <div class="article-thumbnail">
-                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Market Analysis" />
-                        </div>
-                        <div class="article-content">
-                                <h2><a href="posts/clean-energy-investment-record-2025.html">Market Report: Renewable Energy Investment Trends 2025</a></h2>
-                            <p class="excerpt">Comprehensive analysis of global renewable energy investment patterns, market dynamics, and future growth projections for clean energy sectors.</p>
-                            <div class="article-meta">September 5, 2025 • <span class="read-time">10 MIN READ</span></div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-        </div>
-
-        <!-- Right Sidebar -->
-        <aside class="sidebar">
-                <!-- START SIDEBAR-ARTICLES -->
-
-                        <article class="sidebar-article">
-                            <h3><a href="posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">Market Outlook: Advanced Battery Storage Technology Industry Trends</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Energy Storage</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/solar/floating-solar-farm-installations-latest-developments-and-market-impact.html">Floating Solar Farm Installations: Latest Developments and Market Impact</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Solar Energy</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/solar/solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Solar Energy</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/policy/the-future-of-smart-grid-cybersecurity-measures-industry-analysis.html">The Future of Smart Grid Cybersecurity Measures: Industry Analysis</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Policy & Markets</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/policy/microgrid-technology-innovations-latest-developments-and-market-impact.html">Microgrid Technology Innovations: Latest Developments and Market Impact</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Policy & Markets</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                        <article class="sidebar-article">
-                            <h3><a href="posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">Offshore Wind Energy Developments Technology: Breakthrough Innovations</a></h3>
-                            <div class="sidebar-meta">
-                                <span class="category-tag">Wind Power</span>
-                                <span class="post-date">September 14</span>
-                            </div>
-                        </article>
-                <!-- END SIDEBAR-ARTICLES -->
-                
-            <div class="sidebar-section">
-                <h2 class="sidebar-title">Most Popular</h2>
-                <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                            <h3><a href="posts/breakthrough-in-perovskite-solar-cell-technology-promises-40-percent-efficiency.html">Breakthrough in Perovskite Solar Cell Technology</a></h3>
-                        <div class="sidebar-meta">5 MIN READ • 2.5K VIEWS</div>
-                    </li>
-                    <li class="sidebar-item">
-                            <!-- Removed: Offshore Wind Costs Plummet to Record Lows (no matching post) -->
-                        <div class="sidebar-meta">6 MIN READ • 1.8K VIEWS</div>
-                    </li>
-                    <li class="sidebar-item">
-                            <h3><a href="posts/global-renewable-energy-capacity-hits-record-3-6-tw-in-2025.html">Global Renewable Capacity Hits 3.6 TW</a></h3>
-                        <div class="sidebar-meta">4 MIN READ • 1.3K VIEWS</div>
-                    </li>
-                    <li class="sidebar-item">
-                            <h3><a href="posts/ai-powered-grid-optimization.html">AI-Powered Energy Management Revolution</a></h3>
-                        <div class="sidebar-meta">8 MIN READ • 1.1K VIEWS</div>
-                    </li>
-                </ul>
-            </div>
+<!-- Skip Navigation for Accessibility -->
+<a class="sr-only" href="#main-content">Skip to main content</a>
+<!-- Header -->
+<header class="site-header">
+<div class="container">
+<div class="header-content">
+<div class="header-brand">
+<a class="site-title" href="/">Renewable Power Insight</a>
+<span class="site-tagline">Advanced Energy Research</span>
+</div>
+<nav aria-label="Main navigation" class="main-nav">
+<a aria-current="page" class="nav-link active" href="/">Home</a>
+<a class="nav-link" href="/posts/solar/">Solar</a>
+<a class="nav-link" href="/posts/wind/">Wind</a>
+<a class="nav-link" href="/posts/battery/">Storage</a>
+<a class="nav-link" href="/posts/grid-tech/">Smart Grid</a>
+<a class="nav-link" href="/posts/policy/">Policy</a>
+<a class="nav-link" href="/blog/">All Posts</a>
+</nav>
+<button aria-expanded="false" aria-label="Open mobile menu" class="mobile-menu-button">
+                    ☰
+                </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section">
+<div class="container">
+<div class="hero-content">
+<h1 class="hero-title">Renewable Energy Intelligence</h1>
+<p class="hero-subtitle">
+                    Advanced research, market analysis, and technology insights driving the clean energy transition
+                </p>
+<div class="hero-stats">
+<div class="stat-item">
+<span class="stat-number">1,200+</span>
+<span class="stat-label">Research Articles</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">50+</span>
+<span class="stat-label">Technology Reports</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">25+</span>
+<span class="stat-label">Market Analyses</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="main-content" id="main-content">
+<div class="container">
+<div class="content-grid">
+<!-- Primary Content -->
+<div class="primary-content">
+<!-- Featured Articles Section -->
+<section class="featured-section">
+<h2 class="section-title">Featured Research</h2>
+<div class="featured-grid">
+<article class="article-card featured">
+<div class="article-image">
+<img alt="Advanced battery storage technology" loading="lazy" src="assets/images/blog/energy-storage-breakthrough.jpg"/>
+<span class="category-badge">Solar Energy</span>
+</div>
+<div class="article-content">
+<h3 class="article-title">
+<a href="posts/solar/solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations</a>
+</h3>
+<p class="article-excerpt">The renewable energy sector continues to witness groundbreaking developments in Solar Panel Efficiency Breakthroughs in 2024. These innovations are reshaping the landscape of clean energy and accelera...</p>
+<div class="article-meta">
+<span class="reading-time">3 min read</span>
+<span>•</span>
+<time datetime="2025-09-14">September 14, 2025</time>
+</div>
+</div>
+</article>
+<div class="featured-sidebar">
+<article class="article-card">
+<div class="article-image">
+<img alt="Smart grid cybersecurity innovations" loading="lazy" src="assets/images/blog/smart-grid-cybersecurity.jpg"/>
+<span class="category-badge">Solar Energy</span>
+</div>
+<div class="article-content">
+<h3 class="article-title">
+<a href="posts/solar/floating-solar-farm-installations-latest-developments-and-market-impact.html">Floating Solar Farm Installations: Latest Developments and Market Impact</a>
+</h3>
+<div class="article-meta">
+<span class="reading-time">3 min read</span>
+<span>•</span>
+<time datetime="2025-09-14">September 14, 2025</time>
+</div>
+</div>
+</article>
+<article class="article-card">
+<div class="article-image">
+<img alt="Hydrogen fuel cell technology" loading="lazy" src="assets/images/blog/hydrogen-fuel-cells.jpg"/>
+<span class="category-badge">Wind Power</span>
+</div>
+<div class="article-content">
+<h3 class="article-title">
+<a href="posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">Offshore Wind Energy Developments Technology: Breakthrough Innovations</a>
+</h3>
+<div class="article-meta">
+<span class="reading-time">3 min read</span>
+<span>•</span>
+<time datetime="2025-09-14">September 14, 2025</time>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Latest Articles Grid -->
+<section class="articles-section">
+<h2 class="section-title">Latest Research</h2>
+<div class="articles-grid">
+<article class="grid-article">
+<div class="article-image">
+<img alt="Battery storage market trends" loading="lazy" src="assets/images/blog/battery-market-outlook.jpg"/>
+<span class="category-badge">Wind Power</span>
+</div>
+<div class="article-content">
+<h3 class="article-title">
+<a href="posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations</a>
+</h3>
+<p class="article-excerpt">The renewable energy sector continues to witness groundbreaking developments in Wind Turbine Efficiency Improvements. These innovations are reshaping the landscape of clean energy and accelerating the...</p>
+<div class="article-meta">
+<span class="reading-time">3 min read</span>
+<span>•</span>
+<time datetime="2025-09-14">September 14, 2025</time>
+</div>
+</div>
+</article>
+<article class="grid-article">
+<div class="article-image">
+<img alt="Vehicle-to-grid technology" loading="lazy" src="assets/images/blog/vehicle-to-grid.jpg"/>
+<span class="category-badge">Energy Storage</span>
+</div>
+<div class="article-content">
+<h3 class="article-title">
+<a href="posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">Market Outlook: Advanced Battery Storage Technology Industry Trends</a>
+</h3>
+<p class="article-excerpt">The renewable energy sector continues to witness groundbreaking developments in Advanced Battery Storage Technology. These innovations are reshaping the landscape of clean energy and accelerating the ...</p>
+<div class="article-meta">
+<span class="reading-time">3 min read</span>
+<span>•</span>
+<time datetime="2025-09-14">September 14, 2025</time>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="sidebar-section">
+<h3 class="sidebar-title">Popular Categories</h3>
+<ul class="sidebar-list">
+<li class="sidebar-item">
+<h4><a href="/posts/solar/">Solar Energy</a></h4>
+<div class="sidebar-meta">
+<span>2 articles</span>
+<span>•</span>
+<span>Updated daily</span>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="/posts/wind/">Wind Power</a></h4>
+<div class="sidebar-meta">
+<span>2 articles</span>
+<span>•</span>
+<span>Updated weekly</span>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="/posts/battery/">Energy Storage</a></h4>
+<div class="sidebar-meta">
+<span>2 articles</span>
+<span>•</span>
+<span>Updated daily</span>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="/posts/grid-tech/">Smart Grid</a></h4>
+<div class="sidebar-meta">
+<span>2 articles</span>
+<span>•</span>
+<span>Updated weekly</span>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="/posts/policy/">Policy &amp; Markets</a></h4>
+<div class="sidebar-meta">
+<span>5 articles</span>
+<span>•</span>
+<span>Updated bi-weekly</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebar-section">
+<h3 class="sidebar-title">Recent Updates</h3>
+<ul class="sidebar-list">
+<li class="sidebar-item">
+<h4><a href="#">Breakthrough in Perovskite Solar Cell Efficiency</a></h4>
+<div class="sidebar-meta">
+<span>Solar</span>
+<span>•</span>
+<time datetime="2024-03-16">2 hours ago</time>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="#">New Offshore Wind Capacity Records</a></h4>
+<div class="sidebar-meta">
+<span>Wind</span>
+<span>•</span>
+<time datetime="2024-03-15">1 day ago</time>
+</div>
+</li>
+<li class="sidebar-item">
+<h4><a href="#">Grid-Scale Battery Deployment Accelerates</a></h4>
+<div class="sidebar-meta">
+<span>Storage</span>
+<span>•</span>
+<time datetime="2024-03-14">2 days ago</time>
+</div>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Research Areas</h3>
+<ul class="footer-links">
+<li><a href="/posts/solar/">Solar Technology</a></li>
+<li><a href="/posts/wind/">Wind Energy</a></li>
+<li><a href="/posts/battery/">Energy Storage</a></li>
+<li><a href="/posts/grid-tech/">Smart Grid</a></li>
+<li><a href="/posts/policy/">Policy Analysis</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Resources</h3>
+<ul class="footer-links">
+<li><a href="/blog/">All Articles</a></li>
+<li><a href="/research/">Research Reports</a></li>
+<li><a href="/data/">Market Data</a></li>
+<li><a href="/insights/">Industry Insights</a></li>
+<li><a href="/methodology/">Methodology</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Company</h3>
+<ul class="footer-links">
+<li><a href="/about/">About Us</a></li>
+<li><a href="/team/">Our Team</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/careers/">Careers</a></li>
+<li><a href="/press/">Press</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Connect</h3>
+<ul class="footer-links">
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="https://twitter.com/renewablepower">Twitter</a></li>
+<li><a href="https://linkedin.com/company/renewable-power-insight">LinkedIn</a></li>
+<li><a href="/rss/">RSS Feed</a></li>
+<li><a href="/api/">API Access</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Renewable Power Insight. All rights reserved. | 
+                   <a href="/privacy/">Privacy Policy</a> | 
+                   <a href="/terms/">Terms of Service</a>
+</p>
+</div>
+</div>
+</footer>
+<!-- JavaScript for Interactivity -->
+<script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mainNav = document.querySelector('.main-nav');
             
-            <div class="sidebar-section">
-                <h2 class="sidebar-title">Technology</h2>
-                <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                            <h3><a href="posts/connected-climate-change-energy-system-transformation.html">How Renewable Energy Transition Works</a></h3>
-                        <div class="sidebar-meta">12 MIN READ</div>
-                    </li>
-                    <li class="sidebar-item">
-                            <h3><a href="posts/ai-powered-grid-optimization.html">AI-Powered Energy Management Deep Dive</a></h3>
-                        <div class="sidebar-meta">15 MIN READ</div>
-                    </li>
-                </ul>
-            </div>
+            if (mobileMenuButton && mainNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.style.display = isExpanded ? 'none' : 'flex';
+                    mainNav.style.flexDirection = 'column';
+                    mainNav.style.position = 'absolute';
+                    mainNav.style.top = '100%';
+                    mainNav.style.left = '0';
+                    mainNav.style.right = '0';
+                    mainNav.style.background = 'white';
+                    mainNav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                    mainNav.style.padding = '1rem';
+                });
+            }
             
-            <div class="sidebar-section">
-                <h2 class="sidebar-title">Markets</h2>
-                <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                            <h3><a href="posts/clean-energy-investment-record-2025.html">Renewable Energy Investment Report 2025</a></h3>
-                        <div class="sidebar-meta">10 MIN READ</div>
-                    </li>
-                    <li class="sidebar-item">
-                            <!-- Removed: Offshore Wind Investment Trends (no matching post) -->
-                        <div class="sidebar-meta">8 MIN READ</div>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-    </main>
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe article cards for animations
+            document.querySelectorAll('.article-card, .grid-article').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+<!-- Performance and Analytics (Optional) -->
+<script>
+        // Basic page load performance tracking
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const loadTime = performance.now();
+                console.log('Page loaded in:', Math.round(loadTime), 'ms');
+            }
+        });
+    </script>
 </body>
 </html>
-
-
