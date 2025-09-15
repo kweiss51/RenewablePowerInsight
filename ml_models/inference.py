@@ -2,6 +2,7 @@
 """
 Simple Energy Content Inference Engine
 Generates blog posts using the trained energy domain model
+Automatically saves posts to the website posts folder
 """
 
 import torch
@@ -14,6 +15,9 @@ from pathlib import Path
 from typing import List, Dict, Optional
 import re
 
+# Import our automated blog generator
+from .automated_blog_generator import AutomatedBlogGenerator
+
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -23,6 +27,10 @@ class EnergyInference:
         """Initialize the inference engine"""
         self.model_path = Path(model_path)
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        
+        # Initialize the automated blog generator
+        posts_dir = Path(__file__).parent.parent / "posts"
+        self.blog_generator = AutomatedBlogGenerator(str(posts_dir))
         
         # Energy-specific prompts and templates
         self.energy_topics = [
@@ -242,6 +250,56 @@ class EnergyInference:
                 'topic': topic,
                 'word_count': len(self._generate_fallback_content(topic).split())
             }
+    
+    def generate_and_save_blog_post(self, topic: str, target_length: int = 600, category: str = None) -> Dict[str, str]:
+        """Generate a blog post and automatically save it to the posts folder"""
+        print(f"🤖 Generating blog post about: {topic}")
+        
+        # Generate the blog post content
+        blog_data = self.generate_blog_post(topic, target_length)
+        
+        # Save to posts folder using the automated blog generator
+        try:
+            post_info = self.blog_generator.create_blog_post(
+                title=blog_data['title'],
+                content=blog_data['content'],
+                custom_category=category
+            )
+            
+            # Combine the blog data with post info
+            result = {**blog_data, **post_info}
+            
+            print(f"✅ Blog post saved successfully!")
+            print(f"   📄 Title: {result['title']}")
+            print(f"   📁 File: {result['filename']}")
+            print(f"   🔗 URL: {result['url']}")
+            print(f"   📂 Category: {result['category']}")
+            print(f"   📝 Words: {result['word_count']}")
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error saving blog post: {e}")
+            return blog_data
+    
+    def batch_generate_posts(self, topics: List[str], target_length: int = 600) -> List[Dict[str, str]]:
+        """Generate multiple blog posts and save them all"""
+        print(f"🚀 Starting batch generation of {len(topics)} blog posts...")
+        
+        generated_posts = []
+        
+        for i, topic in enumerate(topics, 1):
+            print(f"\n📝 Generating post {i}/{len(topics)}: {topic}")
+            
+            post_result = self.generate_and_save_blog_post(topic, target_length)
+            generated_posts.append(post_result)
+            
+            # Small delay between generations to avoid overwhelming the system
+            import time
+            time.sleep(1)
+        
+        print(f"\n🎉 Batch generation complete! Generated {len(generated_posts)} posts.")
+        return generated_posts
     
     def _structure_blog_content(self, content: str, topic: str) -> str:
         """Structure the blog content with proper formatting"""

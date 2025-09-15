@@ -1,0 +1,41 @@
+{
+  "integration_date": "2025-09-14T21:58:17.789082",
+  "total_posts": 9,
+  "posts_by_category": {
+    "grid-tech": 1,
+    "wind": 2,
+    "battery": 1,
+    "solar": 2,
+    "policy": 3
+  },
+  "latest_post": {
+    "title": "Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update",
+    "excerpt": "The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity Innovations. These innovations are reshaping the landscape of clean energy and accelerating the...",
+    "image_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format",
+    "image_alt": "Government building representing energy policy",
+    "category": "grid-tech",
+    "category_name": "Smart Grid",
+    "file_path": "posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html",
+    "url_path": "posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html",
+    "filename": "revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html",
+    "created_date": "2025-09-14 21:44:11.768749",
+    "modified_date": "2025-09-14 21:44:11.532019",
+    "word_count": 368,
+    "reading_time": 1
+  },
+  "oldest_post": {
+    "title": "Market Outlook: Vehicle To Grid Technology Adoption Industry Trends",
+    "excerpt": "The renewable energy sector continues to witness groundbreaking developments in vehicle-to-grid technology adoption. These innovations are reshaping the landscape of clean energy and accelerating the ...",
+    "image_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format",
+    "image_alt": "Government building representing energy policy",
+    "category": "policy",
+    "category_name": "Policy & Markets",
+    "file_path": "posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html",
+    "url_path": "posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html",
+    "filename": "market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html",
+    "created_date": "2025-09-14 21:41:03.983939",
+    "modified_date": "2025-09-14 21:32:34.521223",
+    "word_count": 363,
+    "reading_time": 1
+  }
+}

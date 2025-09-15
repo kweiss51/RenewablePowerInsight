@@ -1,0 +1,20 @@
+# Basic dependencies for the blog automation system
+# Core automation
+schedule>=1.2.0
+
+# Optional: Full ML dependencies (if you want to use the actual ML models)
+# torch>=2.1.0
+# transformers>=4.21.0
+# datasets>=2.0.0
+# accelerate>=0.20.0
+# wandb>=0.15.0
+
+# Web scraping (for data collection)
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+newspaper3k>=0.2.8
+
+# Optional: Advanced data collection
+# selenium>=4.0.0
+# scholarly>=1.7.0
+# feedparser>=6.0.0
