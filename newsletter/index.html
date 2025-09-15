@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Subscription - Renewable Power Insight</title>
+    <meta name="description" content="Subscribe to our weekly newsletter and stay updated with the latest renewable energy news, research, and industry insights.">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <a href="/" class="site-title">Renewable Power Insight</a>
+                    <span class="site-tagline">Advanced Energy Research</span>
+                </div>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/posts/solar/" class="nav-link">Solar</a>
+                    <a href="/posts/wind/" class="nav-link">Wind</a>
+                    <a href="/posts/battery/" class="nav-link">Storage</a>
+                    <a href="/posts/grid-tech/" class="nav-link">Smart Grid</a>
+                    <a href="/posts/policy/" class="nav-link">Policy</a>
+                    <a href="/blog/" class="nav-link">All Posts</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Newsletter
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="newsletter-page">
+                <div class="newsletter-header">
+                    <h1 class="page-title">Stay Updated with Renewable Energy Insights</h1>
+                    <p class="page-subtitle">
+                        Subscribe to our weekly newsletter and receive the three most important 
+                        renewable energy stories directly in your inbox.
+                    </p>
+                </div>
+                
+                <div class="newsletter-content">
+                    <div class="newsletter-form-section">
+                        <div class="form-container">
+                            <h2>Weekly Energy Digest</h2>
+                            <p>Get the latest renewable energy news, research findings, and market insights delivered every week.</p>
+                            
+                            <form class="newsletter-form" id="newsletterForm">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="name">First Name (Optional)</label>
+                                    <input type="text" id="name" name="name" placeholder="Your name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Interests (Select all that apply)</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interests" value="solar">
+                                            <span>Solar Energy</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interests" value="wind">
+                                            <span>Wind Power</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interests" value="storage">
+                                            <span>Energy Storage</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interests" value="grid">
+                                            <span>Smart Grid</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interests" value="policy">
+                                            <span>Policy & Markets</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="subscribe-button">Subscribe to Newsletter</button>
+                                
+                                <p class="privacy-note">
+                                    We respect your privacy. Unsubscribe at any time. 
+                                    We'll never share your email address.
+                                </p>
+                            </form>
+                            
+                            <div class="success-message" id="successMessage" style="display: none;">
+                                <h3>Thank you for subscribing!</h3>
+                                <p>You'll receive your first newsletter within the next week.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-benefits">
+                        <h2>What You'll Receive</h2>
+                        
+                        <div class="benefit-item">
+                            <h3>📧 Weekly Digest</h3>
+                            <p>Every week, we curate the three most significant renewable energy stories and developments.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>🔬 Research Highlights</h3>
+                            <p>Key findings from the latest research papers, technology breakthroughs, and market analysis.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>💡 Industry Insights</h3>
+                            <p>Expert commentary on policy changes, market trends, and investment opportunities.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>📊 Market Updates</h3>
+                            <p>Essential data on capacity additions, pricing trends, and technology adoption rates.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>🌍 Global Perspective</h3>
+                            <p>Coverage of renewable energy developments from around the world.</p>
+                        </div>
+                        
+                        <div class="sample-newsletter">
+                            <h3>Sample Newsletter Content</h3>
+                            <div class="sample-content">
+                                <h4>This Week in Renewable Energy</h4>
+                                <ul>
+                                    <li><strong>Solar:</strong> New perovskite solar cell efficiency record breaks 26% barrier</li>
+                                    <li><strong>Wind:</strong> Offshore wind capacity additions reach 10 GW globally in Q3</li>
+                                    <li><strong>Storage:</strong> Grid-scale battery costs drop 15% year-over-year</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="/posts/solar/">Solar Technology</a></li>
+                        <li><a href="/posts/wind/">Wind Energy</a></li>
+                        <li><a href="/posts/battery/">Energy Storage</a></li>
+                        <li><a href="/posts/grid-tech/">Smart Grid</a></li>
+                        <li><a href="/posts/policy/">Policy Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/blog/">All Articles</a></li>
+                        <li><a href="/research/">Research Reports</a></li>
+                        <li><a href="/data/">Market Data</a></li>
+                        <li><a href="/insights/">Industry Insights</a></li>
+                        <li><a href="/methodology/">Methodology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="/newsletter/">Newsletter</a></li>
+                        <li><a href="/rss/">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Renewable Power Insight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        .newsletter-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .newsletter-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .form-container {
+            background: var(--color-background-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .form-container h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form {
+            margin-top: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+        
+        .form-group input[type="email"],
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .subscribe-button {
+            width: 100%;
+            background: var(--color-primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .subscribe-button:hover {
+            background: var(--color-primary-hover);
+        }
+        
+        .privacy-note {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .newsletter-benefits h2 {
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-item {
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+        
+        .sample-newsletter {
+            background: var(--color-background-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .sample-newsletter h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .sample-content h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sample-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sample-content li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const form = e.target;
+            const successMessage = document.getElementById('successMessage');
+            
+            // Hide form and show success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // In a real implementation, you would send the data to your backend
+            console.log('Newsletter subscription submitted');
+        });
+    </script>
+</body>
+</html>
