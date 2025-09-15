@@ -56,7 +56,7 @@ expansion-reaches-new.md → expansion-reaches-new-milestone.md
 
 ### 5. Created Dynamic Posts Page
 ```markdown
-# Replaced static posts.html with Jekyll-powered posts.md
+# Static posts.html removed; replaced with Jekyll-powered posts.md
 {% for post in site.posts %}
   # Dynamic post listing
 {% endfor %}

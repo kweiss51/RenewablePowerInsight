@@ -30,7 +30,7 @@
 
 ### Backup Files
 - Gemfile.backup ❌
-- posts.md ❌ (we have posts.html)
+- posts.md ❌ (posts.html has been removed)
 - requirements_minimal.txt ❌ (keep requirements.txt)
 
 ## Files to Reorganize
@@ -47,7 +47,7 @@
 ### Keep in root
 - simple_blog_app.py (main application)
 - index.html (working homepage)
-- posts.html (working posts page)
+- posts.html (removed)
 - about.md
 - README.md
 - requirements.txt
@@ -63,7 +63,7 @@ RenewablePowerInsight/
 ├── _config.yml
 ├── Gemfile
 ├── index.html
-├── posts.html
+<!-- posts.html removed -->
 ├── about.md
 ├── 404.html
 ├── simple_blog_app.py (main app)

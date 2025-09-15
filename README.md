@@ -19,7 +19,7 @@ An AI-powered renewable energy blog platform that automatically generates compre
 RenewablePowerInsight/
 ├── simple_blog_app.py          # Main blog application
 ├── index.html                  # Homepage (static)
-├── posts.html                  # Posts listing (static)
+<!-- posts.html (static all-posts page) has been removed -->
 ├── about.md                    # About page
 ├── README.md                   # This file
 ├── requirements.txt            # Python dependencies

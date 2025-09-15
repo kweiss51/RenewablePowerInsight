@@ -37,7 +37,7 @@
 RenewablePowerInsight/
 ├── simple_blog_app.py          # ✅ Main application
 ├── index.html                  # ✅ Working homepage
-├── posts.html                  # ✅ Posts listing
+<!-- posts.html (static all-posts page) has been removed -->
 ├── about.md, README.md, 404.html # ✅ Core pages
 ├── _config.yml, Gemfile         # ✅ Jekyll config
 ├── requirements.txt             # ✅ Dependencies
