@@ -1,8 +1,0 @@
-{
-  "model_version": "1.1757138691",
-  "training_date": "2025-09-05T23:04:51.432399",
-  "final_accuracy": 0.95,
-  "final_loss": 0.2720686345476207,
-  "training_data_size": 3,
-  "epochs": 10
-}
