@@ -47,12 +47,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-brand">
-                    <a href="/" class="site-title">Renewable Power Insight</a>
+                    <a href="../index.html" class="site-title">Renewable Power Insight</a>
                     <span class="site-tagline">Advanced Energy Research</span>
                 </div>
                 
                 <nav class="main-nav" aria-label="Main navigation">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="../index.html" class="nav-link">Home</a>
                     <a href="../posts/solar/index.html" class="nav-link">Solar</a>
                     <a href="../posts/wind/index.html" class="nav-link">Wind</a>
                     <a href="../posts/battery/index.html" class="nav-link">Storage</a>
@@ -73,7 +73,7 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
-                    <a href="/">Home</a>
+                    <a href="../index.html">Home</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Blog
@@ -390,10 +390,7 @@
                     <h3>Company</h3>
                     <ul class="footer-links">
                         <li><a href="../about/index.html">About Us</a></li>
-                        <li><a href="/team/">Our Team</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/careers/">Careers</a></li>
-                        <li><a href="/press/">Press</a></li>
+
                     </ul>
                 </div>
                 
@@ -404,15 +401,15 @@
                         <li><a href="https://twitter.com/renewablepower">Twitter</a></li>
                         <li><a href="https://linkedin.com/company/renewable-power-insight">LinkedIn</a></li>
                         <li><a href="../rss/index.html">RSS Feed</a></li>
-                        <li><a href="/api/">API Access</a></li>
+                        
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2024 Renewable Power Insight. All rights reserved. | 
-                   <a href="/privacy/">Privacy Policy</a> | 
-                   <a href="/terms/">Terms of Service</a>
+                   Privacy Policy | 
+                   Terms of Service
                 </p>
             </div>
         </div>
@@ -439,7 +436,7 @@
                     
                     // Filter articles
                     articles.forEach(article => {
-                        if (category === 'all' || article.dataset.category === category) {
+                        if (category === 'all' | article.dataset.category === category) {
                             article.style.display = 'block';
                             article.classList.add('fade-in');
                         } else {

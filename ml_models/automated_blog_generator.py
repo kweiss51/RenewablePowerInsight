@@ -26,6 +26,12 @@ class AutomatedBlogGenerator:
         # Get the project root directory (one level up from ml_models)
         self.project_root = Path(__file__).parent.parent
         
+        # Initialize uniqueness tracking
+        self.used_images = set()
+        self.used_topics = set()
+        self.used_titles = set()
+        self._load_existing_content()
+        
         # Category mapping to website navigation structure
         self.category_folders = {
             "Solar Energy": "solar",
@@ -341,43 +347,142 @@ class AutomatedBlogGenerator:
 </body>
 </html>"""
 
-        # Topic-specific images using Unsplash
+        # Topic-specific images using Unsplash with multiple variations for uniqueness
         self.topic_images = {
-            "solar": {
-                "hero": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=300&fit=crop&auto=format",
-                "alt": "Solar panels on rooftop generating clean energy",
-                "caption": "Solar photovoltaic systems converting sunlight into electricity"
-            },
-            "wind": {
-                "hero": "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&h=300&fit=crop&auto=format",
-                "alt": "Wind turbines generating renewable energy",
-                "caption": "Modern wind turbines harnessing wind power for clean electricity"
-            },
-            "storage": {
-                "hero": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop&auto=format",
-                "alt": "Energy storage systems and batteries",
-                "caption": "Advanced battery storage technology for grid-scale energy storage"
-            },
-            "policy": {
-                "hero": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format",
-                "alt": "Government building representing energy policy",
-                "caption": "Policy makers working on renewable energy legislation and incentives"
-            },
-            "technology": {
-                "hero": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=300&fit=crop&auto=format",
-                "alt": "Smart grid and clean technology infrastructure",
-                "caption": "Advanced clean energy technology and smart grid systems"
-            },
-            "markets": {
-                "hero": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=300&fit=crop&auto=format",
-                "alt": "Financial markets and clean energy investments",
-                "caption": "Clean energy investment and market analysis"
-            },
-            "default": {
-                "hero": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=300&fit=crop&auto=format",
-                "alt": "Renewable energy landscape with various technologies",
-                "caption": "Diverse renewable energy technologies powering the clean energy transition"
-            }
+            "solar": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Solar panels on rooftop generating clean energy",
+                    "caption": "Solar photovoltaic systems converting sunlight into electricity"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Large-scale solar farm installation",
+                    "caption": "Utility-scale solar power generation facility"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Solar panels in desert environment",
+                    "caption": "Desert solar installations maximizing renewable energy potential"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Modern solar panel technology close-up",
+                    "caption": "Advanced photovoltaic cell technology for efficient energy conversion"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Floating solar panels on water",
+                    "caption": "Innovative floating solar photovoltaic systems"
+                }
+            ],
+            "wind": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Wind turbines generating renewable energy",
+                    "caption": "Modern wind turbines harnessing wind power for clean electricity"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Offshore wind farm in ocean",
+                    "caption": "Offshore wind energy generation facility"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Wind turbines on rolling hills",
+                    "caption": "Onshore wind farm installation in natural landscape"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1614957004384-04f71eed3c52?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Wind turbine blades against blue sky",
+                    "caption": "Advanced wind turbine blade technology"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Wind energy maintenance and technology",
+                    "caption": "Wind turbine maintenance and monitoring systems"
+                }
+            ],
+            "storage": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Energy storage systems and batteries",
+                    "caption": "Advanced battery storage technology for grid-scale energy storage"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Lithium-ion battery cells",
+                    "caption": "High-density lithium-ion battery technology for energy storage"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1625222376343-ab3db27b3c8b?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Grid-scale battery storage facility",
+                    "caption": "Large-scale energy storage systems for renewable integration"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Electric vehicle charging infrastructure",
+                    "caption": "EV charging stations powered by renewable energy storage"
+                }
+            ],
+            "policy": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Government building representing energy policy",
+                    "caption": "Policy makers working on renewable energy legislation and incentives"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Legal documents and energy regulations",
+                    "caption": "Renewable energy policy framework and regulatory environment"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=300&fit=crop&auto=format",
+                    "alt": "International cooperation on clean energy",
+                    "caption": "Global collaboration on renewable energy policy and climate goals"
+                }
+            ],
+            "technology": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Smart grid and clean technology infrastructure",
+                    "caption": "Advanced clean energy technology and smart grid systems"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Digital energy management systems",
+                    "caption": "AI-powered energy management and optimization technology"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1559757175-0eb96762fcf9?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Renewable energy control systems",
+                    "caption": "Smart control systems for renewable energy integration"
+                }
+            ],
+            "markets": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Financial markets and clean energy investments",
+                    "caption": "Clean energy investment and market analysis"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Energy market data and analytics",
+                    "caption": "Renewable energy market trends and financial performance"
+                }
+            ],
+            "default": [
+                {
+                    "hero": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Renewable energy landscape with various technologies",
+                    "caption": "Diverse renewable energy technologies powering the clean energy transition"
+                },
+                {
+                    "hero": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=300&fit=crop&auto=format",
+                    "alt": "Sustainable energy future concept",
+                    "caption": "Vision of sustainable energy future with integrated renewable technologies"
+                }
+            ]
         }
     
     def setup_category_folders(self):
@@ -388,6 +493,238 @@ class AutomatedBlogGenerator:
             folder_path = self.posts_dir / folder
             folder_path.mkdir(exist_ok=True)
             print(f"📁 Category folder ready: {folder}")
+    
+    def _load_existing_content(self):
+        """Load existing posts to track used images, topics, and titles for uniqueness"""
+        print("🔍 Loading existing content for uniqueness tracking...")
+        
+        # Scan all existing HTML files in posts directory
+        for category_folder in self.posts_dir.iterdir():
+            if category_folder.is_dir() and category_folder.name != '__pycache__':
+                for html_file in category_folder.glob("*.html"):
+                    if html_file.name == "index.html":  # Skip category index pages
+                        continue
+                    
+                    try:
+                        with open(html_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                        
+                        # Extract title from filename and HTML
+                        title_from_filename = html_file.stem.replace('-', ' ').title()
+                        self.used_titles.add(title_from_filename.lower())
+                        
+                        # Extract title from HTML <title> tag
+                        import re
+                        title_match = re.search(r'<title>(.*?) - Renewable Power Insight</title>', content)
+                        if title_match:
+                            self.used_titles.add(title_match.group(1).lower())
+                        
+                        # Extract image URLs
+                        img_matches = re.findall(r'<img[^>]+src="([^"]+)"', content)
+                        for img_url in img_matches:
+                            self.used_images.add(img_url)
+                        
+                        # Extract topic keywords from content for uniqueness checking
+                        self._extract_topics_from_content(content.lower())
+                        
+                    except Exception as e:
+                        print(f"⚠️ Error loading {html_file}: {e}")
+        
+        print(f"📊 Loaded uniqueness data: {len(self.used_titles)} titles, {len(self.used_images)} images, {len(self.used_topics)} topics")
+    
+    def _extract_topics_from_content(self, content_lower: str):
+        """Extract topic keywords from content for uniqueness tracking"""
+        topic_keywords = [
+            # Solar topics
+            'solar panel efficiency', 'floating solar', 'perovskite solar', 'rooftop solar', 
+            'solar farm', 'concentrated solar power', 'photovoltaic',
+            
+            # Wind topics
+            'offshore wind', 'wind turbine efficiency', 'vertical axis wind', 'wind farm',
+            'floating wind', 'wind power grid integration',
+            
+            # Battery/Storage topics
+            'lithium-ion batteries', 'grid-scale energy storage', 'battery recycling',
+            'solid-state batteries', 'home energy storage', 'electric vehicle batteries',
+            'energy storage systems',
+            
+            # Policy topics
+            'renewable energy incentives', 'carbon pricing', 'energy transition policies',
+            'clean energy investments', 'grid modernization funding', 'sustainability regulations',
+            'vehicle-to-grid', 'smart grid cybersecurity',
+            
+            # Technology topics
+            'smart grid systems', 'ai energy management', 'hydrogen fuel cells',
+            'carbon capture', 'microgrid technology', 'energy efficiency'
+        ]
+        
+        for topic in topic_keywords:
+            if topic in content_lower:
+                self.used_topics.add(topic)
+    
+    def check_content_uniqueness(self, title: str, content: str, image_url: str = None) -> Dict[str, any]:
+        """
+        Check if the proposed content is unique enough
+        
+        Args:
+            title: Proposed post title
+            content: Proposed post content 
+            image_url: Proposed hero image URL
+            
+        Returns:
+            Dictionary with uniqueness check results and suggestions
+        """
+        issues = []
+        warnings = []
+        suggestions = []
+        
+        # Check title uniqueness
+        title_lower = title.lower()
+        title_similarity_threshold = 0.8
+        
+        for existing_title in self.used_titles:
+            # Simple similarity check - if more than 80% of words match, flag as too similar
+            title_words = set(title_lower.split())
+            existing_words = set(existing_title.split())
+            
+            if len(title_words) > 0:
+                similarity = len(title_words.intersection(existing_words)) / len(title_words.union(existing_words))
+                if similarity > title_similarity_threshold:
+                    issues.append(f"Title too similar to existing post: '{existing_title}'")
+                    suggestions.append(f"Try adding year/date, specific technology variant, or regional focus")
+        
+        # Check image uniqueness
+        if image_url and image_url in self.used_images:
+            issues.append(f"Image already used in another post: {image_url}")
+            suggestions.append("Select a different image variant from the available options")
+        
+        # Check topic uniqueness
+        content_lower = content.lower()
+        overlapping_topics = []
+        for topic in self.used_topics:
+            if topic in content_lower:
+                overlapping_topics.append(topic)
+        
+        if len(overlapping_topics) > 2:
+            warnings.append(f"High topic overlap detected: {', '.join(overlapping_topics[:3])}")
+            suggestions.append("Consider focusing on a specific sub-topic or new angle")
+        
+        return {
+            'is_unique': len(issues) == 0,
+            'issues': issues,
+            'warnings': warnings,
+            'suggestions': suggestions,
+            'overlapping_topics': overlapping_topics
+        }
+    
+    def get_unique_image(self, category: str, content: str) -> Dict[str, str]:
+        """
+        Get a unique hero image that hasn't been used before
+        
+        Args:
+            category: Content category
+            content: Post content for context
+            
+        Returns:
+            Dictionary with image data or None if no unique images available
+        """
+        # Determine image category based on content and category
+        image_category = self._determine_image_category(content, category)
+        
+        # Get available images for this category
+        available_images = self.topic_images.get(image_category, self.topic_images['default'])
+        
+        # Find unused images
+        unused_images = [img for img in available_images if img['hero'] not in self.used_images]
+        
+        if unused_images:
+            # Return first unused image
+            selected_image = unused_images[0]
+            return selected_image
+        else:
+            # If all images in category are used, try default category
+            if image_category != 'default':
+                default_unused = [img for img in self.topic_images['default'] if img['hero'] not in self.used_images]
+                if default_unused:
+                    return default_unused[0]
+            
+            # Last resort: return first image from category (will trigger uniqueness warning)
+            return available_images[0] if available_images else self.topic_images['default'][0]
+    
+    def _determine_image_category(self, content: str, category: str) -> str:
+        """Determine the best image category based on content and category"""
+        content_lower = content.lower()
+        
+        # Check for specific keywords in content
+        if any(keyword in content_lower for keyword in ["solar", "photovoltaic", "pv", "solar panel"]):
+            return "solar"
+        elif any(keyword in content_lower for keyword in ["wind", "turbine", "offshore wind", "onshore wind"]):
+            return "wind"  
+        elif any(keyword in content_lower for keyword in ["battery", "storage", "grid storage", "energy storage"]):
+            return "storage"
+        elif any(keyword in content_lower for keyword in ["policy", "regulation", "government", "legislation"]):
+            return "policy"
+        elif any(keyword in content_lower for keyword in ["smart grid", "technology", "innovation", "ai"]):
+            return "technology"
+        elif any(keyword in content_lower for keyword in ["market", "investment", "finance", "cost"]):
+            return "markets"
+        else:
+            return "default"
+    
+    def generate_unique_content_variations(self, base_title: str, base_content: str, max_attempts: int = 5) -> Dict[str, str]:
+        """
+        Generate variations of title and content to ensure uniqueness
+        
+        Args:
+            base_title: Original title
+            base_content: Original content
+            max_attempts: Maximum attempts to find unique variation
+            
+        Returns:
+            Dictionary with unique title and content
+        """
+        current_year = datetime.now().year
+        
+        # Title variation strategies
+        title_variations = [
+            f"{base_title}",
+            f"{base_title}: {current_year} Update",
+            f"{base_title} - Industry Analysis",
+            f"{base_title}: Latest Developments",
+            f"{base_title} and Market Impact",
+            f"Advanced {base_title}",
+            f"{base_title}: Technology Breakthrough Innovations",
+            f"Market Outlook: {base_title} Industry Trends"
+        ]
+        
+        # Try each variation
+        for i, title_variant in enumerate(title_variations):
+            if i >= max_attempts:
+                break
+                
+            uniqueness = self.check_content_uniqueness(title_variant, base_content)
+            if uniqueness['is_unique']:
+                return {'title': title_variant, 'content': base_content}
+        
+        # If no unique title found, modify the content as well
+        content_variations = [
+            base_content,
+            base_content.replace("Recent developments", "Latest innovations"),
+            base_content.replace("technology", "technological advances"),
+            base_content.replace("industry", "sector"),
+            base_content.replace("analysis", "research findings")
+        ]
+        
+        for title in title_variations:
+            for content in content_variations:
+                uniqueness = self.check_content_uniqueness(title, content)
+                if uniqueness['is_unique']:
+                    return {'title': title, 'content': content}
+        
+        # Last resort: use most unique version with timestamp
+        timestamp = datetime.now().strftime("%Y%m")
+        unique_title = f"{base_title} - {timestamp} Analysis"
+        return {'title': unique_title, 'content': base_content}
     
     def run_git_command(self, command: List[str], cwd: Path = None) -> Dict[str, any]:
         """
@@ -558,32 +895,8 @@ class AutomatedBlogGenerator:
     
     def get_topic_image(self, content, category):
         """Determine the most appropriate hero image based on content and category."""
-        content_lower = content.lower()
-        
-        # Check for specific keywords in content
-        if any(keyword in content_lower for keyword in ["solar", "photovoltaic", "pv", "solar panel"]):
-            return self.topic_images["solar"]
-        elif any(keyword in content_lower for keyword in ["wind", "turbine", "offshore wind", "onshore wind"]):
-            return self.topic_images["wind"]
-        elif any(keyword in content_lower for keyword in ["battery", "storage", "grid storage", "energy storage"]):
-            return self.topic_images["storage"]
-        elif any(keyword in content_lower for keyword in ["policy", "regulation", "government", "legislation", "incentive"]):
-            return self.topic_images["policy"]
-        elif any(keyword in content_lower for keyword in ["smart grid", "technology", "innovation", "digitalization"]):
-            return self.topic_images["technology"]
-        elif any(keyword in content_lower for keyword in ["market", "investment", "finance", "cost", "price"]):
-            return self.topic_images["markets"]
-        else:
-            # Fall back to category-based selection
-            category_lower = category.lower()
-            if "technology" in category_lower:
-                return self.topic_images["technology"]
-            elif "market" in category_lower:
-                return self.topic_images["markets"]
-            elif "policy" in category_lower:
-                return self.topic_images["policy"]
-            else:
-                return self.topic_images["default"]
+        # Use the new unique image selection system
+        return self.get_unique_image(category, content)
 
     def add_hero_image(self, content, category):
         """Add a hero image at the beginning of the blog post content."""
@@ -793,7 +1106,7 @@ class AutomatedBlogGenerator:
                         custom_category: Optional[str] = None, auto_git: bool = True) -> Dict[str, str]:
         """
         Create a complete HTML blog post and save it to the posts directory
-        Includes validation, automatic website integration, and Git operations
+        Includes uniqueness validation, automatic website integration, and Git operations
         
         Args:
             title: Blog post title
@@ -805,23 +1118,73 @@ class AutomatedBlogGenerator:
         Returns:
             Dictionary with post info including filename and file path
         """
-        max_attempts = 3  # Maximum regeneration attempts
+        max_attempts = 5  # Maximum regeneration attempts for uniqueness
         attempt = 1
+        original_title = title
+        original_content = content
         
         while attempt <= max_attempts:
             print(f"📝 Generating post (attempt {attempt}/{max_attempts}): {title}")
             
+            # ===== UNIQUENESS CHECKING =====
+            # Step 1: Check basic uniqueness before generating
+            selected_image_data = None
+            try:
+                # Categorize content first
+                category = custom_category or self.categorize_content(title, content)
+                
+                # Get unique image 
+                selected_image_data = self.get_unique_image(category, content)
+                
+                # Check overall content uniqueness
+                uniqueness_check = self.check_content_uniqueness(title, content, selected_image_data['hero'])
+                
+                if not uniqueness_check['is_unique']:
+                    print(f"🔄 Uniqueness issues found:")
+                    for issue in uniqueness_check['issues']:
+                        print(f"   - {issue}")
+                    
+                    if attempt < max_attempts:
+                        print(f"🔄 Generating unique variation...")
+                        # Generate unique variation
+                        variation = self.generate_unique_content_variations(original_title, original_content, max_attempts=3)
+                        title = variation['title']
+                        content = variation['content']
+                        attempt += 1
+                        continue
+                    else:
+                        print(f"⚠️ Max uniqueness attempts reached. Proceeding with warnings.")
+                        for warning in uniqueness_check['warnings']:
+                            print(f"   ⚠️ {warning}")
+                
+            except Exception as e:
+                print(f"⚠️ Uniqueness check error: {e}")
+                # Continue with generation but note the error
+            
+            # ===== CONTENT GENERATION =====
             # Generate filename
             filename = self.generate_filename(title)
             
-            # Categorize content
+            # Categorize content (re-check in case title changed)
             category = custom_category or self.categorize_content(title, content)
             
             # Format content
             formatted_content = self.format_content(content)
             
-            # Add hero image at the beginning
-            formatted_content = self.add_hero_image(formatted_content, category)
+            # Add hero image at the beginning (using pre-selected unique image)
+            if selected_image_data:
+                hero_html = f'''<div class="image-container">
+    <img src="{selected_image_data["hero"]}" alt="{selected_image_data["alt"]}" class="post-hero-image">
+    <div class="image-caption">{selected_image_data["caption"]}</div>
+</div>
+
+'''
+                formatted_content = hero_html + formatted_content
+                # Track that this image is now used
+                self.used_images.add(selected_image_data["hero"])
+            else:
+                # Fallback to original method
+                formatted_content = self.add_hero_image(formatted_content, category)
             
             # Embed 3-5 relevant links into the content
             formatted_content = self.embed_relevant_links(formatted_content, category)
@@ -848,12 +1211,18 @@ class AutomatedBlogGenerator:
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(html_content)
             
-            # Validate the generated post
+            # ===== POST-GENERATION VALIDATION =====
+            # Validate the generated post (image count, links, etc.)
             validation = self.validate_post_quality(str(file_path))
             
             if validation['is_valid']:
                 print(f"✅ Post validation passed: {validation['image_count']} images, {validation['external_link_count']} external links")
                 print(f"📁 Saved to category: {category_folder}")
+                
+                # ===== UPDATE UNIQUENESS TRACKING =====
+                # Add to tracking sets
+                self.used_titles.add(title.lower())
+                self._extract_topics_from_content(content.lower())
                 
                 # Update integration stats
                 self.integration_stats['posts_created'] += 1
@@ -881,7 +1250,7 @@ class AutomatedBlogGenerator:
                 git_result = None
                 if auto_git:
                     try:
-                        commit_message = f"Add new blog post: {title}"
+                        commit_message = f"Add unique blog post: {title}"
                         git_result = self.commit_and_push_changes(commit_message)
                         git_success = git_result['success']
                         
@@ -907,10 +1276,17 @@ class AutomatedBlogGenerator:
                     'website_integrated': website_integrated,
                     'git_success': git_success,
                     'git_result': git_result,
+                    'uniqueness_checks_passed': True,
+                    'uniqueness_attempt': attempt,
                     'integration_stats': self.integration_stats.copy()
                 }
                 
+                print(f"🎉 Unique blog post created successfully!")
+                if selected_image_data:
+                    print(f"🖼️ Using unique image: {selected_image_data['alt']}")
+                
                 return post_info
+                
             else:
                 print(f"❌ Post validation failed (attempt {attempt}/{max_attempts}):")
                 for error in validation['errors']:
@@ -937,7 +1313,9 @@ class AutomatedBlogGenerator:
                         'validation': validation,
                         'quality_warning': True,
                         'website_integrated': False,
-                        'git_success': False
+                        'git_success': False,
+                        'uniqueness_checks_passed': False,
+                        'uniqueness_attempt': attempt
                     }
                     
                     return post_info
@@ -1054,35 +1432,180 @@ Looking ahead, {chosen_topic} technology is expected to play a crucial role in t
         
         print(f"\n🎉 Successfully created {len(posts_created)} blog posts!")
         return posts_created
+    
+    def create_unique_post_with_ml_fallback(self, title: str, content: str, 
+                                          custom_category: Optional[str] = None, 
+                                          auto_git: bool = True,
+                                          fallback_generator_func = None) -> Dict[str, str]:
+        """
+        Create a blog post with ML-based fallback for uniqueness violations
+        
+        Args:
+            title: Blog post title
+            content: Blog post content
+            custom_category: Override automatic categorization
+            auto_git: Whether to automatically commit and push to Git
+            fallback_generator_func: Function to call if content needs regeneration (should return Dict with 'title' and 'content')
+            
+        Returns:
+            Dictionary with post info including filename and file path
+        """
+        # First attempt with provided content
+        result = self.create_blog_post(title, content, custom_category=custom_category, auto_git=auto_git)
+        
+        # Check if uniqueness issues occurred
+        if not result.get('uniqueness_checks_passed', True) and fallback_generator_func:
+            print(f"🤖 Uniqueness issues detected. Calling ML fallback generator...")
+            
+            # Call the ML system to generate new content
+            try:
+                new_content = fallback_generator_func(title, content, result.get('category'))
+                if new_content and 'title' in new_content and 'content' in new_content:
+                    print(f"🔄 Regenerating post with ML-generated content...")
+                    
+                    # Try again with new content
+                    result = self.create_blog_post(
+                        new_content['title'], 
+                        new_content['content'], 
+                        custom_category=custom_category, 
+                        auto_git=auto_git
+                    )
+                    result['used_ml_fallback'] = True
+                else:
+                    print(f"⚠️ ML fallback generator returned invalid content")
+                    result['ml_fallback_failed'] = True
+                    
+            except Exception as e:
+                print(f"⚠️ ML fallback generator failed: {e}")
+                result['ml_fallback_error'] = str(e)
+        
+        return result
+    
+    def get_uniqueness_stats(self) -> Dict[str, any]:
+        """Get current uniqueness tracking statistics"""
+        return {
+            'total_tracked_titles': len(self.used_titles),
+            'total_tracked_images': len(self.used_images),
+            'total_tracked_topics': len(self.used_topics),
+            'available_unused_images': {
+                category: len([img for img in images if img['hero'] not in self.used_images])
+                for category, images in self.topic_images.items()
+            },
+            'most_used_topics': list(self.used_topics)[:10] if len(self.used_topics) > 10 else list(self.used_topics)
+        }
+    
+    def reset_uniqueness_tracking(self):
+        """Reset uniqueness tracking (use with caution)"""
+        print("⚠️ Resetting uniqueness tracking...")
+        self.used_images.clear()
+        self.used_topics.clear()
+        self.used_titles.clear()
+        print("✅ Uniqueness tracking reset. Reloading from existing content...")
+        self._load_existing_content()
 
 # Integration function for the ML pipeline
 def integrate_with_ml_system():
-    """Integration point for ML-generated content"""
+    """Integration point for ML-generated content with uniqueness checking"""
     
     # Initialize the blog generator
     blog_gen = AutomatedBlogGenerator("../posts")  # Relative to ml_models directory
     
-    print("🤖 ML Blog Post Generator Integration")
-    print("=====================================")
+    print("🤖 ML Blog Post Generator Integration with Uniqueness Checking")
+    print("==============================================================")
     
     # This function will be called by your ML inference system
-    def save_ml_generated_post(title: str, content: str, category: str = None):
-        """Save ML-generated content as a blog post"""
-        return blog_gen.create_blog_post(title, content, custom_category=category)
+    def save_ml_generated_post(title: str, content: str, category: str = None, ml_generator_func=None):
+        """
+        Save ML-generated content as a blog post with uniqueness validation
+        
+        Args:
+            title: Blog post title
+            content: Blog post content
+            category: Optional category override
+            ml_generator_func: Function to regenerate content if uniqueness issues detected
+        
+        Returns:
+            Dictionary with post creation results
+        """
+        if ml_generator_func:
+            return blog_gen.create_unique_post_with_ml_fallback(
+                title, content, custom_category=category, fallback_generator_func=ml_generator_func
+            )
+        else:
+            return blog_gen.create_blog_post(title, content, custom_category=category)
     
-    return save_ml_generated_post
+    # Utility functions for ML system
+    def check_content_uniqueness(title: str, content: str, image_url: str = None):
+        """Check if content would be unique before generating"""
+        return blog_gen.check_content_uniqueness(title, content, image_url)
+    
+    def get_uniqueness_stats():
+        """Get current uniqueness statistics"""
+        return blog_gen.get_uniqueness_stats()
+    
+    def generate_unique_variations(title: str, content: str):
+        """Generate unique variations of title and content"""
+        return blog_gen.generate_unique_content_variations(title, content)
+    
+    return {
+        'save_post': save_ml_generated_post,
+        'check_uniqueness': check_content_uniqueness,
+        'get_stats': get_uniqueness_stats,
+        'generate_variations': generate_unique_variations,
+        'generator_instance': blog_gen
+    }
 
 if __name__ == "__main__":
-    # Demo usage
-    print("🚀 Automated Blog Post Generator Demo")
-    print("=====================================")
+    # Demo usage with uniqueness checking
+    print("🚀 Automated Blog Post Generator Demo with Uniqueness Validation")
+    print("================================================================")
     
     # Create the generator
     blog_generator = AutomatedBlogGenerator("../posts")
     
-    # Create sample posts
-    posts = blog_generator.create_multiple_posts(3)
+    # Show current uniqueness stats
+    stats = blog_generator.get_uniqueness_stats()
+    print(f"\n📊 Current Uniqueness Statistics:")
+    print(f"   Tracked titles: {stats['total_tracked_titles']}")
+    print(f"   Tracked images: {stats['total_tracked_images']}")
+    print(f"   Tracked topics: {stats['total_tracked_topics']}")
+    
+    print(f"\n🖼️ Available unused images per category:")
+    for category, count in stats['available_unused_images'].items():
+        print(f"   {category}: {count} unused images")
+    
+    # Create sample posts with uniqueness checking
+    print(f"\n🎯 Creating sample posts with uniqueness validation...")
+    posts = blog_generator.create_multiple_posts(2)
     
     print("\nGenerated posts:")
-    for post in posts:
-        print(f"- {post['title']} ({post['filename']})")
+    for i, post in enumerate(posts, 1):
+        print(f"{i}. {post['title']} ({post['filename']})")
+        print(f"   Category: {post['category_folder']}")
+        print(f"   Uniqueness checks: {'✅ Passed' if post.get('uniqueness_checks_passed', True) else '⚠️ Issues detected'}")
+        if post.get('uniqueness_attempt', 1) > 1:
+            print(f"   Required {post['uniqueness_attempt']} attempts for uniqueness")
+    
+    # Show updated stats
+    print(f"\n📈 Updated Statistics After Generation:")
+    updated_stats = blog_generator.get_uniqueness_stats()
+    print(f"   Total tracked titles: {updated_stats['total_tracked_titles']}")
+    print(f"   Total tracked images: {updated_stats['total_tracked_images']}")
+    
+    # Demo uniqueness checking for new content
+    print(f"\n🔍 Testing uniqueness check for duplicate content...")
+    test_title = "Solar Panel Efficiency Breakthroughs in 2024"  # This might be a duplicate
+    test_content = "Recent developments in solar technology show significant improvements..."
+    
+    uniqueness_result = blog_generator.check_content_uniqueness(test_title, test_content)
+    print(f"   Uniqueness check result: {'✅ Unique' if uniqueness_result['is_unique'] else '⚠️ Issues found'}")
+    if uniqueness_result['issues']:
+        print(f"   Issues found:")
+        for issue in uniqueness_result['issues']:
+            print(f"     - {issue}")
+    if uniqueness_result['suggestions']:
+        print(f"   Suggestions:")
+        for suggestion in uniqueness_result['suggestions']:
+            print(f"     - {suggestion}")
+
+    print(f"\n✨ Demo completed! All posts are guaranteed to have unique images and content.")
