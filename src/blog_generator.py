@@ -20,6 +20,33 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 class BlogPostGenerator:
+    def render_post_to_html(self, post: Dict, template_path: str = "../blog-post-template.html") -> str:
+        """Render a blog post dict into HTML using the template."""
+        from string import Template
+        # Load template
+        with open(template_path, 'r', encoding='utf-8') as f:
+            template_html = f.read()
+        # Prepare replacements
+        html = Template(template_html).safe_substitute({
+            'BLOG_POST_TITLE': post.get('headline', ''),
+            'BLOG_POST_SUBTITLE': post.get('meta_description', ''),
+            'BLOG_POST_DATE': post.get('published_date', ''),
+            'BLOG_POST_AUTHOR': post.get('author', 'RenewablePowerInsight Team'),
+            'BLOG_POST_IMAGE': post.get('featured_image', 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80'),
+            'BLOG_POST_CONTENT': post.get('content', ''),
+        })
+        return html
+
+    def save_posts_as_html(self, posts: List[Dict], template_path: str = "../blog-post-template.html", output_dir: str = "../posts"):
+        """Save each blog post as an HTML file in the posts directory using the template."""
+        os.makedirs(output_dir, exist_ok=True)
+        for post in posts:
+            html = self.render_post_to_html(post, template_path)
+            slug = post.get('slug', 'post')
+            filename = os.path.join(output_dir, f"{slug}.html")
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(html)
+        print(f"💾 Saved {len(posts)} blog posts as HTML files in {output_dir}")
     def __init__(self, use_custom_llm: bool = True, model_path: Optional[str] = None):
         self.use_custom_llm = use_custom_llm
         self.custom_llm = None
@@ -492,9 +519,11 @@ if __name__ == "__main__":
         with open(latest_file, 'r', encoding='utf-8') as f:
             articles = json.load(f)
         
-        generator = BlogPostGenerator()
-        posts = generator.generate_all_posts(articles)
-        generator.save_blog_posts(posts)
+    generator = BlogPostGenerator()
+    posts = generator.generate_all_posts(articles)
+    generator.save_blog_posts(posts)
+    # Save each post as HTML using the template
+    generator.save_posts_as_html(posts, template_path="../blog-post-template.html", output_dir="../posts")
     else:
         print("❌ No article files found. Run news_scraper.py first.")
     
