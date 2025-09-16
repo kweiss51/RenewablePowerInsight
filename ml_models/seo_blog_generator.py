@@ -336,7 +336,10 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         title = base_content["title"]
         content = base_content["content"]
         
-        # 1. Optimize title with primary keyword
+        # 1. Convert markdown to HTML first
+        content = self.format_content_for_html(content)
+        
+        # 2. Optimize title with primary keyword
         primary_keywords = self.seo_keywords.get(category, [])
         if primary_keywords and primary_keywords[0].lower() not in title.lower():
             title = f"{primary_keywords[0].title()}: {title}"
@@ -345,25 +348,25 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         if len(title) > 60:
             title = title[:57] + "..."
         
-        # 2. Generate meta description
+        # 3. Generate meta description
         meta_description = self.generate_meta_description(content, category)
         
-        # 3. Add internal links
+        # 4. Add internal links
         content = self.add_internal_links(content, category)
         
-        # 4. Add external links
+        # 5. Add external links
         content = self.add_external_links(content, category)
         
-        # 5. Enhance with structured data
+        # 6. Enhance with structured data
         content = self.add_schema_markup(content, title, category)
         
-        # 6. Add SEO-optimized image with alt text
+        # 7. Add SEO-optimized image with alt text
         content = self.optimize_images_for_seo(content, category)
         
-        # 7. Improve heading structure
+        # 8. Improve heading structure
         content = self.optimize_heading_structure(content, category)
         
-        # 8. Add meta keywords
+        # 9. Add meta keywords
         meta_keywords = ", ".join(primary_keywords[:10])
         
         return {
@@ -515,6 +518,64 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
             )
         
         return content
+    
+    def format_content_for_html(self, content: str) -> str:
+        """Convert markdown-style content to proper HTML formatting"""
+        
+        # Convert markdown headers to HTML
+        content = re.sub(r'^# (.+)$', r'<h1>\1</h1>', content, flags=re.MULTILINE)
+        content = re.sub(r'^## (.+)$', r'<h2>\1</h2>', content, flags=re.MULTILINE)
+        content = re.sub(r'^### (.+)$', r'<h3>\1</h3>', content, flags=re.MULTILINE)
+        content = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', content, flags=re.MULTILINE)
+        
+        # Convert markdown bold to HTML
+        content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
+        
+        # Convert markdown links to HTML
+        content = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', content)
+        
+        # Split content into sections by double newlines
+        sections = content.split('\n\n')
+        formatted_sections = []
+        
+        for section in sections:
+            section = section.strip()
+            if not section:
+                continue
+                
+            # Check if this is a header
+            if section.startswith('<h'):
+                formatted_sections.append(section)
+            else:
+                # Process as paragraph content
+                lines = section.split('\n')
+                processed_lines = []
+                in_list = False
+                
+                for line in lines:
+                    line = line.strip()
+                    if not line:
+                        continue
+                        
+                    # Check for bullet points
+                    if line.startswith('- ') or line.startswith('* '):
+                        if not in_list:
+                            processed_lines.append('<ul>')
+                            in_list = True
+                        processed_lines.append(f'<li>{line[2:].strip()}</li>')
+                    else:
+                        if in_list:
+                            processed_lines.append('</ul>')
+                            in_list = False
+                        processed_lines.append(f'<p>{line}</p>')
+                
+                # Close any open lists
+                if in_list:
+                    processed_lines.append('</ul>')
+                
+                formatted_sections.extend(processed_lines)
+        
+        return '\n\n'.join(formatted_sections)
     
     def generate_canonical_url(self, title: str) -> str:
         """Generate canonical URL for the post"""
