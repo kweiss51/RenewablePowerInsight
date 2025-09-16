@@ -1,0 +1,19 @@
+{
+  "daily_posts": 2,
+  "categories": [
+    "solar",
+    "wind",
+    "battery",
+    "policy",
+    "technology"
+  ],
+  "preferred_times": [
+    "09:00",
+    "15:00"
+  ],
+  "enabled": true,
+  "max_posts_per_day": 5,
+  "quality_threshold": 70.0,
+  "auto_commit": true,
+  "notification_email": null
+}
