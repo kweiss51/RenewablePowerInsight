@@ -36,7 +36,12 @@
         ]
     }
     </script>
-</head>
+
+    <!-- Preload critical blog images -->
+    <link rel="preload" href="../assets/images/blog/placeholder-solar.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-wind.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-battery.svg" as="image">
+    </head>
 
 <body>
     <!-- Skip Navigation -->
@@ -129,7 +134,7 @@
                             <div class="article-image">
                                 <img src="../assets/images/blog/energy-storage-breakthrough.jpg" 
                                      alt="Advanced battery storage technology" 
-                                     loading="lazy">
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
                                 <span class="category-badge">Battery Tech</span>
                             </div>
                             <div class="article-content">
@@ -154,7 +159,7 @@
                             <div class="article-image">
                                 <img src="../assets/images/blog/battery-market-outlook.jpg" 
                                      alt="Battery storage market trends" 
-                                     loading="lazy">
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
                                 <span class="category-badge">Markets</span>
                             </div>
                             <div class="article-content">
@@ -180,7 +185,7 @@
                             <div class="article-image">
                                 <img src="../assets/images/blog/smart-grid-cybersecurity.jpg" 
                                      alt="Smart grid cybersecurity innovations" 
-                                     loading="lazy">
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
                                 <span class="category-badge">Grid Tech</span>
                             </div>
                             <div class="article-content">
@@ -206,7 +211,7 @@
                             <div class="article-image">
                                 <img src="../assets/images/blog/hydrogen-fuel-cells.jpg" 
                                      alt="Hydrogen fuel cell technology" 
-                                     loading="lazy">
+                                     loading="lazy" onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
                                 <span class="category-badge">Hydrogen</span>
                             </div>
                             <div class="article-content">
@@ -231,7 +236,7 @@
                             <div class="article-image">
                                 <img src="../assets/images/blog/vehicle-to-grid.jpg" 
                                      alt="Vehicle-to-grid technology" 
-                                     loading="lazy">
+                                     loading="lazy" onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
                                 <span class="category-badge">V2G</span>
                             </div>
                             <div class="article-content">

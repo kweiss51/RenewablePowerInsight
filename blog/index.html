@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Blog - Renewable Power Insight | Latest Energy Research &amp; Analysis</title>
-<meta content="Browse our comprehensive collection of renewable energy research articles, market analysis, and technology insights covering solar, wind, battery storage, and smart grid innovations." name="description"/>
-<meta content="renewable energy blog, energy research articles, solar power analysis, wind energy insights, battery storage news" name="keywords"/>
-<!-- External Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<!-- External CSS -->
-<link href="../style.css" rel="stylesheet"/>
-<!-- Breadcrumb Schema -->
-<script type="application/ld+json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts - Renewable Power Insight | Latest Energy Research & Analysis</title>
+    <meta name="description" content="Browse our comprehensive collection of renewable energy research articles, market analysis, and technology insights covering solar, wind, battery storage, and smart grid innovations.">
+    <meta name="keywords" content="renewable energy blog, energy research articles, solar power analysis, wind energy insights, battery storage news">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -28,524 +30,579 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Blog",
-                "item": "../blog/"
+                "name": "All Posts",
+                "item": "../blog/index.html"
             }
         ]
     }
     </script>
-</head>
+
+    <!-- Preload critical blog images -->
+    <link rel="preload" href="../assets/images/blog/placeholder-solar.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-wind.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-battery.svg" as="image">
+    </head>
 <body>
-<!-- Skip Navigation -->
-<a class="sr-only" href="#main-content">Skip to main content</a>
-<!-- Header -->
-<header class="site-header">
-<div class="container">
-<div class="header-content">
-<div class="header-brand">
-<a class="site-title" href="../index.html">Renewable Power Insight</a>
-<span class="site-tagline">Advanced Energy Research</span>
-</div>
-<nav aria-label="Main navigation" class="main-nav">
-<a class="nav-link" href="../index.html">Home</a>
-<a class="nav-link" href="../posts/solar/index.html">Solar</a>
-<a class="nav-link" href="../posts/wind/index.html">Wind</a>
-<a class="nav-link" href="../posts/battery/index.html">Storage</a>
-<a class="nav-link" href="../posts/grid-tech/index.html">Smart Grid</a>
-<a class="nav-link" href="../posts/policy/index.html">Policy</a>
-<a aria-current="page" class="nav-link active" href="../blog/index.html">All Posts</a>
-</nav>
-<button aria-expanded="false" aria-label="Open mobile menu" class="mobile-menu-button">
+    <!-- Skip Navigation -->
+    <a class="sr-only" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <a href="../index.html" class="site-title">Renewable Power Insight</a>
+                    <span class="site-tagline">Advanced Energy Research</span>
+                </div>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../posts/solar/index.html" class="nav-link">Solar</a>
+                    <a href="../posts/wind/index.html" class="nav-link">Wind</a>
+                    <a href="../posts/battery/index.html" class="nav-link">Storage</a>
+                    <a href="../posts/grid-tech/index.html" class="nav-link">Smart Grid</a>
+                    <a href="../posts/policy/index.html" class="nav-link">Policy</a>
+                    <a href="../blog/index.html" class="nav-link active" aria-current="page">All Posts</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
                     ☰
                 </button>
-</div>
-</div>
-</header>
-<!-- Breadcrumb Navigation -->
-<nav aria-label="Breadcrumb" class="breadcrumb-nav">
-<div class="container">
-<ol class="breadcrumb-list">
-<li class="breadcrumb-item">
-<a href="../index.html">Home</a>
-</li>
-<li aria-current="page" class="breadcrumb-item active">
-                    Blog
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Home</a>
                 </li>
-</ol>
-</div>
-</nav>
-<!-- Page Header -->
-<section class="page-header">
-<div class="container">
-<div class="page-header-content">
-<h1 class="page-title">Research Blog</h1>
-<p class="page-subtitle">
+                <li class="breadcrumb-item active" aria-current="page">
+                    All Posts
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Research Blog</h1>
+                <p class="page-subtitle">
                     Comprehensive analysis and insights on renewable energy technologies, 
                     market trends, and policy developments shaping the clean energy future.
                 </p>
-<!-- Filter Categories -->
-<div class="filter-categories">
-<button aria-pressed="true" class="filter-btn active" data-category="all">
-                        All Posts <span class="count">(13)</span>
-</button>
-<button aria-pressed="false" class="filter-btn" data-category="solar">
-                        Solar <span class="count">(2)</span>
-</button>
-<button aria-pressed="false" class="filter-btn" data-category="wind">
+                
+                <!-- Filter Categories -->
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-category="all" aria-pressed="true">
+                        All Posts <span class="count">(15)</span>
+                    </button>
+                    <button class="filter-btn" data-category="solar" aria-pressed="false">
+                        Solar <span class="count">(4)</span>
+                    </button>
+                    <button class="filter-btn" data-category="wind" aria-pressed="false">
                         Wind <span class="count">(2)</span>
-</button>
-<button aria-pressed="false" class="filter-btn" data-category="battery">
+                    </button>
+                    <button class="filter-btn" data-category="battery" aria-pressed="false">
                         Storage <span class="count">(2)</span>
-</button>
-<button aria-pressed="false" class="filter-btn" data-category="grid-tech">
+                    </button>
+                    <button class="filter-btn" data-category="grid-tech" aria-pressed="false">
                         Smart Grid <span class="count">(2)</span>
-</button>
-<button aria-pressed="false" class="filter-btn" data-category="policy">
+                    </button>
+                    <button class="filter-btn" data-category="policy" aria-pressed="false">
                         Policy <span class="count">(5)</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Main Content -->
-<main class="main-content" id="main-content">
-<div class="container">
-<div class="content-grid">
-<!-- Articles Grid -->
-<div class="articles-container">
-<div class="articles-grid" id="articles-grid">
-<article class="grid-article" data-category="grid-tech">
-<div class="article-image">
-<img alt="Advanced Renewable Energy Integration Strategies" loading="lazy" src="../assets/images/blog/placeholder-grid-tech.jpg"/>
-<span class="category-badge">Smart Grid</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/grid-tech/advanced-renewable-energy-integration-strategies.html">
-                        Advanced Renewable Energy Integration Strategies
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The integration of renewable energy sources into existing power grids represents one of the most significant challenges and opportunities in modern energy systems.
-                </p>
-<div class="article-meta">
-<span class="reading-time">2 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="grid-tech">
-<div class="article-image">
-<img alt="Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update" loading="lazy" src="../assets/images/blog/placeholder-grid-tech.jpg"/>
-<span class="category-badge">Smart Grid</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html">
-                        Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity Innovations. These innovations are reshaping the landscape of clean energy and accelerating the...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="policy">
-<div class="article-image">
-<img alt="Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation" loading="lazy" src="../assets/images/blog/placeholder-policy.jpg"/>
-<span class="category-badge">Policy &amp; Markets</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/policy/hydrogen-fuel-cell-technology-breakthrough-innovations-in-clean-transportation.html">
-                        Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation. These innovations are reshaping the lan...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="policy">
-<div class="article-image">
-<img alt="Smart Grid Cybersecurity: Advanced Protection Measures for 2025" loading="lazy" src="../assets/images/blog/placeholder-policy.jpg"/>
-<span class="category-badge">Policy &amp; Markets</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/policy/smart-grid-cybersecurity-advanced-protection-measures-for-2025.html">
-                        Smart Grid Cybersecurity: Advanced Protection Measures for 2025
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity: Advanced Protection Measures for 2025. These innovations are reshaping the landscape of clean ...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="policy">
-<div class="article-image">
-<img alt="The Future of Smart Grid Cybersecurity Measures: Industry Analysis" loading="lazy" src="../assets/images/blog/placeholder-policy.jpg"/>
-<span class="category-badge">Policy &amp; Markets</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/policy/the-future-of-smart-grid-cybersecurity-measures-industry-analysis.html">
-                        The Future of Smart Grid Cybersecurity Measures: Industry Analysis
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in smart grid cybersecurity measures. These innovations are reshaping the landscape of clean energy and accelerating the gl...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="policy">
-<div class="article-image">
-<img alt="Microgrid Technology Innovations: Latest Developments and Market Impact" loading="lazy" src="../assets/images/blog/placeholder-policy.jpg"/>
-<span class="category-badge">Policy &amp; Markets</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/policy/microgrid-technology-innovations-latest-developments-and-market-impact.html">
-                        Microgrid Technology Innovations: Latest Developments and Market Impact
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Microgrid Technology Innovations. These innovations are reshaping the landscape of clean energy and accelerating the glo...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="policy">
-<div class="article-image">
-<img alt="Market Outlook: Vehicle To Grid Technology Adoption Industry Trends" loading="lazy" src="../assets/images/blog/placeholder-policy.jpg"/>
-<span class="category-badge">Policy &amp; Markets</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html">
-                        Market Outlook: Vehicle To Grid Technology Adoption Industry Trends
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in vehicle-to-grid technology adoption. These innovations are reshaping the landscape of clean energy and accelerating the ...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="battery">
-<div class="article-image">
-<img alt="Advanced Energy Storage Systems: Revolutionary Battery Technology Developments" loading="lazy" src="../assets/images/blog/placeholder-battery.jpg"/>
-<span class="category-badge">Energy Storage</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/battery/advanced-energy-storage-systems-revolutionary-battery-technology-developments.html">
-                        Advanced Energy Storage Systems: Revolutionary Battery Technology Developments
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in advanced battery storage technology. These innovations are reshaping the landscape of clean energy and accelerating the ...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="battery">
-<div class="article-image">
-<img alt="Market Outlook: Advanced Battery Storage Technology Industry Trends" loading="lazy" src="../assets/images/blog/placeholder-battery.jpg"/>
-<span class="category-badge">Energy Storage</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">
-                        Market Outlook: Advanced Battery Storage Technology Industry Trends
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Advanced Battery Storage Technology. These innovations are reshaping the landscape of clean energy and accelerating the ...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="wind">
-<div class="article-image">
-<img alt="Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations" loading="lazy" src="../assets/images/blog/placeholder-wind.jpg"/>
-<span class="category-badge">Wind Power</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">
-                        Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Wind Turbine Efficiency Improvements. These innovations are reshaping the landscape of clean energy and accelerating the...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="wind">
-<div class="article-image">
-<img alt="Offshore Wind Energy Developments Technology: Breakthrough Innovations" loading="lazy" src="../assets/images/blog/placeholder-wind.jpg"/>
-<span class="category-badge">Wind Power</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">
-                        Offshore Wind Energy Developments Technology: Breakthrough Innovations
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in Offshore Wind Energy Developments. These innovations are reshaping the landscape of clean energy and accelerating the gl...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="solar">
-<div class="article-image">
-<img alt="Floating Solar Farm Installations: Latest Developments and Market Impact" loading="lazy" src="../assets/images/blog/placeholder-solar.jpg"/>
-<span class="category-badge">Solar Energy</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/solar/floating-solar-farm-installations-latest-developments-and-market-impact.html">
-                        Floating Solar Farm Installations: Latest Developments and Market Impact
-                    </a>
-</h2>
-<p class="article-excerpt">
-                    The renewable energy sector continues to witness groundbreaking developments in floating solar farm installations. These innovations are reshaping the landscape of clean energy and accelerating the gl...
-                </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<article class="grid-article" data-category="solar">
-<div class="article-image">
-<img alt="Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations" loading="lazy" src="../assets/images/blog/placeholder-solar.jpg"/>
-<span class="category-badge">Solar Energy</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-<a href="../posts/solar/solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Articles Grid -->
+                <div class="articles-container">
+                    <div class="articles-grid" id="articles-grid">
+        <article class="grid-article" data-category="solar">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-solar.svg" 
+                     alt="Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations" 
+                     onload="this.style.opacity='1';" 
+                     onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" 
+                     style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Solar Energy</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/solar/solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">
                         Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations
                     </a>
-</h2>
-<p class="article-excerpt">
+                </h2>
+                <p class="article-excerpt">
                     The renewable energy sector continues to witness groundbreaking developments in Solar Panel Efficiency Breakthroughs in 2024. These innovations are reshaping the landscape of clean energy and accelera...
                 </p>
-<div class="article-meta">
-<span class="reading-time">3 min read</span>
-<span>•</span>
-<time datetime="2025-09-14">September 14, 2025</time>
-</div>
-</div>
-</article>
-<!-- Battery Storage Articles -->
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="solar">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-solar.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Solar Panel Technology" 
+                      onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Solar Energy</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/solar/solar-panel-technology.html">
+                        Solar Panel Technology
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    Comprehensive analysis of renewable energy technologies and market developments.
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="solar">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-solar.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Floating Solar Farm Installations: Latest Developments and Market Impact" 
+                      onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Solar Energy</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/solar/floating-solar-farm-installations-latest-developments-and-market-impact.html">
+                        Floating Solar Farm Installations: Latest Developments and Market Impact
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in floating solar farm installations. These innovations are reshaping the landscape of clean energy and accelerating the gl...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="solar">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-solar.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Advanced Solar Panel Technology - AI Generated Update" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Solar Energy</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/solar/advanced-solar-panel-technology-ai-generated-update.html">
+                        Advanced Solar Panel Technology - AI Generated Update
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    Comprehensive analysis of renewable energy technologies and market developments.
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="wind">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-wind.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Offshore Wind Energy Developments Technology: Breakthrough Innovations" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Wind Power</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/wind/offshore-wind-energy-developments-technology-breakthrough-innovations.html">
+                        Offshore Wind Energy Developments Technology: Breakthrough Innovations
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Offshore Wind Energy Developments. These innovations are reshaping the landscape of clean energy and accelerating the gl...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="wind">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-wind.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Wind Power</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/wind/wind-turbine-efficiency-improvements-technology-breakthrough-innovations.html">
+                        Wind Turbine Efficiency Improvements Technology: Breakthrough Innovations
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Wind Turbine Efficiency Improvements. These innovations are reshaping the landscape of clean energy and accelerating the...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="battery">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-battery.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Market Outlook: Advanced Battery Storage Technology Industry Trends" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Energy Storage</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">
+                        Market Outlook: Advanced Battery Storage Technology Industry Trends
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Advanced Battery Storage Technology. These innovations are reshaping the landscape of clean energy and accelerating the ...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="battery">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-battery.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Advanced Energy Storage Systems: Revolutionary Battery Technology Developments" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Energy Storage</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/battery/advanced-energy-storage-systems-revolutionary-battery-technology-developments.html">
+                        Advanced Energy Storage Systems: Revolutionary Battery Technology Developments
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in advanced battery storage technology. These innovations are reshaping the landscape of clean energy and accelerating the ...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="policy">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-policy.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Market Outlook: Vehicle To Grid Technology Adoption Industry Trends" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Policy & Markets</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html">
+                        Market Outlook: Vehicle To Grid Technology Adoption Industry Trends
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in vehicle-to-grid technology adoption. These innovations are reshaping the landscape of clean energy and accelerating the ...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="policy">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-policy.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Microgrid Technology Innovations: Latest Developments and Market Impact" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Policy & Markets</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/policy/microgrid-technology-innovations-latest-developments-and-market-impact.html">
+                        Microgrid Technology Innovations: Latest Developments and Market Impact
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Microgrid Technology Innovations. These innovations are reshaping the landscape of clean energy and accelerating the glo...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="policy">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-policy.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="The Future of Smart Grid Cybersecurity Measures: Industry Analysis" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Policy & Markets</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/policy/the-future-of-smart-grid-cybersecurity-measures-industry-analysis.html">
+                        The Future of Smart Grid Cybersecurity Measures: Industry Analysis
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in smart grid cybersecurity measures. These innovations are reshaping the landscape of clean energy and accelerating the gl...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="policy">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-policy.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Smart Grid Cybersecurity: Advanced Protection Measures for 2025" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Policy & Markets</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/policy/smart-grid-cybersecurity-advanced-protection-measures-for-2025.html">
+                        Smart Grid Cybersecurity: Advanced Protection Measures for 2025
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity: Advanced Protection Measures for 2025. These innovations are reshaping the landscape of clean ...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="policy">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-policy.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Policy & Markets</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/policy/hydrogen-fuel-cell-technology-breakthrough-innovations-in-clean-transportation.html">
+                        Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Hydrogen Fuel Cell Technology: Breakthrough Innovations in Clean Transportation. These innovations are reshaping the lan...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="grid-tech">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-grid-tech.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Smart Grid</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html">
+                        Revolutionary Advances in Smart Grid Cybersecurity Innovations: 2025 Update
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The renewable energy sector continues to witness groundbreaking developments in Smart Grid Cybersecurity Innovations. These innovations are reshaping the landscape of clean energy and accelerating the...
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
+        <article class="grid-article" data-category="grid-tech">
+            <div class="article-image">
+                <img src="../assets/images/blog/placeholder-grid-tech.svg" style="opacity: 0; transition: opacity 0.3s ease;" 
+                     alt="Advanced Renewable Energy Integration Strategies" 
+                     loading="lazy" onload="this.style.opacity='1';" onerror="console.log('Image failed to load:', this.src); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGQjAwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIU8L3RleHQ+PC9zdmc+';" style="opacity: 0; transition: opacity 0.3s ease;">
+                <span class="category-badge">Smart Grid</span>
+            </div>
+            <div class="article-content">
+                <h2 class="article-title">
+                    <a href="../posts/grid-tech/advanced-renewable-energy-integration-strategies.html">
+                        Advanced Renewable Energy Integration Strategies
+                    </a>
+                </h2>
+                <p class="article-excerpt">
+                    The integration of renewable energy sources into existing power grids represents one of the most significant challenges and opportunities in modern energy systems.
+                </p>
+                <div class="article-meta">
+                    <span class="reading-time">5 min read</span>
+                    <span>•</span>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </div>
+            </div>
+        </article>
 
-<!-- Smart Grid Articles -->
-
-<!-- Policy Articles -->
-
-<!-- Add more articles as they become available -->
-<article class="grid-article coming-soon" data-category="solar">
-<div class="article-image">
-<div class="placeholder-image">
-<span class="placeholder-text">Coming Soon</span>
-</div>
-<span class="category-badge">Solar</span>
-</div>
-<div class="article-content">
-<h2 class="article-title">
-                                    Next-Generation Solar Cell Efficiency Breakthroughs
-                                </h2>
-<p class="article-excerpt">
-                                    Upcoming analysis of revolutionary solar cell technologies pushing efficiency 
-                                    boundaries beyond current commercial limitations.
-                                </p>
-<div class="article-meta">
-<span class="reading-time">Expected soon</span>
-<span>•</span>
-<time datetime="2024-03-20">March 20, 2024</time>
-</div>
-</div>
-</article>
-</div>
-<!-- Load More Button -->
-<div class="load-more-container">
-<button class="load-more-btn" id="load-more">
-                            Load More Articles
-                            <span class="loading-spinner hidden">⟳</span>
-</button>
-</div>
-</div>
-<!-- Sidebar -->
-<aside class="sidebar">
-<div class="sidebar-section">
-<h3 class="sidebar-title">Browse by Category</h3>
-<ul class="category-list">
-<li class="category-item">
-<a class="category-link" href="../posts/solar/index.html">
-<span class="category-name">Solar Energy</span>
-<span class="category-count">45</span>
-</a>
-</li>
-<li class="category-item">
-<a class="category-link" href="../posts/wind/index.html">
-<span class="category-name">Wind Power</span>
-<span class="category-count">38</span>
-</a>
-</li>
-<li class="category-item">
-<a class="category-link" href="../posts/battery/index.html">
-<span class="category-name">Energy Storage</span>
-<span class="category-count">42</span>
-</a>
-</li>
-<li class="category-item">
-<a class="category-link" href="../posts/grid-tech/index.html">
-<span class="category-name">Smart Grid</span>
-<span class="category-count">29</span>
-</a>
-</li>
-<li class="category-item">
-<a class="category-link" href="../posts/policy/index.html">
-<span class="category-name">Policy &amp; Markets</span>
-<span class="category-count">36</span>
-</a>
-</li>
-</ul>
-</div>
-<div class="sidebar-section">
-<h3 class="sidebar-title">Popular Tags</h3>
-<div class="tag-cloud">
-<a class="tag" data-count="23" href="#">Battery Technology</a>
-<a class="tag" data-count="19" href="#">Solar Panels</a>
-<a class="tag" data-count="15" href="#">Wind Turbines</a>
-<a class="tag" data-count="12" href="#">Smart Grid</a>
-<a class="tag" data-count="11" href="#">Energy Storage</a>
-<a class="tag" data-count="9" href="#">Policy Analysis</a>
-<a class="tag" data-count="8" href="#">Market Trends</a>
-<a class="tag" data-count="7" href="#">Sustainability</a>
-</div>
-</div>
-<div class="sidebar-section">
-<h3 class="sidebar-title">Newsletter</h3>
-<div class="newsletter-signup">
-<p>Get the latest renewable energy insights delivered to your inbox.</p>
-<form action="/subscribe" class="newsletter-form" method="post">
-<div class="form-group">
-<label class="sr-only" for="email">Email address</label>
-<input class="newsletter-input" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
-</div>
-<button class="newsletter-btn" type="submit">
+                    </div>
+                    
+                    <!-- Load More Section -->
+                    <div class="load-more-container">
+                        <p class="load-more-info">
+                            Showing all 15 articles. New content is published regularly - check back soon!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Browse by Category</h3>
+                        <ul class="category-list">
+                            <li class="category-item">
+                                <a href="../posts/solar/index.html" class="category-link">
+                                    <span class="category-name">Solar Energy</span>
+                                    <span class="category-count">4</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/wind/index.html" class="category-link">
+                                    <span class="category-name">Wind Power</span>
+                                    <span class="category-count">2</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/battery/index.html" class="category-link">
+                                    <span class="category-name">Energy Storage</span>
+                                    <span class="category-count">2</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/grid-tech/index.html" class="category-link">
+                                    <span class="category-name">Smart Grid</span>
+                                    <span class="category-count">2</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/policy/index.html" class="category-link">
+                                    <span class="category-name">Policy & Markets</span>
+                                    <span class="category-count">5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Popular Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag" data-count="12">Battery Technology</a>
+                            <a href="#" class="tag" data-count="10">Solar Panels</a>
+                            <a href="#" class="tag" data-count="8">Wind Turbines</a>
+                            <a href="#" class="tag" data-count="6">Smart Grid</a>
+                            <a href="#" class="tag" data-count="5">Energy Storage</a>
+                            <a href="#" class="tag" data-count="4">Policy Analysis</a>
+                            <a href="#" class="tag" data-count="4">Market Trends</a>
+                            <a href="#" class="tag" data-count="3">Sustainability</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Newsletter</h3>
+                        <div class="newsletter-signup">
+                            <p>Get the latest renewable energy insights delivered to your inbox.</p>
+                            <form class="newsletter-form" action="/subscribe" method="post">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email address</label>
+                                    <input type="email" id="email" name="email" class="newsletter-input" 
+                                           placeholder="Enter your email" required>
+                                </div>
+                                <button type="submit" class="newsletter-btn">
                                     Subscribe
                                 </button>
-</form>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="site-footer">
-<div class="container">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Research Areas</h3>
-<ul class="footer-links">
-<li><a href="../posts/solar/index.html">Solar Technology</a></li>
-<li><a href="../posts/wind/index.html">Wind Energy</a></li>
-<li><a href="../posts/battery/index.html">Energy Storage</a></li>
-<li><a href="../posts/grid-tech/index.html">Smart Grid</a></li>
-<li><a href="../posts/policy/index.html">Policy Analysis</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Resources</h3>
-<ul class="footer-links">
-<li><a href="../blog/index.html">All Articles</a></li>
-<li><a href="../research/index.html">Research Reports</a></li>
-<li><a href="../data/index.html">Market Data</a></li>
-<li><a href="../insights/index.html">Industry Insights</a></li>
-<li><a href="../methodology/index.html">Methodology</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Company</h3>
-<ul class="footer-links">
-<li><a href="../about/index.html">About Us</a></li>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
 
-</ul>
-</div>
-<div class="footer-section">
-<h3>Connect</h3>
-<ul class="footer-links">
-<li><a href="../newsletter/index.html">Newsletter</a></li>
-<li><a href="https://twitter.com/renewablepower">Twitter</a></li>
-<li><a href="https://linkedin.com/company/renewable-power-insight">LinkedIn</a></li>
-<li><a href="../rss/index.html">RSS Feed</a></li>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="../posts/solar/index.html">Solar Technology</a></li>
+                        <li><a href="../posts/wind/index.html">Wind Energy</a></li>
+                        <li><a href="../posts/battery/index.html">Energy Storage</a></li>
+                        <li><a href="../posts/grid-tech/index.html">Smart Grid</a></li>
+                        <li><a href="../posts/policy/index.html">Policy Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../blog/index.html">All Articles</a></li>
+                        <li><a href="../research/index.html">Research Reports</a></li>
+                        <li><a href="../data/index.html">Market Data</a></li>
+                        <li><a href="../insights/index.html">Industry Insights</a></li>
+                        <li><a href="../methodology/index.html">Methodology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about/index.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="../newsletter/index.html">Newsletter</a></li>
+                        <li><a href="../rss/index.html">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Renewable Power Insight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Renewable Power Insight. All rights reserved. | 
-                   Privacy Policy | 
-                   Terms of Service
-</p>
-</div>
-</div>
-</footer>
-<!-- JavaScript for Blog Functionality -->
-<script>
+    <!-- JavaScript for Blog Functionality -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Category filtering
             const filterButtons = document.querySelectorAll('.filter-btn');
@@ -565,7 +622,7 @@
                     
                     // Filter articles
                     articles.forEach(article => {
-                        if (category === 'all' | article.dataset.category === category) {
+                        if (category === 'all' || article.dataset.category === category) {
                             article.style.display = 'block';
                             article.classList.add('fade-in');
                         } else {
@@ -573,24 +630,6 @@
                         }
                     });
                 });
-            });
-
-            // Load more functionality
-            const loadMoreBtn = document.getElementById('load-more');
-            const spinner = loadMoreBtn.querySelector('.loading-spinner');
-            
-            loadMoreBtn.addEventListener('click', function() {
-                spinner.classList.remove('hidden');
-                this.disabled = true;
-                
-                // Simulate loading delay
-                setTimeout(() => {
-                    // In real implementation, this would load more articles via AJAX
-                    spinner.classList.add('hidden');
-                    this.disabled = false;
-                    this.textContent = 'No more articles';
-                    this.disabled = true;
-                }, 1500);
             });
 
             // Newsletter form handling
@@ -616,7 +655,7 @@
                 mobileMenuButton.addEventListener('click', function() {
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
-                    mainNav.style.display = isExpanded ? 'none' : 'flex';
+                    mainNav.classList.toggle('mobile-open');
                 });
             }
 
@@ -640,5 +679,49 @@
             });
         });
     </script>
+
+<script id="imageLoadingScript">
+document.addEventListener('DOMContentLoaded', function() {
+    // Force reload any failed images
+    const images = document.querySelectorAll('.article-image img');
+    
+    images.forEach(function(img) {
+        // Add load event handler
+        img.addEventListener('load', function() {
+            console.log('Image loaded successfully:', this.src);
+            this.style.opacity = '1';
+        });
+        
+        // Add error handler  
+        img.addEventListener('error', function() {
+            console.log('Image failed to load, retrying:', this.src);
+            // Try reloading the image once
+            const originalSrc = this.src;
+            this.src = '';
+            setTimeout(() => {
+                this.src = originalSrc;
+            }, 100);
+        });
+        
+        // Ensure image is visible
+        img.style.display = 'block';
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+        
+        // Force reload if src is already set but not visible
+        if (img.complete && img.naturalWidth === 0) {
+            const src = img.src;
+            img.src = '';
+            img.src = src;
+        } else if (img.complete) {
+            img.style.opacity = '1';
+        }
+    });
+    
+    // Log image status
+    console.log(`Blog page loaded with ${images.length} images`);
+});
+</script>
+
 </body>
 </html>
