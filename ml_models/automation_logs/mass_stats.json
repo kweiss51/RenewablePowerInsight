@@ -1,0 +1,2824 @@
+{
+  "total_batches": 100,
+  "successful_posts": 1000,
+  "failed_posts": 0,
+  "posts_meeting_requirements": 550,
+  "average_seo_score": 74.7,
+  "generation_start": "2025-09-15T19:11:58.019048",
+  "generation_end": "2025-09-15T19:15:22.607712",
+  "category_distribution": {
+    "energy_markets": 152,
+    "battery": 181,
+    "solar": 175,
+    "wind": 179,
+    "policy": 29,
+    "green_investing": 73,
+    "stock_forecasts": 70,
+    "technology": 24,
+    "commodities": 59,
+    "energy_financials": 58
+  },
+  "quality_improvements": 20,
+  "batches_completed": [
+    {
+      "batch_number": 1,
+      "categories": [
+        "energy_markets",
+        "energy_markets",
+        "battery",
+        "energy_markets",
+        "solar",
+        "wind",
+        "policy",
+        "wind",
+        "solar",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.4,
+        "average_word_count": 594,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.037815093994140625,
+      "timestamp": "2025-09-15T19:11:58.058700"
+    },
+    {
+      "batch_number": 2,
+      "categories": [
+        "battery",
+        "policy",
+        "green_investing",
+        "wind",
+        "stock_forecasts",
+        "technology",
+        "solar",
+        "wind",
+        "stock_forecasts",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.5,
+        "average_word_count": 604,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03933286666870117,
+      "timestamp": "2025-09-15T19:12:00.105253"
+    },
+    {
+      "batch_number": 3,
+      "categories": [
+        "solar",
+        "green_investing",
+        "solar",
+        "battery",
+        "wind",
+        "battery",
+        "technology",
+        "solar",
+        "wind",
+        "commodities"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 77.0,
+        "average_word_count": 606,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05394625663757324,
+      "timestamp": "2025-09-15T19:12:02.171368"
+    },
+    {
+      "batch_number": 4,
+      "categories": [
+        "energy_markets",
+        "solar",
+        "stock_forecasts",
+        "technology",
+        "energy_markets",
+        "battery",
+        "commodities",
+        "wind",
+        "wind",
+        "green_investing"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.2,
+        "average_word_count": 620,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05756425857543945,
+      "timestamp": "2025-09-15T19:12:04.236906"
+    },
+    {
+      "batch_number": 5,
+      "categories": [
+        "wind",
+        "green_investing",
+        "commodities",
+        "battery",
+        "commodities",
+        "battery",
+        "energy_financials",
+        "wind",
+        "stock_forecasts",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.4,
+        "average_word_count": 639,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.06057286262512207,
+      "timestamp": "2025-09-15T19:12:06.306367"
+    },
+    {
+      "batch_number": 6,
+      "categories": [
+        "wind",
+        "energy_markets",
+        "stock_forecasts",
+        "wind",
+        "energy_markets",
+        "battery",
+        "wind",
+        "battery",
+        "commodities",
+        "green_investing"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.7,
+        "average_word_count": 671,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04151797294616699,
+      "timestamp": "2025-09-15T19:12:08.355727"
+    },
+    {
+      "batch_number": 7,
+      "categories": [
+        "wind",
+        "wind",
+        "battery",
+        "battery",
+        "technology",
+        "battery",
+        "green_investing",
+        "solar",
+        "stock_forecasts",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 76.3,
+        "average_word_count": 655,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05565905570983887,
+      "timestamp": "2025-09-15T19:12:10.419446"
+    },
+    {
+      "batch_number": 8,
+      "categories": [
+        "wind",
+        "solar",
+        "energy_financials",
+        "battery",
+        "wind",
+        "battery",
+        "solar",
+        "green_investing",
+        "wind",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 76.9,
+        "average_word_count": 642,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03821897506713867,
+      "timestamp": "2025-09-15T19:12:12.460845"
+    },
+    {
+      "batch_number": 9,
+      "categories": [
+        "battery",
+        "battery",
+        "commodities",
+        "policy",
+        "energy_financials",
+        "battery",
+        "wind",
+        "green_investing",
+        "commodities",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.6,
+        "average_word_count": 665,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.07924413681030273,
+      "timestamp": "2025-09-15T19:12:14.549362"
+    },
+    {
+      "batch_number": 10,
+      "categories": [
+        "wind",
+        "policy",
+        "technology",
+        "solar",
+        "solar",
+        "battery",
+        "stock_forecasts",
+        "battery",
+        "battery",
+        "policy"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 8,
+        "average_seo_score": 77.6,
+        "average_word_count": 625,
+        "average_image_count": 2.0,
+        "quality_percentage": 80.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05748391151428223,
+      "timestamp": "2025-09-15T19:12:16.617207"
+    },
+    {
+      "batch_number": 11,
+      "categories": [
+        "battery",
+        "battery",
+        "battery",
+        "stock_forecasts",
+        "energy_markets",
+        "commodities",
+        "energy_financials",
+        "solar",
+        "energy_markets",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.2,
+        "average_word_count": 643,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.042656898498535156,
+      "timestamp": "2025-09-15T19:12:18.668294"
+    },
+    {
+      "batch_number": 12,
+      "categories": [
+        "battery",
+        "green_investing",
+        "solar",
+        "wind",
+        "green_investing",
+        "policy",
+        "wind",
+        "solar",
+        "stock_forecasts",
+        "green_investing"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 73.5,
+        "average_word_count": 642,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05525922775268555,
+      "timestamp": "2025-09-15T19:12:20.734831"
+    },
+    {
+      "batch_number": 13,
+      "categories": [
+        "battery",
+        "green_investing",
+        "battery",
+        "energy_markets",
+        "wind",
+        "wind",
+        "energy_markets",
+        "battery",
+        "commodities",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.4,
+        "average_word_count": 667,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.13144493103027344,
+      "timestamp": "2025-09-15T19:12:22.879407"
+    },
+    {
+      "batch_number": 14,
+      "categories": [
+        "solar",
+        "policy",
+        "wind",
+        "solar",
+        "wind",
+        "battery",
+        "battery",
+        "battery",
+        "energy_markets",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 9,
+        "average_seo_score": 77.4,
+        "average_word_count": 642,
+        "average_image_count": 2.0,
+        "quality_percentage": 90.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.054290771484375,
+      "timestamp": "2025-09-15T19:12:24.945722"
+    },
+    {
+      "batch_number": 15,
+      "categories": [
+        "wind",
+        "energy_markets",
+        "battery",
+        "commodities",
+        "battery",
+        "wind",
+        "solar",
+        "energy_markets",
+        "wind",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.0,
+        "average_word_count": 658,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05246901512145996,
+      "timestamp": "2025-09-15T19:12:27.008466"
+    },
+    {
+      "batch_number": 16,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "battery",
+        "technology",
+        "solar",
+        "green_investing",
+        "solar",
+        "energy_financials",
+        "battery",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.0,
+        "average_word_count": 611,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05415797233581543,
+      "timestamp": "2025-09-15T19:12:29.073835"
+    },
+    {
+      "batch_number": 17,
+      "categories": [
+        "stock_forecasts",
+        "wind",
+        "energy_markets",
+        "commodities",
+        "solar",
+        "solar",
+        "solar",
+        "green_investing",
+        "policy",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.5,
+        "average_word_count": 592,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05190563201904297,
+      "timestamp": "2025-09-15T19:12:31.137764"
+    },
+    {
+      "batch_number": 18,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "energy_markets",
+        "green_investing",
+        "stock_forecasts",
+        "energy_markets",
+        "solar",
+        "solar",
+        "battery",
+        "energy_financials"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 71.7,
+        "average_word_count": 614,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.041554927825927734,
+      "timestamp": "2025-09-15T19:12:33.188491"
+    },
+    {
+      "batch_number": 19,
+      "categories": [
+        "battery",
+        "battery",
+        "solar",
+        "wind",
+        "wind",
+        "solar",
+        "battery",
+        "energy_financials",
+        "wind",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 8,
+        "average_seo_score": 77.7,
+        "average_word_count": 640,
+        "average_image_count": 2.0,
+        "quality_percentage": 80.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05446624755859375,
+      "timestamp": "2025-09-15T19:12:35.252043"
+    },
+    {
+      "batch_number": 20,
+      "categories": [
+        "solar",
+        "battery",
+        "solar",
+        "energy_markets",
+        "green_investing",
+        "solar",
+        "battery",
+        "energy_financials",
+        "policy",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.2,
+        "average_word_count": 615,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.054199934005737305,
+      "timestamp": "2025-09-15T19:12:37.314971"
+    },
+    {
+      "batch_number": 21,
+      "categories": [
+        "battery",
+        "green_investing",
+        "wind",
+        "solar",
+        "energy_markets",
+        "technology",
+        "wind",
+        "energy_markets",
+        "energy_markets",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.9,
+        "average_word_count": 648,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.12599802017211914,
+      "timestamp": "2025-09-15T19:12:39.451036"
+    },
+    {
+      "batch_number": 22,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "stock_forecasts",
+        "commodities",
+        "battery",
+        "policy",
+        "battery",
+        "energy_markets",
+        "solar",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.9,
+        "average_word_count": 614,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.10123181343078613,
+      "timestamp": "2025-09-15T19:12:41.565421"
+    },
+    {
+      "batch_number": 23,
+      "categories": [
+        "solar",
+        "battery",
+        "energy_markets",
+        "commodities",
+        "green_investing",
+        "green_investing",
+        "energy_markets",
+        "policy",
+        "green_investing",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 72.0,
+        "average_word_count": 632,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04750633239746094,
+      "timestamp": "2025-09-15T19:12:43.621743"
+    },
+    {
+      "batch_number": 24,
+      "categories": [
+        "battery",
+        "battery",
+        "solar",
+        "battery",
+        "energy_financials",
+        "stock_forecasts",
+        "green_investing",
+        "stock_forecasts",
+        "wind",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.5,
+        "average_word_count": 650,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.06082272529602051,
+      "timestamp": "2025-09-15T19:12:45.692259"
+    },
+    {
+      "batch_number": 25,
+      "categories": [
+        "wind",
+        "wind",
+        "wind",
+        "energy_financials",
+        "battery",
+        "energy_financials",
+        "solar",
+        "energy_markets",
+        "energy_financials",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 73.8,
+        "average_word_count": 633,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05036592483520508,
+      "timestamp": "2025-09-15T19:12:47.755909"
+    },
+    {
+      "batch_number": 26,
+      "categories": [
+        "policy",
+        "technology",
+        "commodities",
+        "wind",
+        "green_investing",
+        "stock_forecasts",
+        "stock_forecasts",
+        "energy_markets",
+        "battery",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.6,
+        "average_word_count": 620,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.041538238525390625,
+      "timestamp": "2025-09-15T19:12:49.807470"
+    },
+    {
+      "batch_number": 27,
+      "categories": [
+        "battery",
+        "technology",
+        "battery",
+        "energy_financials",
+        "solar",
+        "technology",
+        "wind",
+        "stock_forecasts",
+        "battery",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.9,
+        "average_word_count": 630,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05488729476928711,
+      "timestamp": "2025-09-15T19:12:51.872052"
+    },
+    {
+      "batch_number": 28,
+      "categories": [
+        "commodities",
+        "energy_financials",
+        "battery",
+        "battery",
+        "solar",
+        "battery",
+        "energy_financials",
+        "policy",
+        "solar",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.8,
+        "average_word_count": 647,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05512404441833496,
+      "timestamp": "2025-09-15T19:12:53.936419"
+    },
+    {
+      "batch_number": 29,
+      "categories": [
+        "solar",
+        "solar",
+        "battery",
+        "battery",
+        "energy_financials",
+        "technology",
+        "energy_financials",
+        "solar",
+        "battery",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.0,
+        "average_word_count": 627,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0436859130859375,
+      "timestamp": "2025-09-15T19:12:55.988455"
+    },
+    {
+      "batch_number": 30,
+      "categories": [
+        "energy_markets",
+        "solar",
+        "energy_financials",
+        "wind",
+        "green_investing",
+        "commodities",
+        "energy_markets",
+        "solar",
+        "stock_forecasts",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 72.6,
+        "average_word_count": 588,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.039911746978759766,
+      "timestamp": "2025-09-15T19:12:58.039585"
+    },
+    {
+      "batch_number": 31,
+      "categories": [
+        "wind",
+        "energy_financials",
+        "green_investing",
+        "energy_markets",
+        "battery",
+        "solar",
+        "solar",
+        "battery",
+        "wind",
+        "technology"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 76.2,
+        "average_word_count": 622,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04863309860229492,
+      "timestamp": "2025-09-15T19:13:00.098136"
+    },
+    {
+      "batch_number": 32,
+      "categories": [
+        "wind",
+        "stock_forecasts",
+        "battery",
+        "green_investing",
+        "green_investing",
+        "solar",
+        "wind",
+        "solar",
+        "battery",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.3,
+        "average_word_count": 643,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05365896224975586,
+      "timestamp": "2025-09-15T19:13:02.162618"
+    },
+    {
+      "batch_number": 33,
+      "categories": [
+        "policy",
+        "solar",
+        "solar",
+        "wind",
+        "energy_financials",
+        "solar",
+        "green_investing",
+        "energy_markets",
+        "wind",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.8,
+        "average_word_count": 608,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.046972036361694336,
+      "timestamp": "2025-09-15T19:13:04.218440"
+    },
+    {
+      "batch_number": 34,
+      "categories": [
+        "commodities",
+        "policy",
+        "energy_markets",
+        "solar",
+        "battery",
+        "battery",
+        "energy_financials",
+        "solar",
+        "energy_markets",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 74.0,
+        "average_word_count": 602,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03406810760498047,
+      "timestamp": "2025-09-15T19:13:06.261527"
+    },
+    {
+      "batch_number": 35,
+      "categories": [
+        "energy_markets",
+        "battery",
+        "energy_financials",
+        "commodities",
+        "wind",
+        "wind",
+        "battery",
+        "stock_forecasts",
+        "green_investing",
+        "energy_financials"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 73.0,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.041626930236816406,
+      "timestamp": "2025-09-15T19:13:08.315627"
+    },
+    {
+      "batch_number": 36,
+      "categories": [
+        "wind",
+        "energy_markets",
+        "wind",
+        "green_investing",
+        "wind",
+        "energy_financials",
+        "solar",
+        "solar",
+        "solar",
+        "green_investing"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.1,
+        "average_word_count": 626,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0486910343170166,
+      "timestamp": "2025-09-15T19:13:10.374433"
+    },
+    {
+      "batch_number": 37,
+      "categories": [
+        "energy_markets",
+        "commodities",
+        "energy_financials",
+        "energy_markets",
+        "battery",
+        "battery",
+        "wind",
+        "green_investing",
+        "solar",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.3,
+        "average_word_count": 631,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.08081698417663574,
+      "timestamp": "2025-09-15T19:13:12.466210"
+    },
+    {
+      "batch_number": 38,
+      "categories": [
+        "green_investing",
+        "energy_financials",
+        "solar",
+        "solar",
+        "solar",
+        "battery",
+        "battery",
+        "stock_forecasts",
+        "stock_forecasts",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 72.9,
+        "average_word_count": 613,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05637073516845703,
+      "timestamp": "2025-09-15T19:13:14.536873"
+    },
+    {
+      "batch_number": 39,
+      "categories": [
+        "solar",
+        "green_investing",
+        "energy_financials",
+        "energy_markets",
+        "wind",
+        "green_investing",
+        "commodities",
+        "energy_markets",
+        "wind",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.5,
+        "average_word_count": 633,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.051357269287109375,
+      "timestamp": "2025-09-15T19:13:16.600153"
+    },
+    {
+      "batch_number": 40,
+      "categories": [
+        "wind",
+        "wind",
+        "wind",
+        "technology",
+        "solar",
+        "battery",
+        "solar",
+        "energy_markets",
+        "technology",
+        "commodities"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 77.1,
+        "average_word_count": 598,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.07592988014221191,
+      "timestamp": "2025-09-15T19:13:18.682465"
+    },
+    {
+      "batch_number": 41,
+      "categories": [
+        "wind",
+        "green_investing",
+        "wind",
+        "battery",
+        "energy_markets",
+        "stock_forecasts",
+        "wind",
+        "solar",
+        "stock_forecasts",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.2,
+        "average_word_count": 663,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05763602256774902,
+      "timestamp": "2025-09-15T19:13:20.749688"
+    },
+    {
+      "batch_number": 42,
+      "categories": [
+        "wind",
+        "commodities",
+        "wind",
+        "technology",
+        "solar",
+        "battery",
+        "wind",
+        "energy_markets",
+        "battery",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 77.8,
+        "average_word_count": 624,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04816293716430664,
+      "timestamp": "2025-09-15T19:13:22.806709"
+    },
+    {
+      "batch_number": 43,
+      "categories": [
+        "solar",
+        "solar",
+        "commodities",
+        "stock_forecasts",
+        "energy_markets",
+        "green_investing",
+        "battery",
+        "solar",
+        "wind",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.4,
+        "average_word_count": 618,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0639030933380127,
+      "timestamp": "2025-09-15T19:13:24.880150"
+    },
+    {
+      "batch_number": 44,
+      "categories": [
+        "energy_markets",
+        "wind",
+        "wind",
+        "wind",
+        "energy_markets",
+        "solar",
+        "battery",
+        "commodities",
+        "solar",
+        "commodities"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.9,
+        "average_word_count": 627,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03960418701171875,
+      "timestamp": "2025-09-15T19:13:26.927620"
+    },
+    {
+      "batch_number": 45,
+      "categories": [
+        "energy_markets",
+        "wind",
+        "battery",
+        "commodities",
+        "battery",
+        "solar",
+        "solar",
+        "energy_markets",
+        "commodities",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.5,
+        "average_word_count": 625,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.057007789611816406,
+      "timestamp": "2025-09-15T19:13:28.997016"
+    },
+    {
+      "batch_number": 46,
+      "categories": [
+        "commodities",
+        "battery",
+        "wind",
+        "wind",
+        "wind",
+        "solar",
+        "energy_markets",
+        "stock_forecasts",
+        "solar",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 75.0,
+        "average_word_count": 612,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.10227704048156738,
+      "timestamp": "2025-09-15T19:13:31.111383"
+    },
+    {
+      "batch_number": 47,
+      "categories": [
+        "energy_markets",
+        "energy_markets",
+        "energy_markets",
+        "solar",
+        "solar",
+        "wind",
+        "stock_forecasts",
+        "battery",
+        "battery",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.7,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.054492950439453125,
+      "timestamp": "2025-09-15T19:13:33.177955"
+    },
+    {
+      "batch_number": 48,
+      "categories": [
+        "solar",
+        "wind",
+        "solar",
+        "stock_forecasts",
+        "energy_financials",
+        "battery",
+        "green_investing",
+        "green_investing",
+        "energy_markets",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.9,
+        "average_word_count": 620,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.046708106994628906,
+      "timestamp": "2025-09-15T19:13:35.229682"
+    },
+    {
+      "batch_number": 49,
+      "categories": [
+        "solar",
+        "solar",
+        "wind",
+        "stock_forecasts",
+        "energy_markets",
+        "green_investing",
+        "solar",
+        "energy_markets",
+        "energy_markets",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.1,
+        "average_word_count": 614,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04009294509887695,
+      "timestamp": "2025-09-15T19:13:37.278026"
+    },
+    {
+      "batch_number": 50,
+      "categories": [
+        "green_investing",
+        "solar",
+        "wind",
+        "energy_financials",
+        "green_investing",
+        "technology",
+        "stock_forecasts",
+        "energy_markets",
+        "battery",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.3,
+        "average_word_count": 650,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.11821198463439941,
+      "timestamp": "2025-09-15T19:13:39.411817"
+    },
+    {
+      "batch_number": 51,
+      "categories": [
+        "commodities",
+        "solar",
+        "battery",
+        "wind",
+        "battery",
+        "battery",
+        "wind",
+        "energy_markets",
+        "energy_markets",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.6,
+        "average_word_count": 619,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05417680740356445,
+      "timestamp": "2025-09-15T19:13:41.494004"
+    },
+    {
+      "batch_number": 52,
+      "categories": [
+        "wind",
+        "wind",
+        "commodities",
+        "energy_markets",
+        "energy_financials",
+        "energy_markets",
+        "wind",
+        "commodities",
+        "solar",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 73.1,
+        "average_word_count": 592,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.038041114807128906,
+      "timestamp": "2025-09-15T19:13:43.543094"
+    },
+    {
+      "batch_number": 53,
+      "categories": [
+        "energy_markets",
+        "battery",
+        "solar",
+        "energy_markets",
+        "wind",
+        "energy_markets",
+        "stock_forecasts",
+        "wind",
+        "wind",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.5,
+        "average_word_count": 657,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.042218923568725586,
+      "timestamp": "2025-09-15T19:13:45.598067"
+    },
+    {
+      "batch_number": 54,
+      "categories": [
+        "energy_markets",
+        "battery",
+        "battery",
+        "battery",
+        "wind",
+        "solar",
+        "solar",
+        "green_investing",
+        "wind",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 77.0,
+        "average_word_count": 630,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.07285618782043457,
+      "timestamp": "2025-09-15T19:13:47.689630"
+    },
+    {
+      "batch_number": 55,
+      "categories": [
+        "solar",
+        "wind",
+        "battery",
+        "energy_markets",
+        "wind",
+        "energy_financials",
+        "battery",
+        "green_investing",
+        "policy",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.6,
+        "average_word_count": 637,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05053591728210449,
+      "timestamp": "2025-09-15T19:13:49.751669"
+    },
+    {
+      "batch_number": 56,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "battery",
+        "solar",
+        "energy_markets",
+        "battery",
+        "energy_financials",
+        "battery",
+        "wind",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.2,
+        "average_word_count": 627,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.042157649993896484,
+      "timestamp": "2025-09-15T19:13:51.800424"
+    },
+    {
+      "batch_number": 57,
+      "categories": [
+        "battery",
+        "green_investing",
+        "solar",
+        "energy_markets",
+        "green_investing",
+        "solar",
+        "policy",
+        "battery",
+        "solar",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.2,
+        "average_word_count": 634,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.039079904556274414,
+      "timestamp": "2025-09-15T19:13:53.848939"
+    },
+    {
+      "batch_number": 58,
+      "categories": [
+        "wind",
+        "commodities",
+        "stock_forecasts",
+        "solar",
+        "solar",
+        "commodities",
+        "battery",
+        "energy_financials",
+        "solar",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 72.5,
+        "average_word_count": 612,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.056584835052490234,
+      "timestamp": "2025-09-15T19:13:55.916040"
+    },
+    {
+      "batch_number": 59,
+      "categories": [
+        "wind",
+        "energy_financials",
+        "wind",
+        "wind",
+        "battery",
+        "solar",
+        "energy_markets",
+        "green_investing",
+        "battery",
+        "technology"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.5,
+        "average_word_count": 657,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.08315181732177734,
+      "timestamp": "2025-09-15T19:13:58.011270"
+    },
+    {
+      "batch_number": 60,
+      "categories": [
+        "battery",
+        "energy_markets",
+        "energy_financials",
+        "solar",
+        "battery",
+        "commodities",
+        "wind",
+        "solar",
+        "battery",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 76.2,
+        "average_word_count": 637,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0499730110168457,
+      "timestamp": "2025-09-15T19:14:00.069829"
+    },
+    {
+      "batch_number": 61,
+      "categories": [
+        "battery",
+        "wind",
+        "wind",
+        "wind",
+        "stock_forecasts",
+        "commodities",
+        "energy_financials",
+        "energy_markets",
+        "battery",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.0,
+        "average_word_count": 643,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.050457000732421875,
+      "timestamp": "2025-09-15T19:14:02.129621"
+    },
+    {
+      "batch_number": 62,
+      "categories": [
+        "solar",
+        "battery",
+        "wind",
+        "stock_forecasts",
+        "wind",
+        "battery",
+        "commodities",
+        "solar",
+        "battery",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 76.6,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05941295623779297,
+      "timestamp": "2025-09-15T19:14:04.203939"
+    },
+    {
+      "batch_number": 63,
+      "categories": [
+        "solar",
+        "policy",
+        "wind",
+        "battery",
+        "commodities",
+        "solar",
+        "energy_markets",
+        "stock_forecasts",
+        "battery",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.8,
+        "average_word_count": 648,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.036448001861572266,
+      "timestamp": "2025-09-15T19:14:06.249949"
+    },
+    {
+      "batch_number": 64,
+      "categories": [
+        "wind",
+        "stock_forecasts",
+        "wind",
+        "solar",
+        "technology",
+        "wind",
+        "energy_financials",
+        "solar",
+        "battery",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 8,
+        "average_seo_score": 77.1,
+        "average_word_count": 627,
+        "average_image_count": 2.0,
+        "quality_percentage": 80.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0631401538848877,
+      "timestamp": "2025-09-15T19:14:08.323540"
+    },
+    {
+      "batch_number": 65,
+      "categories": [
+        "wind",
+        "energy_markets",
+        "battery",
+        "wind",
+        "solar",
+        "commodities",
+        "stock_forecasts",
+        "wind",
+        "green_investing",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.3,
+        "average_word_count": 639,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03973817825317383,
+      "timestamp": "2025-09-15T19:14:10.370708"
+    },
+    {
+      "batch_number": 66,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "battery",
+        "technology",
+        "green_investing",
+        "wind",
+        "battery",
+        "wind",
+        "energy_markets",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.1,
+        "average_word_count": 638,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.03522801399230957,
+      "timestamp": "2025-09-15T19:14:12.417087"
+    },
+    {
+      "batch_number": 67,
+      "categories": [
+        "wind",
+        "energy_markets",
+        "wind",
+        "stock_forecasts",
+        "solar",
+        "solar",
+        "green_investing",
+        "battery",
+        "energy_markets",
+        "commodities"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 73.7,
+        "average_word_count": 649,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04879617691040039,
+      "timestamp": "2025-09-15T19:14:14.477993"
+    },
+    {
+      "batch_number": 68,
+      "categories": [
+        "green_investing",
+        "energy_markets",
+        "wind",
+        "stock_forecasts",
+        "energy_markets",
+        "battery",
+        "energy_markets",
+        "battery",
+        "energy_financials",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 72.2,
+        "average_word_count": 622,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04394078254699707,
+      "timestamp": "2025-09-15T19:14:16.531863"
+    },
+    {
+      "batch_number": 69,
+      "categories": [
+        "green_investing",
+        "solar",
+        "battery",
+        "energy_financials",
+        "wind",
+        "energy_financials",
+        "battery",
+        "wind",
+        "energy_financials",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 74.9,
+        "average_word_count": 656,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.053070068359375,
+      "timestamp": "2025-09-15T19:14:18.595910"
+    },
+    {
+      "batch_number": 70,
+      "categories": [
+        "solar",
+        "solar",
+        "battery",
+        "policy",
+        "commodities",
+        "energy_markets",
+        "wind",
+        "battery",
+        "policy",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 76.2,
+        "average_word_count": 632,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05499529838562012,
+      "timestamp": "2025-09-15T19:14:20.662027"
+    },
+    {
+      "batch_number": 71,
+      "categories": [
+        "battery",
+        "battery",
+        "energy_markets",
+        "wind",
+        "solar",
+        "policy",
+        "battery",
+        "energy_markets",
+        "policy",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 76.1,
+        "average_word_count": 640,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04188179969787598,
+      "timestamp": "2025-09-15T19:14:22.711793"
+    },
+    {
+      "batch_number": 72,
+      "categories": [
+        "energy_markets",
+        "battery",
+        "stock_forecasts",
+        "solar",
+        "solar",
+        "energy_markets",
+        "battery",
+        "wind",
+        "technology",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.6,
+        "average_word_count": 611,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05347108840942383,
+      "timestamp": "2025-09-15T19:14:24.776646"
+    },
+    {
+      "batch_number": 73,
+      "categories": [
+        "wind",
+        "solar",
+        "energy_markets",
+        "solar",
+        "stock_forecasts",
+        "battery",
+        "green_investing",
+        "energy_markets",
+        "energy_financials",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 71.3,
+        "average_word_count": 622,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04511404037475586,
+      "timestamp": "2025-09-15T19:14:26.834393"
+    },
+    {
+      "batch_number": 74,
+      "categories": [
+        "solar",
+        "wind",
+        "commodities",
+        "green_investing",
+        "stock_forecasts",
+        "green_investing",
+        "battery",
+        "solar",
+        "energy_markets",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 73.1,
+        "average_word_count": 630,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05475115776062012,
+      "timestamp": "2025-09-15T19:14:28.901289"
+    },
+    {
+      "batch_number": 75,
+      "categories": [
+        "commodities",
+        "commodities",
+        "green_investing",
+        "wind",
+        "energy_markets",
+        "stock_forecasts",
+        "energy_markets",
+        "policy",
+        "battery",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 71.7,
+        "average_word_count": 621,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04482293128967285,
+      "timestamp": "2025-09-15T19:14:30.958393"
+    },
+    {
+      "batch_number": 76,
+      "categories": [
+        "battery",
+        "green_investing",
+        "energy_markets",
+        "energy_financials",
+        "energy_financials",
+        "energy_markets",
+        "green_investing",
+        "stock_forecasts",
+        "energy_markets",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 2,
+        "average_seo_score": 69.4,
+        "average_word_count": 631,
+        "average_image_count": 2.0,
+        "quality_percentage": 20.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.050417184829711914,
+      "timestamp": "2025-09-15T19:14:33.020003"
+    },
+    {
+      "batch_number": 77,
+      "categories": [
+        "energy_markets",
+        "solar",
+        "solar",
+        "energy_markets",
+        "solar",
+        "wind",
+        "energy_markets",
+        "green_investing",
+        "energy_financials",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 73.0,
+        "average_word_count": 596,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.037934064865112305,
+      "timestamp": "2025-09-15T19:14:35.069443"
+    },
+    {
+      "batch_number": 78,
+      "categories": [
+        "solar",
+        "stock_forecasts",
+        "battery",
+        "wind",
+        "wind",
+        "solar",
+        "solar",
+        "energy_markets",
+        "battery",
+        "energy_financials"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 76.2,
+        "average_word_count": 599,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05374598503112793,
+      "timestamp": "2025-09-15T19:14:37.135136"
+    },
+    {
+      "batch_number": 79,
+      "categories": [
+        "battery",
+        "battery",
+        "energy_financials",
+        "solar",
+        "energy_financials",
+        "energy_markets",
+        "energy_markets",
+        "green_investing",
+        "battery",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 71.5,
+        "average_word_count": 640,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0363621711730957,
+      "timestamp": "2025-09-15T19:14:39.181574"
+    },
+    {
+      "batch_number": 80,
+      "categories": [
+        "energy_markets",
+        "battery",
+        "energy_financials",
+        "green_investing",
+        "energy_markets",
+        "wind",
+        "battery",
+        "technology",
+        "wind",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.3,
+        "average_word_count": 639,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04012918472290039,
+      "timestamp": "2025-09-15T19:14:41.231528"
+    },
+    {
+      "batch_number": 81,
+      "categories": [
+        "battery",
+        "energy_markets",
+        "wind",
+        "wind",
+        "wind",
+        "battery",
+        "solar",
+        "energy_markets",
+        "energy_financials",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 75.7,
+        "average_word_count": 663,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.039443016052246094,
+      "timestamp": "2025-09-15T19:14:43.281013"
+    },
+    {
+      "batch_number": 82,
+      "categories": [
+        "battery",
+        "stock_forecasts",
+        "solar",
+        "energy_financials",
+        "battery",
+        "green_investing",
+        "energy_markets",
+        "energy_markets",
+        "battery",
+        "energy_financials"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.3,
+        "average_word_count": 642,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.052438974380493164,
+      "timestamp": "2025-09-15T19:14:45.343499"
+    },
+    {
+      "batch_number": 83,
+      "categories": [
+        "solar",
+        "solar",
+        "energy_markets",
+        "commodities",
+        "wind",
+        "stock_forecasts",
+        "energy_markets",
+        "wind",
+        "energy_markets",
+        "battery"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 72.7,
+        "average_word_count": 629,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.035317182540893555,
+      "timestamp": "2025-09-15T19:14:47.389623"
+    },
+    {
+      "batch_number": 84,
+      "categories": [
+        "energy_financials",
+        "energy_markets",
+        "stock_forecasts",
+        "battery",
+        "battery",
+        "wind",
+        "commodities",
+        "wind",
+        "energy_markets",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 72.6,
+        "average_word_count": 664,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05681204795837402,
+      "timestamp": "2025-09-15T19:14:49.457459"
+    },
+    {
+      "batch_number": 85,
+      "categories": [
+        "commodities",
+        "stock_forecasts",
+        "battery",
+        "wind",
+        "solar",
+        "energy_markets",
+        "solar",
+        "commodities",
+        "wind",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.1,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04645037651062012,
+      "timestamp": "2025-09-15T19:14:51.515231"
+    },
+    {
+      "batch_number": 86,
+      "categories": [
+        "battery",
+        "solar",
+        "solar",
+        "energy_markets",
+        "wind",
+        "wind",
+        "battery",
+        "wind",
+        "energy_markets",
+        "stock_forecasts"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 76.5,
+        "average_word_count": 662,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05443525314331055,
+      "timestamp": "2025-09-15T19:14:53.582763"
+    },
+    {
+      "batch_number": 87,
+      "categories": [
+        "battery",
+        "wind",
+        "green_investing",
+        "energy_financials",
+        "solar",
+        "solar",
+        "commodities",
+        "wind",
+        "wind",
+        "policy"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.9,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.036261796951293945,
+      "timestamp": "2025-09-15T19:14:55.629837"
+    },
+    {
+      "batch_number": 88,
+      "categories": [
+        "wind",
+        "wind",
+        "solar",
+        "stock_forecasts",
+        "stock_forecasts",
+        "stock_forecasts",
+        "battery",
+        "green_investing",
+        "green_investing",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 72.6,
+        "average_word_count": 624,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.06116080284118652,
+      "timestamp": "2025-09-15T19:14:57.703833"
+    },
+    {
+      "batch_number": 89,
+      "categories": [
+        "green_investing",
+        "energy_markets",
+        "solar",
+        "battery",
+        "stock_forecasts",
+        "solar",
+        "stock_forecasts",
+        "commodities",
+        "commodities",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 3,
+        "average_seo_score": 71.5,
+        "average_word_count": 613,
+        "average_image_count": 2.0,
+        "quality_percentage": 30.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05591392517089844,
+      "timestamp": "2025-09-15T19:14:59.772169"
+    },
+    {
+      "batch_number": 90,
+      "categories": [
+        "wind",
+        "battery",
+        "green_investing",
+        "stock_forecasts",
+        "energy_markets",
+        "commodities",
+        "battery",
+        "battery",
+        "stock_forecasts",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 73.7,
+        "average_word_count": 643,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04333305358886719,
+      "timestamp": "2025-09-15T19:15:01.826947"
+    },
+    {
+      "batch_number": 91,
+      "categories": [
+        "commodities",
+        "solar",
+        "commodities",
+        "battery",
+        "battery",
+        "wind",
+        "wind",
+        "commodities",
+        "energy_markets",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.8,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.17466020584106445,
+      "timestamp": "2025-09-15T19:15:04.020333"
+    },
+    {
+      "batch_number": 92,
+      "categories": [
+        "energy_markets",
+        "energy_markets",
+        "commodities",
+        "energy_financials",
+        "energy_markets",
+        "battery",
+        "wind",
+        "solar",
+        "green_investing",
+        "technology"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 71.7,
+        "average_word_count": 613,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.04053807258605957,
+      "timestamp": "2025-09-15T19:15:06.079093"
+    },
+    {
+      "batch_number": 93,
+      "categories": [
+        "solar",
+        "energy_markets",
+        "solar",
+        "solar",
+        "energy_markets",
+        "commodities",
+        "battery",
+        "wind",
+        "green_investing",
+        "technology"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 75.0,
+        "average_word_count": 611,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.048914194107055664,
+      "timestamp": "2025-09-15T19:15:08.140451"
+    },
+    {
+      "batch_number": 94,
+      "categories": [
+        "energy_markets",
+        "wind",
+        "solar",
+        "battery",
+        "policy",
+        "energy_markets",
+        "energy_markets",
+        "solar",
+        "wind",
+        "wind"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 10,
+        "average_seo_score": 77.5,
+        "average_word_count": 640,
+        "average_image_count": 2.0,
+        "quality_percentage": 100.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05084395408630371,
+      "timestamp": "2025-09-15T19:15:10.202857"
+    },
+    {
+      "batch_number": 95,
+      "categories": [
+        "energy_markets",
+        "wind",
+        "green_investing",
+        "energy_markets",
+        "battery",
+        "battery",
+        "commodities",
+        "battery",
+        "wind",
+        "policy"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 74.9,
+        "average_word_count": 660,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.039869070053100586,
+      "timestamp": "2025-09-15T19:15:12.256069"
+    },
+    {
+      "batch_number": 96,
+      "categories": [
+        "solar",
+        "wind",
+        "battery",
+        "wind",
+        "stock_forecasts",
+        "energy_financials",
+        "green_investing",
+        "solar",
+        "energy_markets",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.6,
+        "average_word_count": 600,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.07062768936157227,
+      "timestamp": "2025-09-15T19:15:14.338423"
+    },
+    {
+      "batch_number": 97,
+      "categories": [
+        "wind",
+        "energy_financials",
+        "energy_markets",
+        "policy",
+        "stock_forecasts",
+        "battery",
+        "stock_forecasts",
+        "green_investing",
+        "policy",
+        "solar"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 6,
+        "average_seo_score": 73.2,
+        "average_word_count": 626,
+        "average_image_count": 2.0,
+        "quality_percentage": 60.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.05334115028381348,
+      "timestamp": "2025-09-15T19:15:16.410570"
+    },
+    {
+      "batch_number": 98,
+      "categories": [
+        "solar",
+        "solar",
+        "wind",
+        "energy_markets",
+        "solar",
+        "battery",
+        "stock_forecasts",
+        "energy_financials",
+        "battery",
+        "energy_markets"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 5,
+        "average_seo_score": 74.7,
+        "average_word_count": 601,
+        "average_image_count": 2.0,
+        "quality_percentage": 50.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.044883012771606445,
+      "timestamp": "2025-09-15T19:15:18.466880"
+    },
+    {
+      "batch_number": 99,
+      "categories": [
+        "solar",
+        "battery",
+        "stock_forecasts",
+        "battery",
+        "wind",
+        "wind",
+        "energy_markets",
+        "solar",
+        "wind",
+        "technology"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 7,
+        "average_seo_score": 77.5,
+        "average_word_count": 643,
+        "average_image_count": 2.0,
+        "quality_percentage": 70.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.0530400276184082,
+      "timestamp": "2025-09-15T19:15:20.535892"
+    },
+    {
+      "batch_number": 100,
+      "categories": [
+        "policy",
+        "wind",
+        "battery",
+        "solar",
+        "stock_forecasts",
+        "green_investing",
+        "energy_markets",
+        "green_investing",
+        "commodities",
+        "commodities"
+      ],
+      "results": {
+        "successful_posts": 10,
+        "posts_meeting_requirements": 4,
+        "average_seo_score": 71.9,
+        "average_word_count": 628,
+        "average_image_count": 2.0,
+        "quality_percentage": 40.0,
+        "recommendations": [
+          "Improve SEO optimization and keyword density"
+        ]
+      },
+      "duration": 0.052590131759643555,
+      "timestamp": "2025-09-15T19:15:22.600241"
+    }
+  ]
+}
