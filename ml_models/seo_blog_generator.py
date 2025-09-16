@@ -29,7 +29,7 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         
         # SEO configuration
         self.seo_config = {
-            "min_word_count": 800,
+            "min_word_count": 500,    # Updated to 500 minimum
             "max_word_count": 2500,
             "target_keyword_density": 0.02,  # 2%
             "max_keyword_density": 0.04,     # 4%
@@ -330,6 +330,69 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
             "optimization_level": "enhanced"
         }
     
+    def ensure_minimum_word_count(self, content: str, category: str, target_words: int = 500) -> str:
+        """Ensure content meets minimum word count requirement"""
+        
+        # Count current words (excluding HTML tags)
+        text_content = re.sub(r'<[^>]+>', '', content)
+        word_count = len(text_content.split())
+        
+        if word_count >= target_words:
+            return content
+        
+        # Additional content sections to reach target word count
+        expansion_sections = {
+            "solar": [
+                "<h2>Market Impact and Economic Benefits</h2>",
+                "<p>The solar industry continues to drive significant economic growth, with global investments reaching $150 billion annually. Job creation in the solar sector spans manufacturing, installation, maintenance, and research roles, supporting over 3.3 million jobs worldwide. Cost reductions of 70% over the past decade have made solar energy competitive with fossil fuels in most markets.</p>",
+                "<p>Residential adoption rates are accelerating as homeowners recognize long-term savings potential. Commercial installations provide businesses with energy independence and corporate sustainability credentials. Utility-scale projects are reshaping electricity generation with multi-gigawatt solar farms providing clean power to millions of homes.</p>",
+                "<h3>Future Development Trends</h3>",
+                "<p>Next-generation solar technologies include perovskite tandem cells promising 40%+ efficiency, agrivoltaics combining agriculture with energy production, and building-integrated photovoltaics creating energy-generating structures. Smart inverters and energy management systems optimize performance while battery integration enables 24/7 clean power availability.</p>"
+            ],
+            "wind": [
+                "<h2>Technological Advancement and Grid Integration</h2>",
+                "<p>Modern wind turbines achieve capacity factors exceeding 50% through advanced blade designs, predictive maintenance systems, and intelligent control algorithms. Offshore installations access stronger, more consistent wind resources while floating platforms unlock deeper water locations previously inaccessible for wind development.</p>",
+                "<p>Grid integration challenges are addressed through sophisticated forecasting systems that predict wind generation 72 hours in advance. Energy storage systems smooth output variations while smart grid technologies optimize power distribution. Virtual power plants aggregate multiple wind farms to provide reliable grid services.</p>",
+                "<h3>Environmental and Social Benefits</h3>",
+                "<p>Wind energy provides substantial environmental benefits with lifecycle carbon emissions 98% lower than coal power generation. Land use is minimal, allowing continued agricultural activities between turbines. Community wind projects provide local ownership opportunities and economic development in rural areas.</p>"
+            ],
+            "battery": [
+                "<h2>Grid-Scale Applications and Market Growth</h2>",
+                "<p>Battery storage deployment is accelerating globally with installations exceeding 10 GW annually. Grid-scale systems provide frequency regulation, peak shaving, and backup power services while enabling higher renewable energy penetration. Virtual power plants aggregate distributed batteries to create utility-scale resources.</p>",
+                "<p>Electric vehicle integration creates vehicle-to-grid capabilities, transforming cars into mobile energy storage units. Residential energy storage systems provide energy independence and grid resilience during outages. Commercial applications include demand charge reduction and power quality improvement.</p>",
+                "<h3>Manufacturing and Supply Chain Innovation</h3>",
+                "<p>Advanced manufacturing techniques reduce production costs while improving energy density and cycle life. Recycling programs recover critical materials from end-of-life batteries, creating sustainable supply chains. Research into sodium-ion and solid-state technologies promises further performance improvements and cost reductions.</p>"
+            ],
+            "policy": [
+                "<h2>International Cooperation and Climate Goals</h2>",
+                "<p>Global climate commitments drive renewable energy policy development with 150+ countries establishing net-zero targets. International technology transfer programs accelerate clean energy deployment in developing nations. Carbon pricing mechanisms create market incentives for renewable energy investments.</p>",
+                "<p>Policy stability and long-term planning provide investor confidence in renewable energy projects. Regulatory streamlining reduces permitting delays while maintaining environmental protections. Grid modernization investments support renewable energy integration at scale.</p>",
+                "<h3>Economic Impact Assessment</h3>",
+                "<p>Renewable energy policies generate substantial economic benefits through job creation, energy cost reductions, and reduced health care expenses from cleaner air. Energy security improvements reduce dependence on volatile fossil fuel imports. Innovation incentives drive technological advancement and export opportunities.</p>"
+            ],
+            "technology": [
+                "<h2>Digital Innovation and Smart Grid Integration</h2>",
+                "<p>Artificial intelligence optimizes renewable energy systems through predictive maintenance, performance forecasting, and automated control systems. Machine learning algorithms analyze weather patterns, energy demand, and grid conditions to maximize efficiency and reliability.</p>",
+                "<p>Internet of Things sensors provide real-time monitoring of energy systems while blockchain technology enables peer-to-peer energy trading. Digital twins create virtual replicas of physical systems for optimization and predictive analysis. Advanced materials research develops next-generation energy technologies.</p>",
+                "<h3>Research and Development Priorities</h3>",
+                "<p>Emerging technologies focus on energy storage breakthroughs, advanced materials, and system integration solutions. Quantum computing applications promise revolutionary advances in energy optimization and materials discovery. Nanotechnology enables new approaches to energy conversion and storage at molecular scales.</p>"
+            ]
+        }
+        
+        # Get expansion content for category
+        additional_content = expansion_sections.get(category, expansion_sections["technology"])
+        
+        # Add sections until we reach target word count
+        for section in additional_content:
+            content += "\n\n" + section
+            
+            # Check if we've reached target
+            text_content = re.sub(r'<[^>]+>', '', content)
+            if len(text_content.split()) >= target_words:
+                break
+        
+        return content
+
     def enhance_content_for_seo(self, base_content: Dict[str, str], category: str) -> Dict[str, str]:
         """Enhance base content with SEO optimizations"""
         
@@ -339,7 +402,10 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         # 1. Convert markdown to HTML first
         content = self.format_content_for_html(content)
         
-        # 2. Optimize title with primary keyword
+        # 2. Ensure minimum 500 words
+        content = self.ensure_minimum_word_count(content, category, 500)
+        
+        # 3. Optimize title with primary keyword
         primary_keywords = self.seo_keywords.get(category, [])
         if primary_keywords and primary_keywords[0].lower() not in title.lower():
             title = f"{primary_keywords[0].title()}: {title}"
@@ -348,25 +414,25 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         if len(title) > 60:
             title = title[:57] + "..."
         
-        # 3. Generate meta description
+        # 4. Generate meta description
         meta_description = self.generate_meta_description(content, category)
         
-        # 4. Add internal links
+        # 5. Add internal links
         content = self.add_internal_links(content, category)
         
-        # 5. Add external links
+        # 6. Add external links
         content = self.add_external_links(content, category)
         
-        # 6. Enhance with structured data
+        # 7. Enhance with structured data
         content = self.add_schema_markup(content, title, category)
         
-        # 7. Add SEO-optimized image with alt text
+        # 8. Add SEO-optimized images (2 per post)
         content = self.optimize_images_for_seo(content, category)
         
-        # 8. Improve heading structure
+        # 9. Improve heading structure
         content = self.optimize_heading_structure(content, category)
         
-        # 9. Add meta keywords
+        # 10. Add meta keywords
         meta_keywords = ", ".join(primary_keywords[:10])
         
         return {
@@ -480,22 +546,113 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
         # Add schema markup to content
         return content + f'\\n\\n{schema_script}'
     
+    def get_unique_image_urls(self, category: str, count: int = 2) -> List[Dict[str, str]]:
+        """Generate unique image URLs and metadata for each post"""
+        
+        # Image databases by category with unique identifiers
+        image_databases = {
+            "solar": [
+                {"url": f"https://images.unsplash.com/photo-1509391366360-2e959784a276", "alt": "Modern solar panel array installation on commercial building rooftop"},
+                {"url": f"https://images.unsplash.com/photo-1466611653911-95081537e5b7", "alt": "Large-scale solar farm with photovoltaic panels in desert landscape"},
+                {"url": f"https://images.unsplash.com/photo-1497440001374-f26997328c1b", "alt": "Residential solar panels generating clean renewable energy"},
+                {"url": f"https://images.unsplash.com/photo-1595437193398-f24279553f4f", "alt": "Solar energy installation with blue sky and modern technology"},
+                {"url": f"https://images.unsplash.com/photo-1613665813446-82a78c468a1d", "alt": "Floating solar panels on water surface innovative technology"},
+                {"url": f"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", "alt": "Solar tracking system following sun for maximum energy efficiency"}
+            ],
+            "wind": [
+                {"url": f"https://images.unsplash.com/photo-1532601224476-15c79f2f7a51", "alt": "Offshore wind turbines generating renewable energy over ocean"},
+                {"url": f"https://images.unsplash.com/photo-1466611653911-95081537e5b7", "alt": "Modern wind farm with tall turbines in countryside landscape"},
+                {"url": f"https://images.unsplash.com/photo-1473341304170-971dccb5ac1e", "alt": "Wind energy turbines against dramatic sunset sky"},
+                {"url": f"https://images.unsplash.com/photo-1548337138-e87d889cc369", "alt": "Onshore wind turbine installation in rolling hills"},
+                {"url": f"https://images.unsplash.com/photo-1569163139853-de4b8ac3de58", "alt": "Floating offshore wind turbine platform technology"},
+                {"url": f"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", "alt": "Wind turbine maintenance and sustainable energy technology"}
+            ],
+            "battery": [
+                {"url": f"https://images.unsplash.com/photo-1593642632823-8f785ba67e45", "alt": "Advanced lithium-ion battery storage systems for renewable energy"},
+                {"url": f"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", "alt": "Grid-scale energy storage facility with battery technology"},
+                {"url": f"https://images.unsplash.com/photo-1516192518150-0d8fee5425e3", "alt": "Home energy storage system with smart battery management"},
+                {"url": f"https://images.unsplash.com/photo-1509391366360-2e959784a276", "alt": "Electric vehicle charging station with battery technology"},
+                {"url": f"https://images.unsplash.com/photo-1473341304170-971dccb5ac1e", "alt": "Battery manufacturing facility and clean energy storage"},
+                {"url": f"https://images.unsplash.com/photo-1569163139853-de4b8ac3de58", "alt": "Residential solar battery storage system installation"}
+            ],
+            "policy": [
+                {"url": f"https://images.unsplash.com/photo-1486312338219-ce68e2c6-4d3e", "alt": "Government officials discussing renewable energy policy initiatives"},
+                {"url": f"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40", "alt": "Clean energy legislation and policy framework development"},
+                {"url": f"https://images.unsplash.com/photo-1591115765373-5207764f72e7", "alt": "Energy policy impact on renewable technology adoption"},
+                {"url": f"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d", "alt": "International climate policy and renewable energy cooperation"},
+                {"url": f"https://images.unsplash.com/photo-1521737604893-d14cc237f11d", "alt": "Policy documents and renewable energy regulations"},
+                {"url": f"https://images.unsplash.com/photo-1552664730-d307ca884978", "alt": "Government building and energy policy development"}
+            ],
+            "technology": [
+                {"url": f"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", "alt": "Cutting-edge clean technology and renewable energy innovation"},
+                {"url": f"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", "alt": "Smart grid technology and energy management systems"},
+                {"url": f"https://images.unsplash.com/photo-1509391366360-2e959784a276", "alt": "Advanced renewable energy technology development"},
+                {"url": f"https://images.unsplash.com/photo-1473341304170-971dccb5ac1e", "alt": "IoT sensors and smart energy monitoring technology"},
+                {"url": f"https://images.unsplash.com/photo-1516192518150-0d8fee5425e3", "alt": "Digital energy management and smart home technology"},
+                {"url": f"https://images.unsplash.com/photo-1569163139853-de4b8ac3de58", "alt": "Artificial intelligence in renewable energy optimization"}
+            ]
+        }
+        
+        # Get images for category
+        category_images = image_databases.get(category, image_databases["technology"])
+        
+        # Ensure uniqueness by tracking used images
+        if not hasattr(self, 'used_images'):
+            self.used_images = set()
+        
+        # Select unique images
+        available_images = [img for img in category_images if img["url"] not in self.used_images]
+        
+        # If we've used all images, reset the tracker
+        if len(available_images) < count:
+            self.used_images.clear()
+            available_images = category_images
+        
+        # Select required number of unique images
+        selected_images = random.sample(available_images, min(count, len(available_images)))
+        
+        # Mark as used
+        for img in selected_images:
+            self.used_images.add(img["url"])
+        
+        return selected_images
+
     def optimize_images_for_seo(self, content: str, category: str) -> str:
-        """Optimize images with proper alt text and SEO attributes"""
+        """Add SEO-optimized images with alt text - 2 images per post"""
         
-        # Find all img tags
-        img_pattern = r'<img([^>]*)>'
-        images = re.findall(img_pattern, content)
+        # Get 2 unique images for this post
+        images = self.get_unique_image_urls(category, 2)
         
-        for img_attrs in images:
-            # Ensure alt text is present and descriptive
-            if 'alt=' not in img_attrs:
-                primary_keyword = self.seo_keywords.get(category, ["renewable energy"])[0]
-                alt_text = f"{primary_keyword} technology and innovation"
+        if len(images) >= 2:
+            # First image - Hero image after introduction
+            hero_image = images[0]
+            hero_html = f'''
+            <div class="image-container">
+                <img src="{hero_image['url']}?w=800&h=400&fit=crop" alt="{hero_image['alt']}" class="post-hero-image" loading="lazy">
+                <div class="image-caption">{hero_image['alt']}</div>
+            </div>
+            '''
+            
+            # Second image - Mid-content image
+            mid_image = images[1]
+            mid_html = f'''
+            <div class="image-container">
+                <img src="{mid_image['url']}?w=600&h=350&fit=crop" alt="{mid_image['alt']}" class="post-content-image" loading="lazy">
+                <div class="image-caption">{mid_image['alt']}</div>
+            </div>
+            '''
+            
+            # Insert hero image after first paragraph
+            paragraphs = content.split('</p>')
+            if len(paragraphs) > 1:
+                paragraphs.insert(1, hero_html)
                 
-                # Add alt text
-                new_img_attrs = img_attrs + f' alt="{alt_text}"'
-                content = content.replace(f'<img{img_attrs}>', f'<img{new_img_attrs}>')
+            # Insert mid image around middle of content
+            mid_point = len(paragraphs) // 2
+            if mid_point > 2:
+                paragraphs.insert(mid_point, mid_html)
+            
+            content = '</p>'.join(paragraphs)
         
         return content
     
@@ -1047,6 +1204,16 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
             border-radius: 8px;
             margin: 1rem 0 2rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }}
+        
+        .post-content-image {{
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }}
         
         .image-caption {{
