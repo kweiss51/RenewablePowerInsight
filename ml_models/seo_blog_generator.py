@@ -43,7 +43,7 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
             "required_schema_markup": True
         }
         
-        # SEO keywords database
+        # SEO keywords database - EXPANDED WITH NEW CATEGORIES
         self.seo_keywords = {
             "solar": [
                 "solar panels", "solar energy", "photovoltaic systems", "renewable energy",
@@ -69,6 +69,37 @@ class SEOBlogGenerator(AutomatedBlogGenerator):
                 "clean technology", "green tech", "smart grid", "energy innovation",
                 "sustainable technology", "cleantech", "energy efficiency", "green innovation",
                 "renewable technology", "energy solutions", "climate tech"
+            ],
+            # NEW EXPANDED CATEGORIES
+            "energy_markets": [
+                "energy markets", "electricity trading", "power markets", "energy prices",
+                "wholesale electricity", "capacity markets", "ancillary services",
+                "demand response", "energy auctions", "PPA pricing", "renewable certificates",
+                "carbon markets", "emissions trading", "green certificates", "market design"
+            ],
+            "commodities": [
+                "energy commodities", "oil prices", "natural gas", "coal markets",
+                "uranium prices", "renewable fuels", "biofuels", "hydrogen prices",
+                "carbon prices", "lithium prices", "copper markets", "rare earth metals",
+                "polysilicon prices", "commodity trading", "futures markets", "spot prices"
+            ],
+            "stock_forecasts": [
+                "energy stocks", "renewable energy stocks", "utility stocks", "oil stocks",
+                "clean energy ETFs", "solar stocks", "wind energy stocks", "battery stocks",
+                "grid technology stocks", "ESG investing", "green bonds", "climate ETFs",
+                "energy transition investing", "stock analysis", "earnings forecasts", "valuation models"
+            ],
+            "energy_financials": [
+                "energy company financials", "utility earnings", "renewable energy ROI",
+                "project finance", "energy investments", "LCOE analysis", "NPV calculations",
+                "IRR models", "debt financing", "equity financing", "tax credits",
+                "depreciation schedules", "cash flow analysis", "EBITDA", "free cash flow"
+            ],
+            "green_investing": [
+                "green investing", "sustainable investing", "ESG investing", "climate investing",
+                "impact investing", "responsible investing", "ethical investing", "SRI",
+                "green bonds", "sustainability bonds", "climate bonds", "ESG funds",
+                "clean energy funds", "climate ETFs", "sustainable finance", "ESG metrics"
             ]
         }
         

@@ -15,7 +15,7 @@ import argparse
 # Add current directory to path
 sys.path.append(str(Path(__file__).parent))
 
-from seo_blog_generator import SEOBlogGenerator
+from enhanced_ml_trainer import EnhancedMLTrainer
 
 
 class SEOBlogAutomation:
@@ -29,8 +29,8 @@ class SEOBlogAutomation:
         # Create directories
         self.log_file.parent.mkdir(exist_ok=True)
         
-        # Initialize SEO blog generator
-        self.seo_generator = SEOBlogGenerator()
+        # Initialize enhanced ML trainer (includes all SEO features)
+        self.seo_generator = EnhancedMLTrainer()
         
         # Overall automation metrics
         self.automation_metrics = {
@@ -381,7 +381,9 @@ def main():
     parser.add_argument('--posts', '-p', type=int, default=2, 
                        help='Number of posts to generate (default: 2)')
     parser.add_argument('--categories', '-c', nargs='+', 
-                       choices=['solar', 'wind', 'battery', 'policy', 'technology'],
+                       choices=['solar', 'wind', 'battery', 'policy', 'technology', 
+                               'energy_markets', 'commodities', 'stock_forecasts', 
+                               'energy_financials', 'green_investing'],
                        help='Specific categories to generate')
     parser.add_argument('--no-commit', action='store_true', 
                        help='Skip Git commit operations')
