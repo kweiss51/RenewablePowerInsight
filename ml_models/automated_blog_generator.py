@@ -32,7 +32,7 @@ class AutomatedBlogGenerator:
         self.used_titles = set()
         self._load_existing_content()
         
-        # Category mapping to website navigation structure
+        # Category mapping to website navigation structure - UPDATED WITH NEW CATEGORIES
         self.category_folders = {
             "Solar Energy": "solar",
             "Wind Energy": "wind", 
@@ -44,7 +44,18 @@ class AutomatedBlogGenerator:
             "Smart Grid": "grid-tech",
             "Energy Markets": "markets",
             "Market Analysis": "markets",
-            "Renewable Energy": "general"  # fallback category
+            "Renewable Energy": "general",  # fallback category
+            # NEW ENHANCED CATEGORIES
+            "solar": "solar",
+            "wind": "wind",
+            "battery": "battery",
+            "policy": "policy",
+            "technology": "grid-tech",
+            "energy_markets": "markets",
+            "commodities": "markets",
+            "stock_forecasts": "markets",
+            "energy_financials": "markets", 
+            "green_investing": "markets"
         }
         
         # Create category subfolders
@@ -58,7 +69,7 @@ class AutomatedBlogGenerator:
             "last_integration": None
         }
         
-        # Energy topic categories for generating diverse content
+        # Energy topic categories for generating diverse content - UPDATED WITH NEW CATEGORIES
         self.energy_topics = {
             "solar": [
                 "perovskite solar cells", "solar panel efficiency", "rooftop solar systems",
@@ -77,12 +88,33 @@ class AutomatedBlogGenerator:
                 "clean energy investments", "grid modernization funding", "sustainability regulations"
             ],
             "technology": [
-                "smart grid systems", "AI energy management", "hydrogen fuel cells",
-                "carbon capture", "energy efficiency", "microgrids"
+                "smart grid technology", "energy management systems", "ai in renewable energy",
+                "blockchain energy trading", "iot energy monitoring", "digital twin energy"
+            ],
+            # NEW ENHANCED CATEGORIES
+            "energy_markets": [
+                "electricity trading platforms", "power market volatility", "renewable energy certificates",
+                "capacity market auctions", "energy price forecasting", "grid services markets"
+            ],
+            "commodities": [
+                "lithium price trends", "polysilicon market analysis", "rare earth metal supply",
+                "carbon credit trading", "renewable fuel markets", "copper commodity outlook"
+            ],
+            "stock_forecasts": [
+                "renewable energy stock analysis", "utility stock performance", "clean energy etf trends",
+                "solar company valuations", "wind energy stock outlook", "battery manufacturer earnings"
+            ],
+            "energy_financials": [
+                "renewable project financing", "green bond markets", "energy investment returns",
+                "lcoe cost analysis", "energy company earnings", "infrastructure debt funding"
+            ],
+            "green_investing": [
+                "esg investment criteria", "sustainable finance trends", "climate investment funds",
+                "green bond performance", "impact investing metrics", "carbon footprint analysis"
             ]
         }
         
-        # Relevant external links for embedding in blog posts
+        # Relevant external links for embedding in blog posts - UPDATED WITH NEW CATEGORIES
         self.relevant_links = {
             "solar": [
                 {"text": "Department of Energy Solar Research", "url": "https://www.energy.gov/eere/solar"},
@@ -118,6 +150,42 @@ class AutomatedBlogGenerator:
                 {"text": "Advanced Research Projects Agency", "url": "https://arpa-e.energy.gov/"},
                 {"text": "Clean Technology Investment", "url": "https://www.energy.gov/eere/technology-to-market"},
                 {"text": "National Labs Energy Innovation", "url": "https://www.energy.gov/science/national-laboratories"}
+            ],
+            # NEW ENHANCED CATEGORIES  
+            "energy_markets": [
+                {"text": "Energy Information Administration Markets", "url": "https://www.eia.gov/electricity/wholesale/"},
+                {"text": "Federal Energy Regulatory Commission", "url": "https://www.ferc.gov/"},
+                {"text": "International Energy Markets", "url": "https://www.iea.org/data-and-statistics/"},
+                {"text": "Energy Trading Central", "url": "https://www.energycentral.com/"},
+                {"text": "Power Market Research", "url": "https://www.power-eng.com/"}
+            ],
+            "commodities": [
+                {"text": "Bloomberg Energy Commodities", "url": "https://www.bloomberg.com/energy/"},
+                {"text": "S&P Global Commodities", "url": "https://www.spglobal.com/commodityinsights/"},
+                {"text": "Energy Market Reports", "url": "https://www.eia.gov/petroleum/"},
+                {"text": "Metal Pricing Services", "url": "https://www.lme.com/"},
+                {"text": "Commodity Research Bureau", "url": "https://www.crbequityindexes.com/"}
+            ],
+            "stock_forecasts": [
+                {"text": "Clean Energy Stock Analysis", "url": "https://www.morningstar.com/"},
+                {"text": "Renewable Energy Investing", "url": "https://www.nasdaq.com/"},
+                {"text": "Energy Sector Performance", "url": "https://finance.yahoo.com/"},
+                {"text": "ESG Investment Research", "url": "https://www.msci.com/"},
+                {"text": "Sustainable Finance Institute", "url": "https://www.sustainablefinance.org/"}
+            ],
+            "energy_financials": [
+                {"text": "Project Finance International", "url": "https://www.pfie.com/"},
+                {"text": "Green Finance Institute", "url": "https://www.greenfinanceinstitute.co.uk/"},
+                {"text": "Renewable Energy Finance", "url": "https://www.renewableenergyworld.com/"},
+                {"text": "Infrastructure Investor", "url": "https://www.infrastructureinvestor.com/"},
+                {"text": "Energy Finance Analysis", "url": "https://www.bnef.com/"}
+            ],
+            "green_investing": [
+                {"text": "Principles for Responsible Investment", "url": "https://www.unpri.org/"},
+                {"text": "Climate Bonds Initiative", "url": "https://www.climatebonds.net/"},
+                {"text": "Global Sustainable Investment Alliance", "url": "http://www.gsi-alliance.org/"},
+                {"text": "Task Force on Climate-related Financial Disclosures", "url": "https://www.fsb-tcfd.org/"},
+                {"text": "CDP Environmental Disclosure", "url": "https://www.cdp.net/"}
             ],
             "general": [
                 {"text": "U.S. Department of Energy", "url": "https://www.energy.gov/"},

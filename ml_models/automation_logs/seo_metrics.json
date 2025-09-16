@@ -1,15 +1,15 @@
 {
-  "total_sessions": 11,
-  "successful_posts": 34,
-  "failed_posts": 0,
-  "average_seo_score": 75.8,
-  "posts_above_80_percent": 10,
-  "git_commits": 11,
-  "last_run": "2025-09-15T18:49:49.659174",
+  "total_sessions": 12,
+  "successful_posts": 40,
+  "failed_posts": 4,
+  "average_seo_score": 76.5,
+  "posts_above_80_percent": 14,
+  "git_commits": 12,
+  "last_run": "2025-09-15T19:01:06.410867",
   "categories_generated": {
-    "solar": 9,
-    "wind": 9,
-    "battery": 8,
+    "solar": 11,
+    "wind": 11,
+    "battery": 10,
     "policy": 4,
     "technology": 4
   }
