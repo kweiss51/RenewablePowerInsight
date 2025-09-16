@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Feed - Renewable Power Insight</title>
+    <meta name="description" content="Subscribe to our RSS feed for real-time updates on renewable energy news, research, and industry insights.">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Renewable Power Insight RSS Feed" href="../feed.xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <a href="../index.html" class="site-title">Renewable Power Insight</a>
+                    <span class="site-tagline">Advanced Energy Research</span>
+                </div>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../posts/solar/index.html" class="nav-link">Solar</a>
+                    <a href="../posts/wind/index.html" class="nav-link">Wind</a>
+                    <a href="../posts/battery/index.html" class="nav-link">Storage</a>
+                    <a href="../posts/grid-tech/index.html" class="nav-link">Smart Grid</a>
+                    <a href="../posts/policy/index.html" class="nav-link">Policy</a>
+                    <a href="../blog/index.html" class="nav-link">All Posts</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    RSS Feed
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="rss-page">
+                <div class="rss-header">
+                    <h1 class="page-title">RSS Feed</h1>
+                    <p class="page-subtitle">
+                        Subscribe to our RSS feed for instant access to new renewable energy content 
+                        as soon as it's published.
+                    </p>
+                </div>
+                
+                <div class="rss-content">
+                    <div class="rss-main">
+                        <div class="feed-info">
+                            <h2>Subscribe to Our RSS Feed</h2>
+                            <p>
+                                RSS (Really Simple Syndication) allows you to stay updated with our latest 
+                                content without having to visit our website regularly. You can use any RSS 
+                                reader to subscribe to our feed and receive notifications when new articles are published.
+                            </p>
+                            
+                            <div class="feed-url-section">
+                                <h3>RSS Feed URL:</h3>
+                                <div class="feed-url-box">
+                                    <code id="feedUrl">https://renewablepowerinsight.com/feed.xml</code>
+                                    <button class="copy-button" onclick="copyFeedUrl()">Copy</button>
+                                </div>
+                                <p class="copy-instruction">Click the URL above to copy it to your clipboard</p>
+                            </div>
+                            
+                            <div class="quick-subscribe">
+                                <h3>Quick Subscribe:</h3>
+                                <div class="subscribe-buttons">
+                                    <a href="../feed.xml" class="rss-button">
+                                        📡 Subscribe with RSS Reader
+                                    </a>
+                                    <a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Frenewablepowerinsight.com%2Ffeed.xml" class="feedly-button" target="_blank">
+                                        Subscribe with Feedly
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rss-instructions">
+                            <h2>How to Use RSS Feeds</h2>
+                            
+                            <div class="instruction-step">
+                                <h3>1. Choose an RSS Reader</h3>
+                                <p>Popular RSS readers include Feedly, Inoreader, NewsBlur, and many others. Most are available as web apps, mobile apps, or desktop applications.</p>
+                            </div>
+                            
+                            <div class="instruction-step">
+                                <h3>2. Add Our Feed</h3>
+                                <p>Copy our RSS feed URL and paste it into your RSS reader's "Add Feed" or "Subscribe" function.</p>
+                            </div>
+                            
+                            <div class="instruction-step">
+                                <h3>3. Stay Updated</h3>
+                                <p>Your RSS reader will automatically check for new content and notify you when we publish new articles.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rss-sidebar">
+                        <div class="feed-stats">
+                            <h3>Feed Information</h3>
+                            <div class="stat-item">
+                                <strong>Content Type:</strong>
+                                <span>Full articles with summaries</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Update Frequency:</strong>
+                                <span>Multiple times per week</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Categories Included:</strong>
+                                <span>All research areas</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Format:</strong>
+                                <span>RSS 2.0 / Atom</span>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-readers">
+                            <h3>Popular RSS Readers</h3>
+                            <ul class="reader-list">
+                                <li><a href="https://feedly.com" target="_blank">Feedly</a> - Web & Mobile</li>
+                                <li><a href="https://www.inoreader.com" target="_blank">Inoreader</a> - Web & Mobile</li>
+                                <li><a href="https://newsblur.com" target="_blank">NewsBlur</a> - Web & Mobile</li>
+                                <li><a href="https://feedreader.com" target="_blank">FeedReader</a> - Desktop</li>
+                                <li><a href="https://ranchero.com/netnewswire/" target="_blank">NetNewsWire</a> - Mac/iOS</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="alternative-options">
+                            <h3>Prefer Email?</h3>
+                            <p>If you prefer email updates, consider subscribing to our weekly newsletter instead.</p>
+                            <a href="../newsletter/index.html" class="newsletter-link">Subscribe to Newsletter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="../posts/solar/index.html">Solar Technology</a></li>
+                        <li><a href="../posts/wind/index.html">Wind Energy</a></li>
+                        <li><a href="../posts/battery/index.html">Energy Storage</a></li>
+                        <li><a href="../posts/grid-tech/index.html">Smart Grid</a></li>
+                        <li><a href="../posts/policy/index.html">Policy Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../blog/index.html">All Articles</a></li>
+                        <li><a href="../research/index.html">Research Reports</a></li>
+                        <li><a href="../data/index.html">Market Data</a></li>
+                        <li><a href="../insights/index.html">Industry Insights</a></li>
+                        <li><a href="../methodology/index.html">Methodology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about/index.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="../newsletter/index.html">Newsletter</a></li>
+                        <li><a href="../rss/index.html">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Renewable Power Insight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        .rss-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .rss-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .rss-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .feed-info h2,
+        .rss-instructions h2 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feed-info {
+            margin-bottom: 3rem;
+        }
+        
+        .feed-url-section {
+            background: var(--color-background-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .feed-url-section h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+        
+        .feed-url-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 6px;
+            padding: 0.5rem;
+        }
+        
+        .feed-url-box code {
+            flex: 1;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            font-family: 'Courier New', monospace;
+            color: var(--color-primary);
+            word-break: break-all;
+        }
+        
+        .copy-button {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .copy-button:hover {
+            background: var(--color-primary-hover);
+        }
+        
+        .copy-instruction {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .quick-subscribe {
+            margin: 2rem 0;
+        }
+        
+        .subscribe-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .rss-button,
+        .feedly-button {
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .rss-button {
+            background: #ff6600;
+            color: white;
+        }
+        
+        .rss-button:hover {
+            background: #e55a00;
+        }
+        
+        .feedly-button {
+            background: #2bb24c;
+            color: white;
+        }
+        
+        .feedly-button:hover {
+            background: #259f42;
+        }
+        
+        .instruction-step {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .instruction-step h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .rss-sidebar {
+            background: var(--color-background-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            height: fit-content;
+        }
+        
+        .rss-sidebar h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feed-stats {
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .reader-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .reader-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .reader-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .reader-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .alternative-options {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--color-border);
+        }
+        
+        .newsletter-link {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-link:hover {
+            background: var(--color-primary-hover);
+        }
+        
+        @media (max-width: 768px) {
+            .rss-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .subscribe-buttons {
+                flex-direction: column;
+            }
+            
+            .feed-url-box {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    
+    <script>
+        function copyFeedUrl() {
+            const feedUrl = document.getElementById('feedUrl').textContent;
+            navigator.clipboard.writeText(feedUrl).then(function() {
+                const button = document.querySelector('.copy-button');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#28a745';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

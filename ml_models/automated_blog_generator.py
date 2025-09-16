@@ -1617,7 +1617,7 @@ Next-generation {topic} technology under development includes:
 This technological revolution in {topic} systems positions offshore wind as a cornerstone of global clean energy infrastructure, capable of meeting significant portions of worldwide electricity demand while supporting economic development and environmental protection."""
                 },
                 {
-                    "title": f"Wind Power Economics: How {topic.Title()} is Reshaping Energy Markets",
+                    "title": f"Wind Power Economics: How {topic.title()} is Reshaping Energy Markets",
                     "content": f"""# The Economics of Wind Energy Transformation
 
 The wind power sector is experiencing a fundamental economic transformation driven by {topic} technology innovations that are reshaping electricity markets and challenging traditional energy business models worldwide.

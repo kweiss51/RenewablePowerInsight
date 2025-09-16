@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenewablePowerInsight - Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #28a745;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .metric-card h3 {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-description {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .chart-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        
+        .table-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .table-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .status-good { background-color: #28a745; }
+        .status-warning { background-color: #ffc107; }
+        .status-poor { background-color: #dc3545; }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 3rem;
+        }
+        
+        .refresh-info {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            color: #1565c0;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .insight-card h4 {
+            color: #17a2b8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .insight-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .charts-grid { grid-template-columns: 1fr; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .charts-grid .chart-card { min-width: unset; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>📊 Analytics Dashboard</h1>
+        <p>RenewablePowerInsight - Website Performance Metrics</p>
+    </header>
+
+    <div class="container">
+        <div class="refresh-info">
+            📅 <strong>Report Period:</strong> Last 30 days | 
+            🕒 <strong>Last Updated:</strong> 2025-09-15 18:10:45 |
+            📈 <strong>Data Points:</strong> 0
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>📄 Total Page Views</h3>
+                <div class="metric-value">0</div>
+                <div class="metric-description">Website page impressions</div>
+            </div>
+            
+            <div class="metric-card">
+                <h3>👥 Total Sessions</h3>
+                <div class="metric-value">0</div>
+                <div class="metric-description">Unique visitor sessions</div>
+            </div>
+            
+            <div class="metric-card">
+                <h3>⏱️ Avg Session Duration</h3>
+                <div class="metric-value">0.0s</div>
+                <div class="metric-description">Time spent per session</div>
+            </div>
+            
+            <div class="metric-card">
+                <h3>📊 Bounce Rate</h3>
+                <div class="metric-value">0.0%</div>
+                <div class="metric-description">Single-page sessions</div>
+            </div>
+            
+            <div class="metric-card">
+                <h3>🎯 Conversion Rate</h3>
+                <div class="metric-value">0.0%</div>
+                <div class="metric-description">Visitors who converted</div>
+            </div>
+            
+            <div class="metric-card">
+                <h3>📱 Mobile Traffic</h3>
+                <div class="metric-value">0.0%</div>
+                <div class="metric-description">Mobile device usage</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>📈 Daily Page Views</h3>
+                <div class="chart-container">
+                    <canvas id="pageViewsChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>🚀 Traffic Sources</h3>
+                <div class="chart-container">
+                    <canvas id="trafficSourcesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>📱 Device Types</h3>
+                <div class="chart-container">
+                    <canvas id="deviceTypesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>📊 User Types</h3>
+                <div class="chart-container">
+                    <canvas id="userTypesChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights -->
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>🎯 Performance Status</h4>
+                <p>
+                    <span class="status-indicator status-good"></span>
+                    Bounce Rate: Excellent engagement
+                </p>
+                <p>
+                    <span class="status-indicator status-poor"></span>
+                    Conversion Rate: Below average
+                </p>
+            </div>
+            
+            <div class="insight-card">
+                <h4>📱 User Behavior</h4>
+                <p>Average pages per session: 0.0</p>
+                <p>Most popular device: desktop</p>
+                <p>Primary traffic source: direct</p>
+            </div>
+            
+            <div class="insight-card">
+                <h4>📈 Growth Trends</h4>
+                <p>New vs Returning: 0 new, 0 returning</p>
+                <p>Social media referrals: 0 sessions</p>
+                <p>Peak activity: N/A</p>
+            </div>
+        </div>
+
+        <!-- Top Pages Table -->
+        <div class="table-card">
+            <h3>🔝 Top Performing Pages</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page Title</th>
+                        <th>Views</th>
+                        <th>Avg Time</th>
+                        <th>Exit Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan='4'>No data available</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Traffic Sources Table -->
+        <div class="table-card">
+            <h3>🚀 Traffic Source Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Sessions</th>
+                        <th>Percentage</th>
+                        <th>Conversion Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan='4'>No data available</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Conversion Events Table -->
+        <div class="table-card">
+            <h3>💰 Conversion Events</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Count</th>
+                        <th>Value</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan='4'>No conversions tracked</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>🌱 RenewablePowerInsight Analytics Dashboard | Powered by Custom Analytics Engine</p>
+        <p>Last updated: September 15, 2025 at 06:10 PM</p>
+    </footer>
+
+    <script>
+        // Chart.js configurations and data
+        const chartData = {
+  "pageViews": {
+    "labels": [],
+    "data": []
+  },
+  "trafficSources": {
+    "labels": [],
+    "data": []
+  },
+  "deviceTypes": {
+    "labels": [],
+    "data": []
+  },
+  "userTypes": {
+    "new": 0,
+    "returning": 0
+  }
+};
+        
+        // Page Views Chart
+        const pageViewsCtx = document.getElementById('pageViewsChart').getContext('2d');
+        new Chart(pageViewsCtx, {
+            type: 'line',
+            data: {
+                labels: chartData.pageViews.labels,
+                datasets: [{
+                    label: 'Page Views',
+                    data: chartData.pageViews.data,
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { precision: 0 }
+                    }
+                }
+            }
+        });
+
+        // Traffic Sources Chart
+        const trafficCtx = document.getElementById('trafficSourcesChart').getContext('2d');
+        new Chart(trafficCtx, {
+            type: 'doughnut',
+            data: {
+                labels: chartData.trafficSources.labels,
+                datasets: [{
+                    data: chartData.trafficSources.data,
+                    backgroundColor: [
+                        '#28a745', '#17a2b8', '#ffc107', '#dc3545', '#6f42c1', '#fd7e14'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Device Types Chart
+        const deviceCtx = document.getElementById('deviceTypesChart').getContext('2d');
+        new Chart(deviceCtx, {
+            type: 'bar',
+            data: {
+                labels: chartData.deviceTypes.labels,
+                datasets: [{
+                    label: 'Sessions',
+                    data: chartData.deviceTypes.data,
+                    backgroundColor: '#17a2b8',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { precision: 0 }
+                    }
+                }
+            }
+        });
+
+        // User Types Chart
+        const userTypesCtx = document.getElementById('userTypesChart').getContext('2d');
+        new Chart(userTypesCtx, {
+            type: 'pie',
+            data: {
+                labels: ['New Users', 'Returning Users'],
+                datasets: [{
+                    data: [chartData.userTypes.new, chartData.userTypes.returning],
+                    backgroundColor: ['#28a745', '#ffc107'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Auto-refresh every 5 minutes
+        setTimeout(() => {
+            location.reload();
+        }, 300000);
+    </script>
+</body>
+</html>

@@ -35,6 +35,265 @@
         ]
     }
     </script>
+
+<!-- RenewablePowerInsight Analytics -->
+<script>
+(function() {
+    // Analytics configuration
+    const ANALYTICS_CONFIG = {
+        apiEndpoint: '/api/analytics', // Update this to your analytics endpoint
+        trackPageViews: true,
+        trackSessions: true,
+        trackEvents: true,
+        trackConversions: true
+    };
+    
+    // Session tracking
+    let sessionId = sessionStorage.getItem('rpi_session_id');
+    if (!sessionId) {
+        sessionId = 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+        sessionStorage.setItem('rpi_session_id', sessionId);
+        sessionStorage.setItem('rpi_session_start', new Date().toISOString());
+        sessionStorage.setItem('rpi_is_new_user', !localStorage.getItem('rpi_returning_user') ? 'true' : 'false');
+        localStorage.setItem('rpi_returning_user', 'true');
+    }
+    
+    // User identification
+    let userId = localStorage.getItem('rpi_user_id');
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+        localStorage.setItem('rpi_user_id', userId);
+    }
+    
+    // Device detection
+    function getDeviceType() {
+        const userAgent = navigator.userAgent;
+        if (/tablet|ipad|playbook|silk/i.test(userAgent)) return 'tablet';
+        if (/mobile|iphone|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i.test(userAgent)) return 'mobile';
+        return 'desktop';
+    }
+    
+    // Traffic source detection
+    function getTrafficSource() {
+        const referrer = document.referrer;
+        const utm_source = new URLSearchParams(window.location.search).get('utm_source');
+        
+        if (utm_source) return utm_source;
+        if (!referrer) return 'direct';
+        
+        const hostname = new URL(referrer).hostname;
+        if (hostname.includes('google')) return 'google';
+        if (hostname.includes('facebook')) return 'facebook';
+        if (hostname.includes('twitter')) return 'twitter';
+        if (hostname.includes('linkedin')) return 'linkedin';
+        if (hostname.includes('youtube')) return 'youtube';
+        
+        return 'referral';
+    }
+    
+    // Page tracking
+    function trackPageView() {
+        if (!ANALYTICS_CONFIG.trackPageViews) return;
+        
+        const pageData = {
+            event_type: 'page_view',
+            session_id: sessionId,
+            user_id: userId,
+            page_url: window.location.href,
+            page_title: document.title,
+            referrer: document.referrer,
+            user_agent: navigator.userAgent,
+            device_type: getDeviceType(),
+            traffic_source: getTrafficSource(),
+            timestamp: new Date().toISOString()
+        };
+        
+        // Send to analytics endpoint
+        sendAnalytics(pageData);
+    }
+    
+    // Session tracking
+    function trackSession() {
+        if (!ANALYTICS_CONFIG.trackSessions) return;
+        
+        const sessionData = {
+            event_type: 'session_start',
+            session_id: sessionId,
+            user_id: userId,
+            is_new_user: sessionStorage.getItem('rpi_is_new_user') === 'true',
+            device_type: getDeviceType(),
+            traffic_source: getTrafficSource(),
+            landing_page: window.location.href,
+            start_time: sessionStorage.getItem('rpi_session_start'),
+            user_agent: navigator.userAgent
+        };
+        
+        sendAnalytics(sessionData);
+    }
+    
+    // Event tracking
+    function trackEvent(eventType, properties = {}) {
+        if (!ANALYTICS_CONFIG.trackEvents) return;
+        
+        const eventData = {
+            event_type: 'custom_event',
+            session_id: sessionId,
+            user_id: userId,
+            event_name: eventType,
+            properties: properties,
+            page_url: window.location.href,
+            timestamp: new Date().toISOString()
+        };
+        
+        sendAnalytics(eventData);
+    }
+    
+    // Conversion tracking
+    function trackConversion(conversionType, value = 0, currency = 'USD') {
+        if (!ANALYTICS_CONFIG.trackConversions) return;
+        
+        const conversionData = {
+            event_type: 'conversion',
+            session_id: sessionId,
+            user_id: userId,
+            conversion_type: conversionType,
+            value: value,
+            currency: currency,
+            page_url: window.location.href,
+            timestamp: new Date().toISOString()
+        };
+        
+        sendAnalytics(conversionData);
+    }
+    
+    // Send data to analytics endpoint
+    function sendAnalytics(data) {
+        // For now, log to console (replace with actual API call)
+        console.log('RPI Analytics:', data);
+        
+        // Uncomment when you have an analytics endpoint:
+        /*
+        fetch(ANALYTICS_CONFIG.apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).catch(error => {
+            console.warn('Analytics tracking failed:', error);
+        });
+        */
+    }
+    
+    // Initialize tracking when page loads
+    function initAnalytics() {
+        // Track page view
+        trackPageView();
+        
+        // Track session if it's a new session
+        if (!sessionStorage.getItem('rpi_session_tracked')) {
+            trackSession();
+            sessionStorage.setItem('rpi_session_tracked', 'true');
+        }
+        
+        // Track time on page
+        let pageLoadTime = Date.now();
+        let lastActivityTime = Date.now();
+        
+        // Update last activity on user interaction
+        ['click', 'scroll', 'keypress', 'mousemove'].forEach(event => {
+            document.addEventListener(event, () => {
+                lastActivityTime = Date.now();
+            }, { passive: true });
+        });
+        
+        // Track page exit
+        window.addEventListener('beforeunload', () => {
+            const timeOnPage = (lastActivityTime - pageLoadTime) / 1000;
+            
+            const exitData = {
+                event_type: 'page_exit',
+                session_id: sessionId,
+                user_id: userId,
+                page_url: window.location.href,
+                time_on_page: timeOnPage,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Use sendBeacon for reliable exit tracking
+            if (navigator.sendBeacon && ANALYTICS_CONFIG.apiEndpoint !== '/api/analytics') {
+                navigator.sendBeacon(
+                    ANALYTICS_CONFIG.apiEndpoint,
+                    JSON.stringify(exitData)
+                );
+            }
+        });
+        
+        // Auto-track common events
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            
+            // Track link clicks
+            if (target.tagName === 'A') {
+                trackEvent('link_click', {
+                    link_text: target.textContent,
+                    link_url: target.href,
+                    link_target: target.target
+                });
+            }
+            
+            // Track button clicks
+            if (target.tagName === 'BUTTON' || target.type === 'submit') {
+                trackEvent('button_click', {
+                    button_text: target.textContent,
+                    button_type: target.type
+                });
+            }
+        });
+        
+        // Track scroll depth
+        let maxScroll = 0;
+        let scrollTracked = {};
+        
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round(
+                (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                // Track scroll milestones
+                [25, 50, 75, 90].forEach(milestone => {
+                    if (scrollPercent >= milestone && !scrollTracked[milestone]) {
+                        scrollTracked[milestone] = true;
+                        trackEvent('scroll_depth', {
+                            depth_percent: milestone
+                        });
+                    }
+                });
+            }
+        });
+    }
+    
+    // Expose tracking functions globally
+    window.rpiAnalytics = {
+        trackEvent,
+        trackConversion,
+        getSessionId: () => sessionId,
+        getUserId: () => userId
+    };
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnalytics);
+    } else {
+        initAnalytics();
+    }
+})();
+</script>
+<!-- End RenewablePowerInsight Analytics -->
+
 </head>
 <body>
 <!-- Skip Navigation for Accessibility -->

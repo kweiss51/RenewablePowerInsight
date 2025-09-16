@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Research - Renewable Power Insight | Latest Solar Technology Analysis</title>
+    <meta name="description" content="Explore cutting-edge solar energy research, photovoltaic technology breakthroughs, solar panel efficiency innovations, and market analysis for solar power systems.">
+    <meta name="keywords" content="solar energy, photovoltaic, solar panels, solar technology, solar research, renewable energy">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../../style.css">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "../../index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Solar Energy",
+                "item": "../../posts/solar/"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <a href="../../index.html" class="site-title">Renewable Power Insight</a>
+                    <span class="site-tagline">Advanced Energy Research</span>
+                </div>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../../posts/solar/index.html" class="nav-link active" aria-current="page">Solar</a>
+                    <a href="../../posts/wind/index.html" class="nav-link">Wind</a>
+                    <a href="../../posts/battery/index.html" class="nav-link">Storage</a>
+                    <a href="../../posts/grid-tech/index.html" class="nav-link">Smart Grid</a>
+                    <a href="../../posts/policy/index.html" class="nav-link">Policy</a>
+                    <a href="../../blog/index.html" class="nav-link">All Posts</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="../../index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Solar Energy
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Solar Energy Research</h1>
+                <p class="page-subtitle">
+                    Comprehensive analysis of solar technology innovations, photovoltaic breakthroughs, 
+                    efficiency improvements, and market developments in solar energy systems.
+                </p>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Research Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Latest</span>
+                        <span class="stat-label">Sept 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <!-- Articles Grid -->
+            <section class="articles-section">
+                <div class="articles-grid">
+                    
+                    <!-- Article 1 -->
+                    <article class="grid-article">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=300&fit=crop&auto=format" alt="Solar panels on rooftop generating clean energy" loading="lazy">
+                            <span class="category-badge">Solar Energy</span>
+                        </div>
+                        <div class="article-content">
+                            <h2 class="article-title">
+                                <a href="solar-panel-efficiency-breakthroughs-in-2024-technology-breakthrough-innovations.html">Solar Panel Efficiency Breakthroughs In 2024 Technology: Breakthrough Innovations</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                The renewable energy sector continues to witness groundbreaking developments in Solar Panel Efficiency Breakthroughs in 2024. These innovations are reshaping the landscape of clean energy and accelerating the global transition toward sustainability.
+                            </p>
+                            <div class="article-meta">
+                                <span class="reading-time">3 min read</span>
+                                <span>•</span>
+                                <time datetime="2025-09-14">September 14, 2025</time>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 2 -->
+                    <article class="grid-article">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=300&fit=crop&auto=format" alt="Floating solar farm installations" loading="lazy">
+                            <span class="category-badge">Solar Energy</span>
+                        </div>
+                        <div class="article-content">
+                            <h2 class="article-title">
+                                <a href="floating-solar-farm-installations-latest-developments-and-market-impact.html">Floating Solar Farm Installations: Latest Developments and Market Impact</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                Floating solar installations represent a revolutionary approach to renewable energy generation, combining innovative technology with efficient land use. These systems are transforming how we think about solar deployment and environmental sustainability.
+                            </p>
+                            <div class="article-meta">
+                                <span class="reading-time">3 min read</span>
+                                <span>•</span>
+                                <time datetime="2025-09-14">September 14, 2025</time>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+            <!-- Related Categories -->
+            <section class="related-categories">
+                <div class="container">
+                    <h2 class="section-title">Explore Other Categories</h2>
+                    <div class="category-grid">
+                        <a href="../../posts/wind/index.html" class="category-card">
+                            <h3>Wind Energy</h3>
+                            <p>Offshore and onshore wind technology innovations</p>
+                            <span class="article-count">2 articles</span>
+                        </a>
+                        <a href="../../posts/battery/index.html" class="category-card">
+                            <h3>Energy Storage</h3>
+                            <p>Battery technology and storage system advances</p>
+                            <span class="article-count">2 articles</span>
+                        </a>
+                        <a href="../../posts/grid-tech/index.html" class="category-card">
+                            <h3>Smart Grid</h3>
+                            <p>Grid modernization and cybersecurity innovations</p>
+                            <span class="article-count">2 articles</span>
+                        </a>
+                        <a href="../../posts/policy/index.html" class="category-card">
+                            <h3>Policy & Markets</h3>
+                            <p>Energy policy developments and market analysis</p>
+                            <span class="article-count">5 articles</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Renewable Power Insight</h3>
+                    <p class="footer-description">
+                        Leading the clean energy transition with advanced research, 
+                        market analysis, and technology insights.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../posts/solar/index.html">Solar Energy</a></li>
+                        <li><a href="../../posts/wind/index.html">Wind Power</a></li>
+                        <li><a href="../../posts/battery/index.html">Energy Storage</a></li>
+                        <li><a href="../../posts/grid-tech/index.html">Smart Grid</a></li>
+                        <li><a href="../../posts/policy/index.html">Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../blog/index.html">All Articles</a></li>
+                        <li><a href="../../research/index.html">Research Reports</a></li>
+                        <li><a href="../../data/index.html">Market Data</a></li>
+                        <li><a href="../../insights/index.html">Industry Insights</a></li>
+                        <li><a href="../../methodology/index.html">Methodology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../about/index.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../newsletter/index.html">Newsletter</a></li>
+                        <li><a href="../../rss/index.html">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Renewable Power Insight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

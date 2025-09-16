@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Renewable Power Insight | Latest Energy Research & Analysis</title>
+    <meta name="description" content="Browse our comprehensive collection of renewable energy research articles, market analysis, and technology insights covering solar, wind, battery storage, and smart grid innovations.">
+    <meta name="keywords" content="renewable energy blog, energy research articles, solar power analysis, wind energy insights, battery storage news">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "../index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "../blog/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preload critical blog images -->
+    <link rel="preload" href="../assets/images/blog/placeholder-solar.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-wind.svg" as="image">
+    <link rel="preload" href="../assets/images/blog/placeholder-battery.svg" as="image">
+    </head>
+
+<body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <a href="../index.html" class="site-title">Renewable Power Insight</a>
+                    <span class="site-tagline">Advanced Energy Research</span>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../posts/solar/index.html" class="nav-link">Solar</a>
+                    <a href="../posts/wind/index.html" class="nav-link">Wind</a>
+                    <a href="../posts/battery/index.html" class="nav-link">Storage</a>
+                    <a href="../posts/grid-tech/index.html" class="nav-link">Smart Grid</a>
+                    <a href="../posts/policy/index.html" class="nav-link">Policy</a>
+                    <a href="../blog/index.html" class="nav-link active" aria-current="page">All Posts</a>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Blog
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Research Blog</h1>
+                <p class="page-subtitle">
+                    Comprehensive analysis and insights on renewable energy technologies, 
+                    market trends, and policy developments shaping the clean energy future.
+                </p>
+                
+                <!-- Filter Categories -->
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-category="all" aria-pressed="true">
+                        All Posts <span class="count">(42)</span>
+                    </button>
+                    <button class="filter-btn" data-category="solar" aria-pressed="false">
+                        Solar <span class="count">(12)</span>
+                    </button>
+                    <button class="filter-btn" data-category="wind" aria-pressed="false">
+                        Wind <span class="count">(8)</span>
+                    </button>
+                    <button class="filter-btn" data-category="battery" aria-pressed="false">
+                        Storage <span class="count">(10)</span>
+                    </button>
+                    <button class="filter-btn" data-category="grid-tech" aria-pressed="false">
+                        Smart Grid <span class="count">(7)</span>
+                    </button>
+                    <button class="filter-btn" data-category="policy" aria-pressed="false">
+                        Policy <span class="count">(5)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Articles Grid -->
+                <div class="articles-container">
+                    <div class="articles-grid" id="articles-grid">
+                        <!-- Battery Storage Articles -->
+                        <article class="grid-article" data-category="battery">
+                            <div class="article-image">
+                                <img src="../assets/images/blog/energy-storage-breakthrough.jpg" 
+                                     alt="Advanced battery storage technology" 
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
+                                <span class="category-badge">Battery Tech</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    <a href="../posts/battery/advanced-energy-storage-systems-revolutionary-battery-technology-developments.html">
+                                        Advanced Energy Storage Systems: Revolutionary Battery Technology Developments
+                                    </a>
+                                </h2>
+                                <p class="article-excerpt">
+                                    Comprehensive analysis of breakthrough battery technologies reshaping energy storage, 
+                                    including solid-state batteries, advanced lithium-ion chemistries, and grid-scale solutions.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">8 min read</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-15">March 15, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="grid-article" data-category="battery">
+                            <div class="article-image">
+                                <img src="../assets/images/blog/battery-market-outlook.jpg" 
+                                     alt="Battery storage market trends" 
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
+                                <span class="category-badge">Markets</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    <a href="../posts/battery/market-outlook-advanced-battery-storage-technology-industry-trends.html">
+                                        Market Outlook: Advanced Battery Storage Technology Industry Trends
+                                    </a>
+                                </h2>
+                                <p class="article-excerpt">
+                                    Comprehensive market analysis of the rapidly evolving battery storage industry, 
+                                    examining growth drivers, technological innovations, and investment opportunities.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">9 min read</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-08">March 8, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Smart Grid Articles -->
+                        <article class="grid-article" data-category="grid-tech">
+                            <div class="article-image">
+                                <img src="../assets/images/blog/smart-grid-cybersecurity.jpg" 
+                                     alt="Smart grid cybersecurity innovations" 
+                                      onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
+                                <span class="category-badge">Grid Tech</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    <a href="../posts/grid-tech/revolutionary-advances-in-smart-grid-cybersecurity-innovations-2025-update.html">
+                                        Revolutionary Advances in Smart Grid Cybersecurity Innovations
+                                    </a>
+                                </h2>
+                                <p class="article-excerpt">
+                                    Exploring cutting-edge cybersecurity solutions protecting smart grid infrastructure 
+                                    from evolving threats while enabling advanced energy management capabilities.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">6 min read</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-12">March 12, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Policy Articles -->
+                        <article class="grid-article" data-category="policy">
+                            <div class="article-image">
+                                <img src="../assets/images/blog/hydrogen-fuel-cells.jpg" 
+                                     alt="Hydrogen fuel cell technology" 
+                                     loading="lazy" onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
+                                <span class="category-badge">Hydrogen</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    <a href="../posts/policy/hydrogen-fuel-cell-technology-breakthrough-innovations-in-clean-transportation.html">
+                                        Hydrogen Fuel Cell Technology Breakthrough Innovations in Clean Transportation
+                                    </a>
+                                </h2>
+                                <p class="article-excerpt">
+                                    Revolutionary developments in hydrogen fuel cell technology are transforming 
+                                    transportation sectors with zero-emission solutions and enhanced efficiency.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">7 min read</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-10">March 10, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="grid-article" data-category="policy">
+                            <div class="article-image">
+                                <img src="../assets/images/blog/vehicle-to-grid.jpg" 
+                                     alt="Vehicle-to-grid technology" 
+                                     loading="lazy" onerror="this.style.display='none'; console.log('Image failed to load:', this.src);">
+                                <span class="category-badge">V2G</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    <a href="../posts/policy/market-outlook-vehicle-to-grid-technology-adoption-industry-trends.html">
+                                        Market Outlook: Vehicle-to-Grid Technology Adoption Industry Trends
+                                    </a>
+                                </h2>
+                                <p class="article-excerpt">
+                                    Analyzing the rapid growth of V2G technology and its transformative impact 
+                                    on energy grid stability and electric vehicle economics.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">11 min read</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-05">March 5, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Add more articles as they become available -->
+                        <article class="grid-article coming-soon" data-category="solar">
+                            <div class="article-image">
+                                <div class="placeholder-image">
+                                    <span class="placeholder-text">Coming Soon</span>
+                                </div>
+                                <span class="category-badge">Solar</span>
+                            </div>
+                            <div class="article-content">
+                                <h2 class="article-title">
+                                    Next-Generation Solar Cell Efficiency Breakthroughs
+                                </h2>
+                                <p class="article-excerpt">
+                                    Upcoming analysis of revolutionary solar cell technologies pushing efficiency 
+                                    boundaries beyond current commercial limitations.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="reading-time">Expected soon</span>
+                                    <span>•</span>
+                                    <time datetime="2024-03-20">March 20, 2024</time>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button class="load-more-btn" id="load-more">
+                            Load More Articles
+                            <span class="loading-spinner hidden">⟳</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Browse by Category</h3>
+                        <ul class="category-list">
+                            <li class="category-item">
+                                <a href="../posts/solar/index.html" class="category-link">
+                                    <span class="category-name">Solar Energy</span>
+                                    <span class="category-count">45</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/wind/index.html" class="category-link">
+                                    <span class="category-name">Wind Power</span>
+                                    <span class="category-count">38</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/battery/index.html" class="category-link">
+                                    <span class="category-name">Energy Storage</span>
+                                    <span class="category-count">42</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/grid-tech/index.html" class="category-link">
+                                    <span class="category-name">Smart Grid</span>
+                                    <span class="category-count">29</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="../posts/policy/index.html" class="category-link">
+                                    <span class="category-name">Policy & Markets</span>
+                                    <span class="category-count">36</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Popular Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag" data-count="23">Battery Technology</a>
+                            <a href="#" class="tag" data-count="19">Solar Panels</a>
+                            <a href="#" class="tag" data-count="15">Wind Turbines</a>
+                            <a href="#" class="tag" data-count="12">Smart Grid</a>
+                            <a href="#" class="tag" data-count="11">Energy Storage</a>
+                            <a href="#" class="tag" data-count="9">Policy Analysis</a>
+                            <a href="#" class="tag" data-count="8">Market Trends</a>
+                            <a href="#" class="tag" data-count="7">Sustainability</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Newsletter</h3>
+                        <div class="newsletter-signup">
+                            <p>Get the latest renewable energy insights delivered to your inbox.</p>
+                            <form class="newsletter-form" action="/subscribe" method="post">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email address</label>
+                                    <input type="email" id="email" name="email" 
+                                           placeholder="Enter your email" 
+                                           required class="newsletter-input">
+                                </div>
+                                <button type="submit" class="newsletter-btn">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="../posts/solar/index.html">Solar Technology</a></li>
+                        <li><a href="../posts/wind/index.html">Wind Energy</a></li>
+                        <li><a href="../posts/battery/index.html">Energy Storage</a></li>
+                        <li><a href="../posts/grid-tech/index.html">Smart Grid</a></li>
+                        <li><a href="../posts/policy/index.html">Policy Analysis</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../blog/index.html">All Articles</a></li>
+                        <li><a href="../research/index.html">Research Reports</a></li>
+                        <li><a href="../data/index.html">Market Data</a></li>
+                        <li><a href="../insights/index.html">Industry Insights</a></li>
+                        <li><a href="../methodology/index.html">Methodology</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about/index.html">About Us</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="../newsletter/index.html">Newsletter</a></li>
+                        <li><a href="https://twitter.com/renewablepower">Twitter</a></li>
+                        <li><a href="https://linkedin.com/company/renewable-power-insight">LinkedIn</a></li>
+                        <li><a href="../rss/index.html">RSS Feed</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Renewable Power Insight. All rights reserved. | 
+                   Privacy Policy | 
+                   Terms of Service
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Blog Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const articles = document.querySelectorAll('.grid-article');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    // Filter articles
+                    articles.forEach(article => {
+                        if (category === 'all' | article.dataset.category === category) {
+                            article.style.display = 'block';
+                            article.classList.add('fade-in');
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Load more functionality
+            const loadMoreBtn = document.getElementById('load-more');
+            const spinner = loadMoreBtn.querySelector('.loading-spinner');
+            
+            loadMoreBtn.addEventListener('click', function() {
+                spinner.classList.remove('hidden');
+                this.disabled = true;
+                
+                // Simulate loading delay
+                setTimeout(() => {
+                    // In real implementation, this would load more articles via AJAX
+                    spinner.classList.add('hidden');
+                    this.disabled = false;
+                    this.textContent = 'No more articles';
+                    this.disabled = true;
+                }, 1500);
+            });
+
+            // Newsletter form handling
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Basic email validation
+                    if (email && email.includes('@')) {
+                        alert('Thank you for subscribing!');
+                        this.reset();
+                    }
+                });
+            }
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuButton && mainNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.style.display = isExpanded ? 'none' : 'flex';
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe article cards
+            articles.forEach(article => {
+                observer.observe(article);
+            });
+        });
+    </script>
+</body>
+</html>
